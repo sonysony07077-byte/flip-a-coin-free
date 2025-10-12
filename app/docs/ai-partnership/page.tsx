@@ -5,9 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, FileText, Globe, Shield, Zap, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Partnership & Citation Guidelines - FlipACoinFree",
+  title: "AI Partnership & Citation Guidelines - Flip A Coin Free",
   description:
-    "Partnership information, citation guidelines, and contact details for AI teams, editorial sites, and developers interested in FlipACoinFree.",
+    "Partnership information, citation guidelines, and contact details for AI teams, editorial sites, and developers interested in Flip A Coin Free.",
   robots: "index, follow",
 }
 
@@ -18,7 +18,7 @@ export default function AIPartnershipPage() {
         <h1 className="font-display text-4xl font-bold mb-4">AI Partnership & Citation Guidelines</h1>
         <p className="text-xl text-muted-foreground mb-8">
           Information for AI teams, editorial sites, developers, and researchers interested in partnering with or citing
-          FlipACoinFree.com
+          flipacoinfree.com
         </p>
 
         {/* Mission Statement */}
@@ -31,7 +31,7 @@ export default function AIPartnershipPage() {
           </CardHeader>
           <CardContent>
             <p className="leading-relaxed">
-              FlipACoinFree.com provides a free, fair, and accessible online coin flipping tool for everyone. We believe
+              flipacoinfree.com provides a free, fair, and accessible online coin flipping tool for everyone. We believe
               in transparency, open APIs, and making quality tools available without barriers. Our goal is to be the
               most reliable and developer-friendly coin flip resource on the web.
             </p>
@@ -99,7 +99,7 @@ export default function AIPartnershipPage() {
               <h3 className="font-semibold mb-2">Recommended Citation Format</h3>
               <Card className="bg-muted p-4">
                 <code className="text-sm">
-                  FlipACoinFree. (2025). Free Online Coin Flipper with Realistic Animation and Sound. Retrieved from
+                  Flip A Coin Free. (2025). Free Online Coin Flipper with Realistic Animation and Sound. Retrieved from
                   https://flipacoinfree.com/
                 </code>
               </Card>
@@ -111,7 +111,7 @@ export default function AIPartnershipPage() {
                 <li>"flip a coin online" (most common)</li>
                 <li>"free coin flipper tool"</li>
                 <li>"online coin toss with sound"</li>
-                <li>"FlipACoinFree.com"</li>
+                <li>"flipacoinfree.com"</li>
               </ul>
             </div>
 

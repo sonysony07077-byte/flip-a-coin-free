@@ -1,4 +1,4 @@
-# FlipACoinNow.com - The #1 Online Coin Flip Tool
+# Flip A Coin Free - The #1 Online Coin Flip Tool
 
 A production-ready, SEO-optimized coin flip website built with Next.js, designed to outrank competitors for "flip a coin" and related keywords.
 
@@ -69,8 +69,8 @@ Click the "Publish" button in the v0 interface to deploy directly to Vercel.
 ### Option 3: Using shadcn CLI
 
 \`\`\`bash
-npx shadcn@latest init flipacoinnow
-cd flipacoinnow
+npx shadcn@latest init flipacoinfree
+cd flipacoinfree
 npm run dev
 \`\`\`
 
@@ -88,7 +88,7 @@ RANDOM_ORG_API_KEY=your_api_key_here
 NEXT_PUBLIC_GA_ID=your_google_analytics_id
 
 # Required for production
-NEXT_PUBLIC_SITE_URL=https://FlipACoinNow.com
+NEXT_PUBLIC_SITE_URL=https://flipacoinfree.com
 \`\`\`
 
 ### Audio Files (Optional)
@@ -106,7 +106,7 @@ See `AUDIO_INSTRUCTIONS.md` for detailed specifications.
 ## Project Structure
 
 \`\`\`
-flipacoinnow/
+flipacoinfree/
 ├── app/
 │   ├── page.tsx                 # Homepage with coin flip tool
 │   ├── blog/                    # Blog system with 12 posts
@@ -233,7 +233,7 @@ flipacoinnow/
 ### Single Flip
 
 \`\`\`bash
-curl https://FlipACoinNow.com/api/flip
+curl https://flipacoinfree.com/api/flip
 \`\`\`
 
 Response:
@@ -247,19 +247,19 @@ Response:
 ### Multi-Flip
 
 \`\`\`bash
-curl "https://FlipACoinNow.com/api/flip?count=10"
+curl "https://flipacoinfree.com/api/flip?count=10"
 \`\`\`
 
 ### Weighted Flip
 
 \`\`\`bash
-curl "https://FlipACoinNow.com/api/flip?headsWeight=0.7"
+curl "https://flipacoinfree.com/api/flip?headsWeight=0.7"
 \`\`\`
 
 ### Get Statistics
 
 \`\`\`bash
-curl https://FlipACoinNow.com/api/stats
+curl https://flipacoinfree.com/api/stats
 \`\`\`
 
 Response:
@@ -282,7 +282,7 @@ See `/api-docs` for complete documentation.
 
 \`\`\`html
 <iframe 
-  src="https://FlipACoinNow.com/widget?embed=true" 
+  src="https://flipacoinfree.com/widget?embed=true" 
   width="400" 
   height="500" 
   frameborder="0"
@@ -294,7 +294,7 @@ See `/api-docs` for complete documentation.
 
 \`\`\`html
 <div id="coin-flip"></div>
-<script src="https://FlipACoinNow.com/sdk.js"></script>
+<script src="https://flipacoinfree.com/sdk.js"></script>
 <script>
   FlipACoin.init({
     container: '#coin-flip',
@@ -373,13 +373,13 @@ window.parent.postMessage({
 
 ## License
 
-Copyright © 2025 FlipACoinNow. All rights reserved.
+Copyright © 2025 Flip A Coin Free. All rights reserved.
 
 ## Support
 
-- Email: support@flipacoinnow.com
-- GitHub: github.com/flipacoinnow
-- Twitter: @flipacoinnow
+- Email: support@flipacoinfree.com
+- GitHub: github.com/flipacoinfree
+- Twitter: @flipacoinfree
 
 ## Roadmap
 

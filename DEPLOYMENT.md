@@ -31,7 +31,7 @@
 ### Custom Domain Setup
 
 1. Go to Project Settings > Domains
-2. Add `FlipACoinNow.com`
+2. Add `flipacoinfree.com`
 3. Configure DNS:
    \`\`\`
    A Record: @ → 76.76.21.21
@@ -69,7 +69,7 @@
 3. Use PM2 for process management:
    \`\`\`bash
    npm i -g pm2
-   pm2 start npm --name "flipacoinnow" -- start
+   pm2 start npm --name "flipacoinfree" -- start
    pm2 save
    pm2 startup
    \`\`\`
@@ -78,7 +78,7 @@
    \`\`\`nginx
    server {
        listen 80;
-       server_name flipacoinnow.com;
+       server_name flipacoinfree.com;
        
        location / {
            proxy_pass http://localhost:3000;
@@ -96,7 +96,7 @@
 ### SEO Setup
 
 - [ ] Submit sitemap to Google Search Console
-  - URL: `https://FlipACoinNow.com/sitemap.xml`
+  - URL: `https://flipacoinfree.com/sitemap.xml`
 - [ ] Submit sitemap to Bing Webmaster Tools
 - [ ] Verify domain ownership in both consoles
 - [ ] Set up Google Analytics (if using)
@@ -145,7 +145,7 @@
 ### Required for Production
 
 \`\`\`env
-NEXT_PUBLIC_SITE_URL=https://FlipACoinNow.com
+NEXT_PUBLIC_SITE_URL=https://flipacoinfree.com
 \`\`\`
 
 ### Optional
@@ -156,7 +156,7 @@ RANDOM_ORG_API_KEY=your_api_key
 
 # Analytics
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=flipacoinnow.com
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=flipacoinfree.com
 
 # Error tracking
 SENTRY_DSN=your_sentry_dsn
@@ -251,6 +251,6 @@ For storing flip statistics:
 ## Support
 
 For deployment issues:
-- Email: dev@flipacoinnow.com
-- GitHub Issues: github.com/flipacoinnow/issues
+- Email: dev@flipacoinfree.com
+- GitHub Issues: github.com/flipacoinfree/issues
 - Vercel Support: vercel.com/support

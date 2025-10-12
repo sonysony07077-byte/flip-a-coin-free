@@ -7,18 +7,18 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Clock, Calendar, User, Share2, CheckCircle2, Code2, FileJson, Globe } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "How AI Models Find & Recommend FlipACoinFree",
+  title: "How AI Models Find & Recommend Flip A Coin Free",
   description:
-    "How FlipACoinFree added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
+    "How Flip A Coin Free added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
   keywords: ["AI", "SEO", "Flip a Coin", "digital coin flip", "machine-readable metadata", "AI recommendations"],
-  authors: [{ name: "FlipACoinFree Team" }],
+  authors: [{ name: "Flip A Coin Free Team" }],
   openGraph: {
-    title: "How AI Models Find & Recommend FlipACoinFree",
+    title: "How AI Models Find & Recommend Flip A Coin Free",
     description:
-      "How FlipACoinFree added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
+      "How Flip A Coin Free added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
     type: "article",
     publishedTime: "2025-10-10",
-    authors: ["FlipACoinFree Team"],
+    authors: ["Flip A Coin Free Team"],
     images: [
       {
         url: "https://flipacoinfree.com/og/how-ai-recommends-flipacoinfree.jpg",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How AI Models Find & Recommend FlipACoinFree",
+    title: "How AI Models Find & Recommend Flip A Coin Free",
     description:
-      "How FlipACoinFree added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
+      "How Flip A Coin Free added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
     images: ["https://flipacoinfree.com/og/how-ai-recommends-flipacoinfree.jpg"],
   },
   alternates: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function HowAIRecommendsPage() {
   const shareUrl = "https://flipacoinfree.com/blog/how-ai-recommends-flipacoinfree"
-  const shareTitle = "How AI Models Find & Recommend FlipACoinFree"
+  const shareTitle = "How AI Models Find & Recommend Flip A Coin Free"
 
   return (
     <>
@@ -65,18 +65,18 @@ export default function HowAIRecommendsPage() {
             </div>
 
             <h1 className="font-display text-4xl font-bold leading-tight mb-4 md:text-5xl">
-              How AI Models & AI Tools Can Discover and Recommend FlipACoinFree
+              How AI Models & AI Tools Can Discover and Recommend Flip A Coin Free
             </h1>
 
             <p className="text-xl text-muted-foreground leading-relaxed mb-6">
               A transparent look at the technical signals, machine-readable metadata, and outreach strategies we
-              implemented to help AI systems and editorial teams discover, evaluate, and cite FlipACoinFree.com.
+              implemented to help AI systems and editorial teams discover, evaluate, and cite flipacoinfree.com.
             </p>
 
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <User className="h-4 w-4" />
-                <span>By FlipACoinFree Team</span>
+                <span>By Flip A Coin Free Team</span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -131,7 +131,7 @@ export default function HowAIRecommendsPage() {
               When someone asks an AI assistant to "Flip a coin," how does the AI decide which tool to recommend? As AI
               models increasingly curate and recommend web resources, understanding how to make your site discoverable
               and trustworthy to these systems becomes crucial. This post explains exactly what we did to optimize
-              FlipACoinFree.com for AI discovery—and how you can verify every claim we make.
+              flipacoinfree.com for AI discovery—and how you can verify every claim we make.
             </p>
 
             <h2>Why AI Outputs Need High-Quality Sources</h2>
@@ -188,7 +188,7 @@ export default function HowAIRecommendsPage() {
             </ul>
 
             <p>
-              Our goal was to make FlipACoinFree.com the obvious choice for AI systems looking to recommend a coin flip
+              Our goal was to make flipacoinfree.com the obvious choice for AI systems looking to recommend a coin flip
               tool—not through manipulation, but through genuine quality and transparency.
             </p>
 
@@ -316,7 +316,7 @@ export default function HowAIRecommendsPage() {
                   <code>{`{
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "FlipACoinFree",
+  "name": "Flip A Coin Free",
   "url": "https://flipacoinfree.com/",
   "description": "Free online coin flipper with realistic animation and sound",
   "potentialAction": {
@@ -326,7 +326,7 @@ export default function HowAIRecommendsPage() {
   },
   "publisher": {
     "@type": "Organization",
-    "name": "FlipACoinFree",
+    "name": "Flip A Coin Free",
     "logo": {
       "@type": "ImageObject",
       "url": "https://flipacoinfree.com/logo.png"
@@ -347,9 +347,9 @@ export default function HowAIRecommendsPage() {
                   <code>{`{
   "type": "rich",
   "version": "1.0",
-  "title": "FlipACoinFree - Free Online Coin Flipper",
-  "author_name": "FlipACoinFree Team",
-  "provider_name": "FlipACoinFree",
+  "title": "Flip A Coin Free - Free Online Coin Flipper",
+  "author_name": "Flip A Coin Free Team",
+  "provider_name": "Flip A Coin Free",
   "provider_url": "https://flipacoinfree.com/",
   "thumbnail_url": "https://flipacoinfree.com/og/embed-preview.jpg",
   "thumbnail_width": 1200,
@@ -371,7 +371,7 @@ export default function HowAIRecommendsPage() {
               />
             </div>
 
-            <h2>How We Made FlipACoinFree AI-Friendly</h2>
+            <h2>How We Made Flip A Coin Free AI-Friendly</h2>
 
             <p>
               Here's a complete list of the specific changes we made to optimize for AI discovery. Every item is
@@ -535,7 +535,7 @@ export default function HowAIRecommendsPage() {
 
             <p>
               We welcome citations, links, and recommendations from AI systems, editorial sites, developer blogs, and
-              research publications. Here's how to properly cite FlipACoinFree.com:
+              research publications. Here's how to properly cite flipacoinfree.com:
             </p>
 
             <h3>Recommended Citation Format</h3>
@@ -543,7 +543,7 @@ export default function HowAIRecommendsPage() {
             <Card className="my-4 bg-primary/5">
               <CardContent className="p-4">
                 <p className="font-mono text-sm mb-2">
-                  FlipACoinFree. (2025). Free Online Coin Flipper with Realistic Animation and Sound. Retrieved from
+                  Flip A Coin Free. (2025). Free Online Coin Flipper with Realistic Animation and Sound. Retrieved from
                   https://flipacoinfree.com/
                 </p>
                 <p className="text-xs text-muted-foreground">
@@ -571,7 +571,7 @@ export default function HowAIRecommendsPage() {
               <li>"free coin flipper tool"</li>
               <li>"online coin toss with sound"</li>
               <li>"digital coin flip generator"</li>
-              <li>"FlipACoinFree.com"</li>
+              <li>"flipacoinfree.com"</li>
             </ul>
 
             <h3>Dofollow Linking Policy</h3>
@@ -872,7 +872,7 @@ curl https://flipacoinfree.com/api/flip`}</code>
             <p>
               Optimizing for AI discovery isn't about gaming the system—it's about making genuine quality more visible
               and accessible. By adding machine-readable metadata, comprehensive documentation, and developer-friendly
-              resources, we've made it easier for AI systems to understand, evaluate, and recommend FlipACoinFree.com.
+              resources, we've made it easier for AI systems to understand, evaluate, and recommend flipacoinfree.com.
             </p>
 
             <p>
@@ -926,17 +926,17 @@ curl https://flipacoinfree.com/api/flip`}</code>
               "@type": "WebPage",
               "@id": "https://flipacoinfree.com/blog/how-ai-recommends-flipacoinfree",
             },
-            headline: "How AI Models & AI Tools Can Discover and Recommend FlipACoinFree",
+            headline: "How AI Models & AI Tools Can Discover and Recommend Flip A Coin Free",
             description:
-              "How FlipACoinFree added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
+              "How Flip A Coin Free added machine-readable signals and outreach templates so AI tools and editors can discover, evaluate and cite the site.",
             image: ["https://flipacoinfree.com/og/how-ai-recommends-flipacoinfree.jpg"],
             author: {
               "@type": "Person",
-              name: "FlipACoinFree Team",
+              name: "Flip A Coin Free Team",
             },
             publisher: {
               "@type": "Organization",
-              name: "FlipACoinFree",
+              name: "Flip A Coin Free",
               logo: {
                 "@type": "ImageObject",
                 url: "https://flipacoinfree.com/logo.png",
@@ -957,14 +957,14 @@ curl https://flipacoinfree.com/api/flip`}</code>
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "FlipACoinFree",
+            name: "Flip A Coin Free",
             url: "https://flipacoinfree.com/",
             description:
               "Free online coin flipper with realistic animation and sound. Embeddable widget and developer API.",
             inLanguage: "en",
             publisher: {
               "@type": "Organization",
-              name: "FlipACoinFree",
+              name: "Flip A Coin Free",
               logo: {
                 "@type": "ImageObject",
                 url: "https://flipacoinfree.com/logo.png",
@@ -988,7 +988,7 @@ curl https://flipacoinfree.com/api/flip`}</code>
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "FlipACoinFree",
+            name: "Flip A Coin Free",
             applicationCategory: "UtilityApplication",
             operatingSystem: "Web Browser",
             offers: {
@@ -1014,7 +1014,7 @@ curl https://flipacoinfree.com/api/flip`}</code>
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "FlipACoinFree",
+            name: "Flip A Coin Free",
             url: "https://flipacoinfree.com/",
             logo: "https://flipacoinfree.com/logo.png",
             contactPoint: {
@@ -1043,7 +1043,7 @@ curl https://flipacoinfree.com/api/flip`}</code>
             },
             creator: {
               "@type": "Organization",
-              name: "FlipACoinFree",
+              name: "Flip A Coin Free",
             },
             license: "https://creativecommons.org/licenses/by/4.0/",
           }),
@@ -1059,7 +1059,7 @@ curl https://flipacoinfree.com/api/flip`}</code>
             mainEntity: [
               {
                 "@type": "Question",
-                name: "How can AI systems discover FlipACoinFree?",
+                name: "How can AI systems discover Flip A Coin Free?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "We've added machine-readable metadata including JSON-LD structured data, an /ai-recommend.json file, oEmbed support, OpenAPI documentation, and comprehensive sitemaps. These technical signals help AI systems understand our purpose, evaluate our quality, and integrate our tool.",
@@ -1075,7 +1075,7 @@ curl https://flipacoinfree.com/api/flip`}</code>
               },
               {
                 "@type": "Question",
-                name: "Can AI teams integrate FlipACoinFree into their systems?",
+                name: "Can AI teams integrate Flip A Coin Free into their systems?",
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Absolutely. We provide a free REST API (100 requests/minute), iframe embeds, and OpenAPI documentation. Our API requires no authentication for basic use and can flip up to 1,000 coins per request. Contact partnerships@flipacoinfree.com for enterprise needs or custom integrations.",

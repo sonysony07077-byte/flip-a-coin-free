@@ -1,5 +1,5 @@
 /**
- * FlipACoinNow JavaScript SDK
+ * Flip A Coin Free JavaScript SDK
  * Version: 1.0.0
  *
  * Usage:

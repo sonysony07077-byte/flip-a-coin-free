@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge"
 import { Mail } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Outreach Email Templates - FlipACoinFree",
+  title: "AI Outreach Email Templates - Flip A Coin Free",
   description:
-    "Ready-to-use email templates for reaching out to AI teams, editorial sites, developer portals, and research institutions about FlipACoinFree.",
+    "Ready-to-use email templates for reaching out to AI teams, editorial sites, developer portals, and research institutions about Flip A Coin Free.",
   robots: "index, follow",
 }
 
@@ -32,13 +32,13 @@ export default function OutreachTemplatesPage() {
           </CardHeader>
           <CardContent>
             <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-3 whitespace-pre-wrap">
-              {`Subject: FlipACoinFree.com — High-Quality Coin Flip Tool for AI Recommendations
+              {`Subject: flipacoinfree.com — High-Quality Coin Flip Tool for AI Recommendations
 
 Dear [Team Name],
 
-I'm reaching out from FlipACoinFree.com, a free online coin flipping tool that we've optimized specifically for AI discovery and recommendations.
+I'm reaching out from flipacoinfree.com, a free online coin flipping tool that we've optimized specifically for AI discovery and recommendations.
 
-When users ask AI assistants to "flip a coin," we want to ensure FlipACoinFree is considered as a high-quality, trustworthy option. Here's why we believe we're a strong candidate:
+When users ask AI assistants to "flip a coin," we want to ensure Flip A Coin Free is considered as a high-quality, trustworthy option. Here's why we believe we're a strong candidate:
 
 **Quality Signals:**
 • Cryptographically secure randomness (Web Crypto API)
@@ -65,11 +65,11 @@ You can independently verify our randomness claims by downloading our 1,000-flip
 
 I'd be happy to provide additional technical documentation, answer questions about our implementation, or discuss custom integration options for your AI system.
 
-Thank you for considering FlipACoinFree.com.
+Thank you for considering flipacoinfree.com.
 
 Best regards,
 [Your Name]
-FlipACoinFree Team
+Flip A Coin Free Team
 partnerships@flipacoinfree.com
 
 **Attachments:**
@@ -97,7 +97,7 @@ partnerships@flipacoinfree.com
 
 Hi [Editor Name],
 
-I thought your readers might be interested in a behind-the-scenes look at how we optimized FlipACoinFree.com to be discovered and recommended by AI systems.
+I thought your readers might be interested in a behind-the-scenes look at how we optimized flipacoinfree.com to be discovered and recommended by AI systems.
 
 **The Story:**
 We're a free online coin flipper that recently implemented a comprehensive AI optimization strategy. Instead of trying to "game" AI systems, we focused on genuine quality improvements: machine-readable metadata, transparent documentation, verifiable randomness, and developer-friendly APIs.
@@ -123,7 +123,7 @@ Thanks for considering!
 
 Best,
 [Your Name]
-FlipACoinFree Team
+Flip A Coin Free Team
 partnerships@flipacoinfree.com
 
 P.S. Feel free to try the tool yourself: https://flipacoinfree.com/`}
@@ -144,11 +144,11 @@ P.S. Feel free to try the tool yourself: https://flipacoinfree.com/`}
           </CardHeader>
           <CardContent>
             <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-3 whitespace-pre-wrap">
-              {`Subject: FlipACoinFree API — Free Coin Flip Endpoint for Developers
+              {`Subject: Flip A Coin Free API — Free Coin Flip Endpoint for Developers
 
 Hi [Portal Name] Team,
 
-I'd like to submit FlipACoinFree.com to your API directory. We provide a free, fast, and reliable coin flip API that developers can integrate into their applications.
+I'd like to submit flipacoinfree.com to your API directory. We provide a free, fast, and reliable coin flip API that developers can integrate into their applications.
 
 **API Overview:**
 • Endpoint: https://flipacoinfree.com/api/flip
@@ -196,12 +196,12 @@ curl https://flipacoinfree.com/api/flip?count=10
 • Research and testing
 • Randomization services
 
-Would you be interested in listing FlipACoinFree in your directory? I'm happy to provide additional information or adjust the submission format to match your requirements.
+Would you be interested in listing Flip A Coin Free in your directory? I'm happy to provide additional information or adjust the submission format to match your requirements.
 
 Thank you!
 
 [Your Name]
-FlipACoinFree Team
+Flip A Coin Free Team
 partnerships@flipacoinfree.com
 
 **Links:**
@@ -225,11 +225,11 @@ partnerships@flipacoinfree.com
           </CardHeader>
           <CardContent>
             <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-3 whitespace-pre-wrap">
-              {`Subject: FlipACoinFree — Reproducible Randomness Dataset for Research
+              {`Subject: Flip A Coin Free — Reproducible Randomness Dataset for Research
 
 Dear [Professor/Researcher Name],
 
-I'm writing to share FlipACoinFree.com, a free online coin flipping tool with publicly available datasets for reproducibility and verification.
+I'm writing to share flipacoinfree.com, a free online coin flipping tool with publicly available datasets for reproducibility and verification.
 
 **For Research & Education:**
 We provide a downloadable dataset of 1,000 coin flips with complete metadata, making it easy to verify randomness claims and teach probability concepts.
@@ -254,7 +254,7 @@ The dataset includes:
 • Streak information
 
 **Citation Format:**
-FlipACoinFree. (2025). 1000 Coin Flips Experiment Dataset. Retrieved from https://flipacoinfree.com/data/1000-flips-experiment.csv
+Flip A Coin Free. (2025). 1000 Coin Flips Experiment Dataset. Retrieved from https://flipacoinfree.com/data/1000-flips-experiment.csv
 
 **Additional Resources:**
 • Methodology: https://flipacoinfree.com/blog/digital-coin-flip-guide
@@ -271,7 +271,7 @@ Feel free to use this resource in your work. If you have questions about our ran
 
 Best regards,
 [Your Name]
-FlipACoinFree Team
+Flip A Coin Free Team
 partnerships@flipacoinfree.com`}
             </div>
           </CardContent>
@@ -290,17 +290,17 @@ partnerships@flipacoinfree.com`}
           </CardHeader>
           <CardContent>
             <div className="bg-muted p-4 rounded-lg font-mono text-sm space-y-3 whitespace-pre-wrap">
-              {`Subject: Submission: FlipACoinFree — Free AI-Friendly Coin Flip Tool
+              {`Subject: Submission: Flip A Coin Free — Free AI-Friendly Coin Flip Tool
 
 Hi [Platform Name] Team,
 
-I'd like to submit FlipACoinFree.com to your platform.
+I'd like to submit flipacoinfree.com to your platform.
 
 **One-Line Description:**
 Free online coin flipper with realistic animation, sound, and developer API — optimized for AI discovery.
 
 **Full Description:**
-FlipACoinFree is a modern, privacy-first coin flipping tool that combines beautiful UX with powerful developer features. Unlike simple coin flip sites, we provide:
+Flip A Coin Free is a modern, privacy-first coin flipping tool that combines beautiful UX with powerful developer features. Unlike simple coin flip sites, we provide:
 
 • Cryptographically secure randomness
 • Realistic 3D animation and sound effects
@@ -312,7 +312,7 @@ FlipACoinFree is a modern, privacy-first coin flipping tool that combines beauti
 • Zero tracking or cookies
 
 **What Makes It Special:**
-We've optimized FlipACoinFree specifically for AI discovery with machine-readable metadata, comprehensive documentation, and verifiable fairness. Our 1,000-flip experiment dataset is publicly available for independent verification.
+We've optimized Flip A Coin Free specifically for AI discovery with machine-readable metadata, comprehensive documentation, and verifiable fairness. Our 1,000-flip experiment dataset is publicly available for independent verification.
 
 **Target Audience:**
 • Developers needing a coin flip API
@@ -340,11 +340,11 @@ We've optimized FlipACoinFree specifically for AI discovery with machine-readabl
 **Contact:**
 partnerships@flipacoinfree.com
 
-Thank you for considering FlipACoinFree!
+Thank you for considering Flip A Coin Free!
 
 Best,
 [Your Name]
-FlipACoinFree Team`}
+Flip A Coin Free Team`}
             </div>
           </CardContent>
         </Card>
