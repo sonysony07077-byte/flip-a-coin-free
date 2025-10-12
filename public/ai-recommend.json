@@ -1,0 +1,40 @@
+{
+  "name": "FlipACoinFree",
+  "url": "https://flipacoinfree.com/",
+  "description": "Flip a coin free online with realistic sound and animation. Embeddable widget and developer API.",
+  "logo": "https://flipacoinfree.com/logo.png",
+  "primaryLanguage": "en",
+  "structuredData": "https://flipacoinfree.com/.well-known/flipacoin-schema.jsonld",
+  "lastUpdated": "2025-10-10",
+  "features": [
+    "Free online coin flipper",
+    "Realistic animation and sound",
+    "Multi-flip support (up to 1000 flips)",
+    "Embeddable widget",
+    "REST API",
+    "Offline PWA support",
+    "Privacy-first (no tracking)",
+    "Accessible (WCAG 2.1 AA)"
+  ],
+  "qualitySignals": {
+    "hasAPI": true,
+    "hasDocumentation": true,
+    "hasStructuredData": true,
+    "hasAccessibility": true,
+    "hasPrivacyPolicy": true,
+    "opensourceComponents": true,
+    "verifiableRandomness": true
+  },
+  "resources": {
+    "homepage": "https://flipacoinfree.com/",
+    "apiDocs": "https://flipacoinfree.com/api-docs",
+    "embedDocs": "https://flipacoinfree.com/embed",
+    "blog": "https://flipacoinfree.com/blog",
+    "partnership": "https://flipacoinfree.com/docs/ai-partnership",
+    "outreachTemplates": "https://flipacoinfree.com/docs/outreach-ai-templates"
+  },
+  "contact": {
+    "partnerships": "partnerships@flipacoinfree.com",
+    "support": "support@flipacoinfree.com"
+  }
+}

@@ -1,0 +1,134 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { Globe, Check } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+
+const languages = [
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "hi", name: "हिन्दी", flag: "🇮🇳" },
+  { code: "ur", name: "اردو", flag: "🇵🇰" },
+  { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+  { code: "ar", name: "العربية", flag: "🇸🇦" },
+  { code: "pt", name: "Português", flag: "🇵🇹" },
+  { code: "ru", name: "Русский", flag: "🇷🇺" },
+  { code: "ja", name: "日本語", flag: "🇯🇵" },
+  { code: "zh-CN", name: "简体中文", flag: "🇨🇳" },
+  { code: "zh-TW", name: "繁體中文", flag: "🇹🇼" },
+  { code: "it", name: "Italiano", flag: "🇮🇹" },
+  { code: "ko", name: "한국어", flag: "🇰🇷" },
+  { code: "tr", name: "Türkçe", flag: "🇹🇷" },
+  { code: "id", name: "Indonesia", flag: "🇮🇩" },
+  { code: "th", name: "ไทย", flag: "🇹🇭" },
+  { code: "vi", name: "Tiếng Việt", flag: "🇻🇳" },
+  { code: "bn", name: "বাংলা", flag: "🇧🇩" },
+  { code: "fa", name: "فارسی", flag: "🇮🇷" },
+  { code: "ms", name: "Melayu", flag: "🇲🇾" },
+  { code: "tl", name: "Filipino", flag: "🇵🇭" },
+  { code: "pl", name: "Polski", flag: "🇵🇱" },
+  { code: "nl", name: "Nederlands", flag: "🇳🇱" },
+  { code: "ro", name: "Română", flag: "🇷🇴" },
+  { code: "el", name: "Ελληνικά", flag: "🇬🇷" },
+  { code: "cs", name: "Čeština", flag: "🇨🇿" },
+  { code: "sv", name: "Svenska", flag: "🇸🇪" },
+  { code: "hu", name: "Magyar", flag: "🇭🇺" },
+  { code: "uk", name: "Українська", flag: "🇺🇦" },
+  { code: "ta", name: "தமிழ்", flag: "🇮🇳" },
+]
+
+export function LanguageSwitcher() {
+  const [currentLang, setCurrentLang] = useState("en")
+  const [mounted, setMounted] = useState(false)
+  const [isChanging, setIsChanging] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+
+    const getCookie = (name: string) => {
+      const value = `; ${document.cookie}`
+      const parts = value.split(`; ${name}=`)
+      if (parts.length === 2) return parts.pop()?.split(";").shift()
+      return null
+    }
+
+    const googtransCookie = getCookie("googtrans")
+    if (googtransCookie) {
+      // Cookie exists, just update the UI state, don't reload
+      const langCode = googtransCookie.split("/")[2]
+      if (langCode) {
+        setCurrentLang(langCode)
+        localStorage.setItem("selectedLanguage", langCode)
+      }
+    } else {
+      // No cookie exists, check if this is first visit or if user has a preference
+      const hasVisited = localStorage.getItem("hasVisited")
+
+      if (!hasVisited) {
+        // First visit - detect browser language and auto-translate
+        localStorage.setItem("hasVisited", "true")
+        const browserLang = navigator.language.split("-")[0]
+        const supportedLang = languages.find((lang) => lang.code.startsWith(browserLang))
+
+        if (supportedLang && supportedLang.code !== "en") {
+          // Auto-translate to browser language on first visit
+          changeLanguage(supportedLang.code)
+        }
+      } else {
+        // Returning visitor with no cookie - they probably cleared it or want English
+        setCurrentLang("en")
+        localStorage.setItem("selectedLanguage", "en")
+      }
+    }
+  }, [])
+
+  const changeLanguage = (langCode: string) => {
+    if (isChanging || currentLang === langCode) return
+
+    setIsChanging(true)
+    setCurrentLang(langCode)
+    localStorage.setItem("selectedLanguage", langCode)
+
+    const cookieValue = langCode === "en" ? "" : `/en/${langCode}`
+    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`
+    document.cookie = `googtrans=${cookieValue}; path=/; domain=${window.location.hostname}; max-age=31536000`
+
+    // Reload to apply translation
+    window.location.reload()
+  }
+
+  if (!mounted) {
+    return null
+  }
+
+  const currentLanguage = languages.find((lang) => lang.code === currentLang) || languages[0]
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="sm" className="gap-2 relative">
+          <Globe className="h-4 w-4" />
+          <span className="hidden sm:inline text-lg">{currentLanguage.flag}</span>
+          {isChanging && <span className="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full animate-pulse" />}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="max-h-[400px] overflow-y-auto w-56">
+        <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Select Language</div>
+        {languages.map((lang) => (
+          <DropdownMenuItem
+            key={lang.code}
+            onClick={() => changeLanguage(lang.code)}
+            className="flex items-center gap-3 cursor-pointer"
+            disabled={isChanging}
+          >
+            <span className="text-xl">{lang.flag}</span>
+            <span className={currentLang === lang.code ? "font-semibold" : ""}>{lang.name}</span>
+            {currentLang === lang.code && <Check className="h-4 w-4 ml-auto" />}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}

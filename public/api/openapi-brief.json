@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "FlipACoinFree API",
+    "description": "Free REST API for coin flipping with support for single and batch flips",
+    "version": "1.0.0",
+    "contact": {
+      "email": "partnerships@flipacoinfree.com",
+      "url": "https://flipacoinfree.com/api-docs"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://flipacoinfree.com/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/flip": {
+      "get": {
+        "summary": "Flip a coin",
+        "description": "Flip one or more coins and get random heads/tails results",
+        "parameters": [
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Number of coins to flip (1-1000)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000,
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful flip",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "result": {
+                          "type": "string",
+                          "enum": ["heads", "tails"]
+                        },
+                        "timestamp": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "enum": ["heads", "tails"]
+                          }
+                        },
+                        "summary": {
+                          "type": "object",
+                          "properties": {
+                            "heads": {
+                              "type": "integer"
+                            },
+                            "tails": {
+                              "type": "integer"
+                            },
+                            "total": {
+                              "type": "integer"
+                            }
+                          }
+                        },
+                        "timestamp": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FlipResult": {
+        "type": "string",
+        "enum": ["heads", "tails"]
+      }
+    }
+  }
+}

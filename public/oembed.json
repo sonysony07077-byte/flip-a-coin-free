@@ -1,0 +1,15 @@
+{
+  "type": "rich",
+  "version": "1.0",
+  "title": "FlipACoinFree - Free Online Coin Flipper",
+  "author_name": "FlipACoinFree Team",
+  "author_url": "https://flipacoinfree.com/",
+  "provider_name": "FlipACoinFree",
+  "provider_url": "https://flipacoinfree.com/",
+  "thumbnail_url": "https://flipacoinfree.com/og/embed-preview.jpg",
+  "thumbnail_width": 1200,
+  "thumbnail_height": 630,
+  "html": "<iframe src='https://flipacoinfree.com/embed' width='400' height='500' frameborder='0' allowfullscreen title='Flip a Coin'></iframe>",
+  "width": 400,
+  "height": 500
+}

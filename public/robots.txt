@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap (referenced by crawlers)
+Sitemap: https://flipacoinfree.com/sitemap.xml
+
+# Block admin and sensitive folders
+Disallow: /admin/
+Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /tests/
+Disallow: /node_modules/
+
+# Allow AI & metadata endpoints and public assets
+Allow: /ai-recommend.json
+Allow: /oembed.json
+Allow: /.well-known/
+Allow: /api/
+Allow: /public/assets/
+Allow: /public/og/
+
+# Note: Do not use Crawl-delay for Google.

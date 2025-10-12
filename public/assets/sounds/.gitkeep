@@ -1,0 +1,9 @@
+# Placeholder for sound files
+# Add the following files:
+# - coin-spin.mp3 (metallic spinning sound, 0.6-1.2s)
+# - coin-drop.mp3 (soft clack sound)
+# - head-voice-male.mp3 (male voice saying "Heads")
+# - head-voice-female.mp3 (female voice saying "Heads")
+# - tail-voice-male.mp3 (male voice saying "Tails")
+# - tail-voice-female.mp3 (female voice saying "Tails")
+# - celebrate.mp3 (confetti + chime, 0.8s)

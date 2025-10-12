@@ -1,0 +1,27 @@
+{
+  "service": "FlipACoinFree",
+  "version": "1.0",
+  "resources": {
+    "sitemap": "https://flipacoinfree.com/sitemap.xml",
+    "privacyPolicy": "https://flipacoinfree.com/privacy",
+    "termsOfService": "https://flipacoinfree.com/terms",
+    "apiDocumentation": "https://flipacoinfree.com/api-docs",
+    "openApiSpec": "https://flipacoinfree.com/api/openapi-brief.json",
+    "oEmbed": "https://flipacoinfree.com/oembed.json",
+    "aiRecommend": "https://flipacoinfree.com/ai-recommend.json",
+    "blog": "https://flipacoinfree.com/blog",
+    "rss": "https://flipacoinfree.com/rss.xml"
+  },
+  "languages": ["en"],
+  "contact": {
+    "partnerships": "partnerships@flipacoinfree.com",
+    "support": "support@flipacoinfree.com"
+  },
+  "features": {
+    "api": true,
+    "embed": true,
+    "offline": true,
+    "accessibility": true,
+    "privacy": true
+  }
+}

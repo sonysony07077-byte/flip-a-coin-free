@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://flipacoinfree.com/</loc>
+    <image:image>
+      <image:loc>https://flipacoinfree.com/og-image.png</image:loc>
+      <image:title>Flip a Coin Free - Online Coin Flipper</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flipacoinfree.com/blog/top-coin-flip-games</loc>
+    <image:image>
+      <image:loc>https://flipacoinfree.com/public/og/top-coin-flip-games.png</image:loc>
+      <image:title>Top Coin Flip Games</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flipacoinfree.com/blog/digital-coin-flip-guide</loc>
+    <image:image>
+      <image:loc>https://flipacoinfree.com/public/og/digital-coin-flip-guide.png</image:loc>
+      <image:title>Digital Coin Flip Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flipacoinfree.com/blog/virtual-coin-toss-guide</loc>
+    <image:image>
+      <image:loc>https://flipacoinfree.com/public/og/virtual-coin-toss-guide.png</image:loc>
+      <image:title>Virtual Coin Toss Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flipacoinfree.com/embed</loc>
+    <image:image>
+      <image:loc>https://flipacoinfree.com/public/og/embed-preview.png</image:loc>
+      <image:title>Embed Coin Flip Widget</image:title>
+    </image:image>
+  </url>
+</urlset>
