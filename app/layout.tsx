@@ -1,3 +1,15 @@
+import Head from "next/head";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <Head>
+        <meta name="google-site-verification" content="IHaRAQ-GTGBa32xwNQHu3-N2JgqaNh2LGlF0Uc9p1Og" />
+      </Head>
+      <body>{children}</body>
+    </html>
+  );
+}
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
