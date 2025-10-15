@@ -1,3 +1,22 @@
+import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Flip a Coin",
+  description: "Flip a Coin online",
+  other: {
+    "google-site-verification": "IHaRAQ-GTGBa32xwNQHu3-N2JgqaNh2LGlF0Uc9p1Og", // 🔥 just the code, no <meta> tag
+  },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
