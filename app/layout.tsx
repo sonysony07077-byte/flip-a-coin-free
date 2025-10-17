@@ -25,6 +25,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flipacoinfree.com"),
+alternates: {
+  canonical: "https://flipacoinfree.com",
+},
   title: "Flip a Coin Free - Realistic Online Coin Flipper with Sound",
   description:
     "Flip a coin free online - realistic heads or tails coin toss with human voice and sound. Now in 30+ languages! Fast, fair, multi-flip & export. Try now - no app.",
