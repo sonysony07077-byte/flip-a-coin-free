@@ -833,9 +833,11 @@ Response:
   try {
     const response = await fetch('https://flipacoinfree.com/api/flip');
     const data = await response.json();
+    console.log(\`Result: \${data.result}\`);
     return data.result;
   } catch (error) {
-    throw new Error('Flip failed');
+    console.error('Flip failed:', error);
+    return null;
   }
 }
 
@@ -867,6 +869,8 @@ flipCoin().then(result => {
       return data;
 
     } catch (error) {
+      console.warn(\`Attempt \${i + 1} failed:\`, error);
+
       if (i === maxRetries - 1) {
         throw new Error('All retry attempts failed');
       }

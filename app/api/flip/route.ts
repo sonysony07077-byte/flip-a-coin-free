@@ -34,7 +34,8 @@ export async function POST(request: Request) {
     const heads = flips.filter((f) => f === "heads").length
     const tails = flips.filter((f) => f === "tails").length
 
-    // Global counter is incremented client-side for better performance
+    // TODO: In production, increment global counter in database/Redis
+    // await incrementFlipCount(count)
 
     return NextResponse.json({
       success: true,

@@ -11,7 +11,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Upload, Coins } from "lucide-react"
 import { setFlipACoinState, getFlipACoinState, type RealCoinId } from "@/lib/flip-state"
 import { COIN_ASSETS } from "@/lib/coin-assets"
-import Image from "next/image"
 
 type CoinPreset = "gold" | "silver" | "bronze" | "dollar" | "eur" | "inr"
 
@@ -253,12 +252,10 @@ export function CustomCoinTool() {
                 </div>
                 {headsImage && (
                   <div className="relative h-24 w-24 rounded-lg border border-border overflow-hidden">
-                    <Image
+                    <img
                       src={headsImage || "/placeholder.svg"}
                       alt="Heads preview"
-                      fill
-                      className="object-cover"
-                      sizes="96px"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 )}
@@ -283,12 +280,10 @@ export function CustomCoinTool() {
                 </div>
                 {tailsImage && (
                   <div className="relative h-24 w-24 rounded-lg border border-border overflow-hidden">
-                    <Image
+                    <img
                       src={tailsImage || "/placeholder.svg"}
                       alt="Tails preview"
-                      fill
-                      className="object-cover"
-                      sizes="96px"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 )}
@@ -300,15 +295,9 @@ export function CustomCoinTool() {
               <p className="mb-4 text-sm font-medium text-center">Preview</p>
               <div className="flex justify-center gap-6">
                 <div className="text-center">
-                  <div className="mx-auto h-24 w-24 rounded-full border-4 border-primary bg-gradient-to-br from-primary to-yellow-600 shadow-xl flex items-center justify-center overflow-hidden relative">
+                  <div className="mx-auto h-24 w-24 rounded-full border-4 border-primary bg-gradient-to-br from-primary to-yellow-600 shadow-xl flex items-center justify-center overflow-hidden">
                     {headsImage ? (
-                      <Image
-                        src={headsImage || "/placeholder.svg"}
-                        alt="Heads"
-                        fill
-                        className="object-cover"
-                        sizes="96px"
-                      />
+                      <img src={headsImage || "/placeholder.svg"} alt="Heads" className="h-full w-full object-cover" />
                     ) : (
                       <span className="text-lg font-bold text-white px-2 text-center break-words">{headsText}</span>
                     )}
@@ -316,15 +305,9 @@ export function CustomCoinTool() {
                   <p className="mt-2 text-xs text-muted-foreground">Heads</p>
                 </div>
                 <div className="text-center">
-                  <div className="mx-auto h-24 w-24 rounded-full border-4 border-[#0066FF] bg-gradient-to-br from-[#0066FF] to-[#003D99] shadow-xl flex items-center justify-center overflow-hidden relative">
+                  <div className="mx-auto h-24 w-24 rounded-full border-4 border-[#0066FF] bg-gradient-to-br from-[#0066FF] to-[#003D99] shadow-xl flex items-center justify-center overflow-hidden">
                     {tailsImage ? (
-                      <Image
-                        src={tailsImage || "/placeholder.svg"}
-                        alt="Tails"
-                        fill
-                        className="object-cover"
-                        sizes="96px"
-                      />
+                      <img src={tailsImage || "/placeholder.svg"} alt="Tails" className="h-full w-full object-cover" />
                     ) : (
                       <span className="text-lg font-bold text-white px-2 text-center break-words">{tailsText}</span>
                     )}

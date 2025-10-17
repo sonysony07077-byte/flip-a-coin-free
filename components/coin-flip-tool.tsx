@@ -12,7 +12,6 @@ import { getFlipACoinState, onFlipACoinStateChange, type FlipACoinState } from "
 import { getCoinAsset } from "@/lib/coin-assets"
 import { trackFlip } from "@/lib/analytics"
 import { rateLimiter } from "@/lib/rate-limiter"
-import Image from "next/image"
 
 type FlipResult = "heads" | "tails"
 
@@ -119,9 +118,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
     if (savedVoice !== null) setVoiceEnabled(savedVoice === "true")
 
     if (typeof window !== "undefined" && soundEnabled) {
-      coinFlipAudioRef.current = new Audio(
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coin-flip-88793-TwfvWak51tiNtgAnf4Yi95xAKdU5W2.mp3",
-      )
+      coinFlipAudioRef.current = new Audio("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coin-flip-88793-TwfvWak51tiNtgAnf4Yi95xAKdU5W2.mp3")
       coinFlipAudioRef.current.preload = "none"
     }
 
@@ -147,20 +144,16 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
     }
   }, [soundEnabled, voiceEnabled, mounted])
 
-  const handleKeyPress = useCallback(
-    (e: KeyboardEvent) => {
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
       if (e.code === "Space" && !isFlipping) {
         e.preventDefault()
         flipCoin()
       }
-    },
-    [isFlipping],
-  )
-
-  useEffect(() => {
+    }
     window.addEventListener("keydown", handleKeyPress)
     return () => window.removeEventListener("keydown", handleKeyPress)
-  }, [handleKeyPress])
+  }, [isFlipping])
 
   const generateRandomResult = async (): Promise<FlipResult> => {
     const array = new Uint32Array(1)
@@ -218,7 +211,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
     [voiceEnabled],
   )
 
-  const flipCoin = useCallback(async () => {
+  const flipCoin = async () => {
     if (isFlipping) return
 
     if (!rateLimiter.isAllowed("flip_action", { maxRequests: 10, windowMs: 10000 })) {
@@ -263,7 +256,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
     if (navigator.vibrate) {
       navigator.vibrate(200)
     }
-  }, [isFlipping, playFlipSound, totalRotation, playCoinDrop, speakResult, coinState.selectedCoinId])
+  }
 
   const resetHistory = () => {
     setHistory([])
@@ -390,13 +383,11 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
                     >
                       <div className="text-center w-full h-full flex items-center justify-center relative">
                         {currentCoin.hasHeadsImage ? (
-                          <Image
+                          <img
                             src={currentCoin.headsContent || "/placeholder.svg"}
                             alt="Heads"
-                            fill
-                            className="object-cover rounded-full"
+                            className="h-full w-full object-cover rounded-full"
                             loading="lazy"
-                            sizes="256px"
                           />
                         ) : (
                           <>
@@ -421,13 +412,11 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
                     >
                       <div className="text-center w-full h-full flex items-center justify-center relative">
                         {currentCoin.hasTailsImage ? (
-                          <Image
+                          <img
                             src={currentCoin.tailsContent || "/placeholder.svg"}
                             alt="Tails"
-                            fill
-                            className="object-cover rounded-full"
+                            className="h-full w-full object-cover rounded-full"
                             loading="lazy"
-                            sizes="256px"
                           />
                         ) : (
                           <>
