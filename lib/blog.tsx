@@ -396,10 +396,10 @@ Apps and websites use coin flips for:
 The easiest way to [embed coin flip widget](https://flipacoinfree.com/embed) is with an iframe. Just copy and paste this code:
 
 \`\`\`html
-<iframe 
-  src="https://flipacoinfree.com/embed" 
-  width="360" 
-  height="420" 
+<iframe
+  src="https://flipacoinfree.com/embed"
+  width="360"
+  height="420"
   title="Flip a coin"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -412,10 +412,10 @@ The easiest way to [embed coin flip widget](https://flipacoinfree.com/embed) is 
 Add URL parameters to customize the embed:
 
 \`\`\`html
-<iframe 
-  src="https://flipacoinfree.com/embed?theme=dark&sound=1&autoflip=0" 
-  width="360" 
-  height="420" 
+<iframe
+  src="https://flipacoinfree.com/embed?theme=dark&sound=1&autoflip=0"
+  width="360"
+  height="420"
   title="Flip a coin">
 </iframe>
 \`\`\`
@@ -434,10 +434,10 @@ Add URL parameters to customize the embed:
 **Example with Multiple Parameters:**
 
 \`\`\`html
-<iframe 
-  src="https://flipacoinfree.com/embed?theme=dark&sound=1&hidehistory=1" 
-  width="360" 
-  height="420" 
+<iframe
+  src="https://flipacoinfree.com/embed?theme=dark&sound=1&hidehistory=1"
+  width="360"
+  height="420"
   title="Flip a coin - dark theme with sound">
 </iframe>
 \`\`\`
@@ -669,25 +669,18 @@ fetch('https://flipacoinfree.com/api/flip', {
 })
 .then(response => {
   if (!response.ok) {
-    throw new Error(\`HTTP error! status: ${response.status}`);
-  }\
+    throw new Error(\`HTTP error! status: \${response.status}\`);
+  }
   return response.json();
-}
-)
-.then(data =>
-{
-  \
+})
+.then(data => {
   // Success - data processed
-}
-)
-.catch(() =>
-{
-  \
+})
+.catch(() => {
   // Handle error appropriately
-}
-)
+})
 \`\`\`
-\
+
 ## Bulk Flips, Giveaways & Sports Integration
 
 ### Bulk Flip Endpoint
@@ -703,22 +696,16 @@ POST https://flipacoinfree.com/api/batchflip
 \`\`\`javascript
 fetch('https://flipacoinfree.com/api/batchflip',
 {
-  method: "POST", headers
-  :
-  ;("Authorization': ")
-  Bearer
-  YOUR_API_KEY
-  ;(",\
-    'Content-Type': ")
-  application / json
-  '
-  ,\
-  body: JSON.stringify(
-  count: 1000, exportFormat
-  : 'csv'
-  )
-}
-)\
+  method: "POST",
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    count: 1000,
+    exportFormat: 'csv'
+  })
+})
 .then(response => response.json())
 .then(data =>
 {
@@ -727,25 +714,26 @@ fetch('https://flipacoinfree.com/api/batchflip',
 }
 )
 \`\`\`
-\
+
 **Response:**
 
 \`\`\`json
 {
   "success": true,
-  "batchId": \"batch_abc123",
+  "batchId": "batch_abc123",
   "count": 1000,
-  "summary": 
+  "summary": {
     "heads": 503,
-    "tails\": 497\
+    "tails": 497
   },
-  \"downloadUrl": "https://flipacoinfree.com/api/download/batch_abc123.csv",
+  "downloadUrl": "https://flipacoinfree.com/api/download/batch_abc123.csv",
   "expiresAt": "2025-10-11T14:30:00Z"
+}
 \`\`\`
 
 ### Giveaway Integration Example
 
-Here\'s a complete example for running a fair giveaway:
+Here's a complete example for running a fair giveaway:
 
 \`\`\`javascript
 // Step 1: Get list of participants
@@ -779,14 +767,14 @@ fetch('https://flipacoinfree.com/api/flip', {
 .then(data => {
   // Step 4: Determine winners
   const winners = data.result === 'heads' ? headsGroup : tailsGroup;
-  
+
   // Step 5: Select random winner from winning group
   const finalWinner = winners[Math.floor(Math.random() * winners.length)];
-  
+
   console.log('Winning side:', data.result);
   console.log('Winner:', finalWinner);
   console.log('Flip ID for verification:', data.flipId);
-  
+
   // Step 6: Log for audit trail
   logGiveawayResult({
     flipId: data.flipId,
@@ -803,7 +791,7 @@ For sports websites implementing official coin tosses:
 \`\`\`javascript
 async function conductSportsCoinToss(team1, team2) {
   // Step 1: Display teams
-  console.log(`Coin toss between ${team1} and ${team2}`);
+  console.log(\`Coin toss between \${team1} and \${team2}\`);
   
   // Step 2: Conduct flip
   const response = await fetch('https://flipacoinfree.com/api/flip', {
@@ -815,19 +803,19 @@ async function conductSportsCoinToss(team1, team2) {
     body: JSON.stringify({
       count: 1,
       metadata: {
+        event: 'Pre-game coin toss',
         team1: team1,
         team2: team2,
-        event: 'Pre-game coin toss'
       }
     })
   });
-  
+
   const data = await response.json();
-  
+
   // Step 3: Determine winner
   const winner = data.result === 'heads' ? team1 : team2;
   const loser = data.result === 'heads' ? team2 : team1;
-  
+
   // Step 4: Return results
   return {
     result: data.result,
@@ -841,8 +829,8 @@ async function conductSportsCoinToss(team1, team2) {
 // Usage
 conductSportsCoinToss('Team A', 'Team B')
   .then(result => {
-    console.log(`${result.winner} wins the toss!`);
-    console.log(`Flip ID: ${result.flipId}`);
+    console.log(\`${result.winner} wins the toss!\`);
+    console.log(\`Flip ID: \${result.flipId}\`);
   });
 \`\`\`
 
@@ -854,7 +842,7 @@ Use bulk flips to generate random tournament brackets:
 async function generateTournamentBracket(teams) {
   // Flip for each matchup
   const matchups = [];
-  
+
   for (let i = 0; i < teams.length; i += 2) {
     const response = await fetch('https://flipacoinfree.com/api/flip', {
       method: 'POST',
@@ -865,14 +853,14 @@ async function generateTournamentBracket(teams) {
       body: JSON.stringify({
         count: 1,
         metadata: {
-          matchup: `${teams[i]} vs ${teams[i+1]}`
+          matchup: \`${teams[i]} vs \${teams[i + 1]}\`
         }
       })
     });
-    
+
     const data = await response.json();
     const winner = data.result === 'heads' ? teams[i] : teams[i+1];
-    
+
     matchups.push({
       team1: teams[i],
       team2: teams[i+1],
@@ -880,7 +868,7 @@ async function generateTournamentBracket(teams) {
       flipId: data.flipId
     });
   }
-  
+
   return matchups;
 }
 \`\`\`
@@ -900,12 +888,10 @@ Every API flip returns a unique \`flipId\` that can be verified:
 const flipId = data.flipId;
 
 // Later, verify the flip
-fetch(`https://flipacoinfree.com/api/verify/${flipId}`)
-  .then(response => response.json())
+fetch(\`https://flipacoinfree.com/api/verify/\${flipId}\`)
+  .then(r => r.json())
   .then(verification => {
-    console.log('Verified result:', verification.result);
-    console.log('Timestamp:', verification.timestamp);
-    console.log('Metadata:', verification.metadata);
+    console.log('Flip verified:', verification);
   });
 \`\`\`
 
@@ -913,21 +899,22 @@ fetch(`https://flipacoinfree.com/api/verify/${flipId}`)
 
 Generate a public verification link for participants:
 
-\`\`\`javascript\
-const verificationUrl = `https://flipacoinfree.com/verify/${flipId}`;
-console.log('Verify this flip at:', verificationUrl);
+\`\`\`javascript
+const verificationUrl = \`https://flipacoinfree.com/verify/\${flipId}\`;
+// Share this URL publicly for transparency
 \`\`\`
 
 **3. Export Complete Audit Logs**
 
 Download CSV of all flips for your account:
 
-\`\`\`javascript\
+\`\`\`javascript
 fetch('https://flipacoinfree.com/api/export', {
   method: 'GET',
-  headers: 
-    'Authorization\': 'Bearer YOUR_API_KEY'\
-  })\
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
+  }
+})
 .then(response => response.blob())
 .then(blob => {
   // Download CSV file
@@ -938,32 +925,32 @@ fetch('https://flipacoinfree.com/api/export', {
   a.click();
 });
 \`\`\`
-\
+
 ### Privacy and Data Handling
 
 We take privacy seriously:
 
--   **No personal data required**: Flips don\'t require user accounts
+-   **No personal data required**: Flips don’t require user accounts
 -   **Optional metadata**: You control what data is attached to flips
 -   **Automatic deletion**: Flip data deleted after 90 days (or sooner on request)
--   **GDPR compliant**: Full data export and deletion available\
--   **No tracking**: We don\'t track users across sites
+-   **GDPR compliant**: Full data export and deletion available
+-   **No tracking**: We don’t track users across sites
 
 ### Preventing Fraud in Giveaways
 
 Best practices for fair giveaways:
-\
+
 **1. Announce Method in Advance**
-- Tell participants you'll use a coin flip\
+- Tell participants you'll use a coin flip
 - Share the verification URL format
 - Explain how winners will be selected
 
 **2. Conduct Flips Publicly**
-- Live stream the flip if possible\
+- Live stream the flip if possible
 - Share flip ID immediately after
 - Allow real-time verification
 
-**3. Use Metadata for Transparency**\
+**3. Use Metadata for Transparency**
 - Include giveaway name in metadata
 - Record participant count
 - Timestamp the flip
@@ -1000,7 +987,7 @@ const apiKey = process.env.FLIPACOIN_API_KEY;
 // Never expose in client code
 fetch('https://flipacoinfree.com/api/flip', {
   headers: {
-    'Authorization': `Bearer ${apiKey}`  // This runs on server only
+    'Authorization': \`Bearer \\\${apiKey}\`  // This runs on server only
   }
 });
 \`\`\`
@@ -1022,7 +1009,7 @@ The combination of easy embedding, powerful API access, bulk flip capabilities, 
 
 **Key Takeaways:**
 - Embed with simple iframe or advanced JavaScript SDK
-- API provides programmatic access with flexible options
+- API provides programmatic access to flexible options
 - Bulk flips perfect for giveaways, contests, and data collection
 - Verification and audit trails ensure transparency
 - Rate limits and security features protect your integration
@@ -1084,13 +1071,13 @@ This guide will explain the technology behind online coin flips, how they achiev
 
 ## How Does an Online Coin Flip Work?
 
-Unlike a physical coin flip influenced by physics, an online coin flip relies on computer algorithms. Here’s a breakdown:
+Unlike a physical coin flip influenced by physics, an online coin flip relies on computer algorithms. Here's a breakdown:
 
 ### 1. Random Number Generation (RNG)
 
 At its core, an online coin flip uses a **Random Number Generator (RNG)**. There are two main types:
 
--   **Pseudo-Random Number Generators (PRNGs)**: These are the most common. They use complex mathematical algorithms to produce sequences of numbers that appear random. These sequences are deterministic, meaning if you know the starting point (the "seed"), you can predict the outcome. However, for practical purposes, especially when using cryptographically secure PRNGs (CSPRNGs), the results are indistinguishable from true randomness. Our service uses CSPRNGs provided by modern web browsers.
+-   **Pseudo-Random Number Generators (PRNGs)**: These are the most common. They use complex mathematical algorithms to produce sequences of numbers that appear random. These sequences are deterministic, meaning if you know the starting point (the "seed\"), you can predict the outcome. However, for practical purposes, especially when using cryptographically secure PRNGs (CSPRNGs), the results are indistinguishable from true randomness. Our service uses CSPRNGs provided by modern web browsers.
 -   **True Random Number Generators (TRNGs)**: These harness unpredictable physical phenomena like atmospheric noise, radioactive decay, or thermal noise. While offering genuine randomness, they are less common for everyday web applications due to complexity and cost.
 
 ### 2. Algorithm Process
@@ -1101,7 +1088,7 @@ a.  **Entropy Collection**: The system gathers "entropy"—sources of unpredicta
 b.  **Seed Generation**: This entropy is used to create a unique, unpredictable "seed" value.
 c.  **PRNG Algorithm**: A CSPRNG algorithm takes the seed and processes it through a series of complex calculations.
 d.  **Output Value**: The algorithm generates a random number (or a sequence of numbers).
-e.  **Mapping to Outcome**: This number is then mapped to a binary outcome (Heads or Tails). For example, if the number is between 0 and 0.5, it’s Heads; if it's between 0.5 and 1, it’s Tails.
+e.  **Mapping to Outcome**: This number is then mapped to a binary outcome (Heads or Tails). For example, if the number is between 0 and 0.5, it's Heads; if it's between 0.5 and 1, it's Tails.
 
 ### 3. Presentation
 
@@ -1199,6 +1186,8 @@ Online coin flips, when implemented with quality RNGs, are highly reliable, fair
 
 Whether you need a quick decision-maker, a tool for educational purposes, or robust integration for your application, digital coin flips provide a trustworthy and efficient solution.
 
+**Ready to test one? Try flipping a coin online now and experience the digital randomness for yourself!**
+
 **Key Takeaways:**
 - Online coin flips use Pseudo-Random Number Generators (PRNGs) or True Random Number Generators (TRNGs).
 - Cryptographically Secure PRNGs (CSPRNGs) are standard for fairness.
@@ -1206,8 +1195,6 @@ Whether you need a quick decision-maker, a tool for educational purposes, or rob
 - Use cases range from simple decisions to app integrations and education.
 - APIs and embeddable widgets make integration easy.
 - Customization and weighted flips offer advanced functionality.
-
-Ready to test one? Try flipping a coin online now and experience the digital randomness for yourself!
 `,
   },
   {
@@ -1379,6 +1366,7 @@ Whether you're making a quick decision, teaching a class, or need random selecti
 - You can verify fairness yourself by testing with large sample sizes
 `,
   },
+  {
     slug: "coin-flip-vs-spinner-vs-dice",
     title: "Coin Flip vs Spinner vs Dice — Which Random Method Is Best?",
     description:
@@ -1390,7 +1378,9 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "Comparison",
     readingTime: 7,
     featured: false,
-    content: ``,,
+    content: ``,
+  },
+  {
     slug: "embed-coin-flip-widget",
     title: "How to Embed a Coin Flip Widget on Your Site (WordPress, Blogger, HTML)",
     description:
@@ -1402,7 +1392,9 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "Tutorial",
     readingTime: 5,
     featured: false,
-    content: ``,,
+    content: ``,
+  },
+  {
     slug: "how-random-online-coin-flips",
     title: "How Random Are Online Coin Flips? (Explained with Experiments)",
     description:
@@ -1414,7 +1406,9 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "Research",
     readingTime: 9,
     featured: true,
-    content: ``,,
+    content: ``,
+  },
+  {
     slug: "coin-flip-api-developer-guide",
     title: "Developer Guide: Use the Flip API in JavaScript, PHP, Python",
     description:
@@ -1426,7 +1420,9 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "Development",
     readingTime: 7,
     featured: false,
-    content: ``,,
+    content: ``,
+  },
+  {
     slug: "history-superstitions-coin-flipping",
     title: "History & Superstitions: Why People Flip Coins",
     description:
@@ -1438,7 +1434,9 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "History",
     readingTime: 6,
     featured: false,
-    content: ``,,
+    content: ``,
+  },
+  {
     slug: "coin-flip-game-nights-dnd",
     title: "How to Use a Coin Flip in Game Nights & DnD Sessions",
     description:
@@ -1450,7 +1448,9 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "Gaming",
     readingTime: 5,
     featured: false,
-    content: ``,,
+    content: ``,
+  },
+  {
     slug: "create-custom-coin-design",
     title: "How to Create Your Own Coin Design (and Upload It)",
     description:
@@ -1462,7 +1462,8 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     category: "Tutorial",
     readingTime: 6,
     featured: false,
-    content: ``,,
+    content: ``,
+  },
   {
     slug: "online-randomizer-mistakes",
     title: "Top 5 Mistakes When Using Online Randomizers",
