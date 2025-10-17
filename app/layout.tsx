@@ -127,3 +127,4 @@ export default function RootLayout({
     </html>
   )
 }
+<link rel="canonical" href="https://flipacoinfree.com" />
