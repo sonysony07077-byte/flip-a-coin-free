@@ -22,3 +22,6 @@ Allow: /public/assets/
 Allow: /public/og/
 
 # Note: Do not use Crawl-delay for Google.
+Host: flipacoinfree.com
+Sitemap: https://flipacoinfree.com/sitemap.xml
+IndexNow: https://api.indexnow.org/indexnow?url=https://flipacoinfree.com/&key=ad0c02f37f4a461096be763ac26d97c8
