@@ -41,13 +41,3 @@
     "typescript": "^5"
   }
 }
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.flipacoinfree.com" }],
-      "destination": "https://flipacoinfree.com/:1",
-      "permanent": true
-    }
-  ]
-}
