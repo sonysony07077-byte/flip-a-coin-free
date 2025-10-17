@@ -424,12 +424,12 @@ Add URL parameters to customize the embed:
 
 | Parameter | Values | Description |
 |-----------|--------|-------------|
-| `theme` | `light`, \`dark\` | Color scheme |
-| `sound` | `0`, `1\` | Enable/disable sound |
-| `autoflip` | `0`, `1\` | Auto-flip on load |
-| `preset\` | preset ID | Load custom coin design |
-| `hidehistory` | `0`, \`1\` | Hide flip history |
-| `hidecontrols` | `0\`, \`1\` | Hide control buttons |
+| \`theme\` | \`light\`, \`dark\` | Color scheme |
+| \`sound\` | \`0\`, \`1\` | Enable/disable sound |
+| \`autoflip\` | \`0\`, \`1\` | Auto-flip on load |
+| \`preset\` | preset ID | Load custom coin design |
+| \`hidehistory\` | \`0\`, \`1\` | Hide flip history |
+| \`hidecontrols\` | \`0\`, \`1\` | Hide control buttons |
 
 **Example with Multiple Parameters:**
 
@@ -511,7 +511,7 @@ FlipACoinFree.setSound(true);
 For WordPress users, we offer a dedicated plugin:
 
 1. Install "Flip A Coin Free" plugin from WordPress directory
-2. Add shortcode to any page or post: `[flipacoin]`
+2. Add shortcode to any page or post: \`[flipacoin]\`
 3. Customize with shortcode attributes:
 
 \`\`\`
@@ -585,11 +585,11 @@ print(f"Timestamp: {result['timestamp']}")
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `count\` | integer | No | Number of flips (1-1000), default: 1 |
-| `weighted\` | boolean | No | Use weighted flip, default: false |
-| `probability\` | float | No | Heads probability (0.0-1.0), default: 0.5 |
-| `preset\` | string | No | Custom coin preset ID |
-| `metadata\` | object | No | Custom data to attach to flip |
+| \`count\` | integer | No | Number of flips (1-1000), default: 1 |
+| \`weighted\` | boolean | No | Use weighted flip, default: false |
+| \`probability\` | float | No | Heads probability (0.0-1.0), default: 0.5 |
+| \`preset\` | string | No | Custom coin preset ID |
+| \`metadata\` | object | No | Custom data to attach to flip |
 
 ### Response Format
 
@@ -669,17 +669,21 @@ fetch('https://flipacoinfree.com/api/flip', {
 })
 .then(response => {
   if (!response.ok) {
-    throw new Error('HTTP error! status: ' + response.status);
+    throw new Error(\`HTTP error! status: ${response.status}\`);
   }
   return response.json();
-})
-.then(data => {
+}
+)
+.then(data =>
+{
   // Success - data processed
-})
-.catch(error => {
+}
+)
+.catch(() =>
+{
   // Handle error appropriately
-  console.error('Flip error:', error);
-});
+}
+)
 \`\`\`
 
 ## Bulk Flips, Giveaways & Sports Integration
@@ -695,7 +699,8 @@ POST https://flipacoinfree.com/api/batchflip
 **Request:**
 
 \`\`\`javascript
-fetch('https://flipacoinfree.com/api/batchflip', {
+fetch('https://flipacoinfree.com/api/batchflip',
+{
   method: "POST",
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY',
@@ -707,10 +712,12 @@ fetch('https://flipacoinfree.com/api/batchflip', {
   })
 })
 .then(response => response.json())
-.then(data => {
-  console.log("Batch ID:", data.batchId);
-  console.log("Download URL:", data.downloadUrl);
-});
+.then(data =>
+{
+  console.log("Batch ID:", data.batchId)
+  console.log("Download URL:", data.downloadUrl)
+}
+)
 \`\`\`
 
 **Response:**
@@ -789,8 +796,8 @@ For sports websites implementing official coin tosses:
 \`\`\`javascript
 async function conductSportsCoinToss(team1, team2) {
   // Step 1: Display teams
-  console.log('Coin toss between ' + team1 + ' and ' + team2);
-  
+  console.log(\`Coin toss between ${team1} and ${team2}\`);
+
   // Step 2: Conduct flip
   const response = await fetch('https://flipacoinfree.com/api/flip', {
     method: 'POST',
@@ -801,9 +808,9 @@ async function conductSportsCoinToss(team1, team2) {
     body: JSON.stringify({
       count: 1,
       metadata: {
-        event: 'Pre-game coin toss',
         team1: team1,
         team2: team2,
+        event: 'Pre-game coin toss'
       }
     })
   });
@@ -827,8 +834,8 @@ async function conductSportsCoinToss(team1, team2) {
 // Usage
 conductSportsCoinToss('Team A', 'Team B')
   .then(result => {
-    console.log(result.winner + ' wins the toss!');
-    console.log('Flip ID: ' + result.flipId);
+    console.log(\`${result.winner} wins the toss!\`);
+    console.log(\`Flip ID: ${result.flipId}\`);
   });
 \`\`\`
 
@@ -851,7 +858,7 @@ async function generateTournamentBracket(teams) {
       body: JSON.stringify({
         count: 1,
         metadata: {
-          matchup: teams[i] + ' vs ' + teams[i + 1]
+          matchup: \`${teams[i]} vs ${teams[i + 1]}\`
         }
       })
     });
@@ -879,17 +886,19 @@ For contests and giveaways, transparency is crucial:
 
 **1. Use Verifiable Flip IDs**
 
-Every API flip returns a unique `flipId\` that can be verified:
+Every API flip returns a unique \`flipId\` that can be verified:
 
 \`\`\`javascript
 // Store the flip ID
 const flipId = data.flipId;
 
 // Later, verify the flip
-fetch('https://flipacoinfree.com/api/verify/' + flipId)
-  .then(r => r.json())
+fetch(\`https://flipacoinfree.com/api/verify/${flipId}\`)
+  .then(response => response.json())
   .then(verification => {
-    console.log('Flip verified:', verification);
+    console.log('Verified result:', verification.result);
+    console.log('Timestamp:', verification.timestamp);
+    console.log('Metadata:', verification.metadata);
   });
 \`\`\`
 
@@ -898,8 +907,8 @@ fetch('https://flipacoinfree.com/api/verify/' + flipId)
 Generate a public verification link for participants:
 
 \`\`\`javascript
-const verificationUrl = 'https://flipacoinfree.com/verify/' + flipId;
-// Share this URL publicly for transparency
+const verificationUrl = \`https://flipacoinfree.com/verify/${flipId}\`;
+console.log('Verify this flip at:', verificationUrl);
 \`\`\`
 
 **3. Export Complete Audit Logs**
@@ -928,11 +937,11 @@ fetch('https://flipacoinfree.com/api/export', {
 
 We take privacy seriously:
 
--   **No personal data required**: Flips don't require user accounts
+-   **No personal data required**: Flips don’t require user accounts
 -   **Optional metadata**: You control what data is attached to flips
 -   **Automatic deletion**: Flip data deleted after 90 days (or sooner on request)
 -   **GDPR compliant**: Full data export and deletion available
--   **No tracking**: We don't track users across sites
+-   **No tracking**: We don’t track users across sites
 
 ### Preventing Fraud in Giveaways
 
@@ -985,7 +994,7 @@ const apiKey = process.env.FLIPACOIN_API_KEY;
 // Never expose in client code
 fetch('https://flipacoinfree.com/api/flip', {
   headers: {
-    'Authorization': 'Bearer ' + apiKey  // This runs on server only
+    'Authorization': \`Bearer \${apiKey}\`  // This runs on server only
   }
 });
 \`\`\`
@@ -1007,7 +1016,7 @@ The combination of easy embedding, powerful API access, bulk flip capabilities, 
 
 **Key Takeaways:**
 - Embed with simple iframe or advanced JavaScript SDK
-- API provides programmatic access to flexible options
+- API provides programmatic access with flexible options
 - Bulk flips perfect for giveaways, contests, and data collection
 - Verification and audit trails ensure transparency
 - Rate limits and security features protect your integration
@@ -1017,8 +1026,8 @@ Start integrating today and bring fair, transparent randomization to your users!
 `,
   },
   {
-    slug: \"top-coin-flip-games\",
-    title: \"Top Coin Flip Games: Use a Coin for Games & Giveaways",
+    slug: "top-coin-flip-games",
+    title: "Top Coin Flip Games: Use a Coin for Games & Giveaways",
     description:
       "Discover top coin flip games and giveaway ideas. Learn how to use a coin flip for fair decisions, contests, and quick party fun. Includes embed tips.",
     author: "FlipACoinFree Team",
@@ -1026,16 +1035,16 @@ Start integrating today and bring fair, transparent randomization to your users!
     updatedAt: "2025-10-10",
     keywords: [
       "coin flip game",
-      \"flip a coin games",
-      \"penny flip",
-      "flip two coins\",\
+      "flip a coin games",
+      "penny flip",
+      "flip two coins",
       "flip three coins",
-      \"coin flip for giveaways",\
-      \"coinflip website",
-      \"flip random coin",
-    ],\
-    category: "Blog",\
-    readingTime: 8,\
+      "coin flip for giveaways",
+      "coinflip website",
+      "flip random coin",
+    ],
+    category: "Blog",
+    readingTime: 8,
     featured: true,
     content: ``,
   },
@@ -1082,129 +1091,53 @@ At its core, an online coin flip uses a **Random Number Generator (RNG)**. There
 
 When you click "Flip Coin":
 
-a.  **Entropy Collection**: The system gathers "entropy"—sources of unpredictable data from your computer or server (e.g., mouse movements, keyboard input timing, system clock fluctuations, network traffic
-).
+a.  **Entropy Collection**: The system gathers "entropy"—sources of unpredictable data from your computer or server (e.g., mouse movements, keyboard input timing, system clock fluctuations, network traffic).
 b.  **Seed Generation**: This entropy is used to create a unique, unpredictable "seed" value.
 c.  **PRNG Algorithm**: A CSPRNG algorithm takes the seed and processes it through a series of complex calculations.
 d.  **Output Value**: The algorithm generates a random number (or a sequence of numbers).
-e.  **Mapping to Outcome**: This number is then mapped to a binary outcome (Heads or Tails). For example,
-if the number
-is
-between
-0
-and
-0.5, it
-;("s Heads; if it")
-s
-between
-0.5
-and
-1, it
-'s Tails.
+e.  **Mapping to Outcome**: This number is then mapped to a binary outcome (Heads or Tails). For example, if the number is between 0 and 0.5, it's Heads; if it's between 0.5 and 1, it's Tails.
 
 ### 3. Presentation
 
-The result ('Heads' or 'Tails') is displayed to the user, often
-with an animation
-simulating
-a
-physical
-coin
-flip.
+The result ('Heads' or 'Tails') is displayed to the user, often with an animation simulating a physical coin flip.
 
-#
-#
-Are
-Online
-Coin
-Flips
-Fair?
+## Are Online Coin Flips Fair?
 
-**Yes, they
-can
-be.** Fairness
-depends
-on
-the
-quality
-of
-the
-RNG
-used.
+**Yes, they can be.** Fairness depends on the quality of the RNG used.
 
-#
-#
-#
-Factors
-Ensuring
-Fairness: 1 ** Cryptographically
-Secure
-PRNGs**
-: Modern browsers implement CSPRNGs (like \`crypto.getRandomValues()\` in JavaScript) that are designed
-for security and statistical randomness. They
-are
-not
-susceptible
-to
-patterns.
-2 ** No
-Human
-Intervention**
-: Once initiated, the flip is determined by the algorithm, removing the possibility of conscious or unconscious bias in the tossing or catching.
+### Factors Ensuring Fairness:
+
+1.  **Cryptographically Secure PRNGs**: Modern browsers implement CSPRNGs (like \`crypto.getRandomValues()\` in JavaScript) that are designed for security and statistical randomness. They are not susceptible to patterns.
+2.  **No Human Intervention**: Once initiated, the flip is determined by the algorithm, removing the possibility of conscious or unconscious bias in the tossing or catching.
 3.  **Verifiable Data**: We can perform millions of flips and analyze the results statistically. A fair online coin flip will consistently show a near 50/50 distribution of heads and tails over large sample sizes. Our experiments confirm this.
 4.  **Transparency**: Reputable services are transparent about their methods and allow users to test the randomness themselves.
 
-### Potential
-for Unfairness (and how to avoid them)
-:
+### Potential for Unfairness (and how to avoid them):
 
 -   **Weak PRNGs**: Older or poorly implemented RNGs might produce predictable patterns.
 -   **Algorithmic Bias**: A flawed algorithm could unintentionally favor one outcome.
--   **Manipulation**: A malicious operator could potentially rig the system (though difficult
-with CSPRNGs)
-.
+-   **Manipulation**: A malicious operator could potentially rig the system (though difficult with CSPRNGs).
 
 **How to Ensure Fairness**:
--   **Use reputable services**: Look
-for services that explain their
-randomness
-sources.
--   **Test
-yourself**
-: Perform large numbers of flips and check the distribution.
--   **Look
-for transparency**
-: Services that share data or explain their algorithms are generally more trustworthy.
+-   **Use reputable services**: Look for services that explain their randomness sources.
+-   **Test yourself**: Perform large numbers of flips and check the distribution.
+-   **Look for transparency**: Services that share data or explain their algorithms are generally more trustworthy.
 
-## Use Cases
-for Digital Coin Flips
+## Use Cases for Digital Coin Flips
 
-Digital
-coin
-flips
-are
-versatile
-tools: #
-#
-#
-1
-Decision
-Making
+Digital coin flips are versatile tools:
 
--   **Simple
-Binary
-Choices**
-: "Should I order pizza or burgers?"
+### 1. Decision Making
+
+-   **Simple Binary Choices**: "Should I order pizza or burgers?"
 -   **Tie-breakers**: In games, debates, or contests.
 -   **Random selection**: Choosing a winner from two options.
 
 ### 2. Apps and Software Integration
 
 -   **Gamification**: Implementing random outcomes in games.
--   **Data Generation**: Creating random data
-for simulations or testing.
--   **Randomizers**
-: Tools that use coin flips as a component.
+-   **Data Generation**: Creating random data for simulations or testing.
+-   **Randomizers**: Tools that use coin flips as a component.
 -   **APIs**: Allowing developers to integrate coin flip functionality into their own applications (e.g., [Flip API](https://flipacoinfree.com/api-docs)).
 
 ### 3. Live Streaming and Content Creation
@@ -1216,11 +1149,8 @@ for simulations or testing.
 ### 4. Education
 
 -   **Teaching Probability**: Demonstrating 50/50 odds and experimental vs. theoretical probability.
--   **Interactive Lessons**: Engaging students
-with real-time flips.
--   **Classroom
-Activities**
-: As seen in our [10 Classroom Activities](https://flipacoinfree.com/blog/classroom-activities-coin-flip) post.
+-   **Interactive Lessons**: Engaging students with real-time flips.
+-   **Classroom Activities**: As seen in our [10 Classroom Activities](https://flipacoinfree.com/blog/classroom-activities-coin-flip) post.
 
 ### 5. Contests and Giveaways
 
@@ -1234,10 +1164,8 @@ Activities**
 
 Developers can leverage coin flip functionality through APIs. This allows:
 -   **Programmatic flips**: Trigger flips from your backend or frontend.
--   **Bulk flips**: Perform many flips at once
-for contests or analysis.
--   **Customization**
-: Specify weighted probabilities or custom coin designs.
+-   **Bulk flips**: Perform many flips at once for contests or analysis.
+-   **Customization**: Specify weighted probabilities or custom coin designs.
 -   **Integration**: Seamlessly add randomization to any app.
 ([See our Coin Flip API Guide](https://flipacoinfree.com/api-docs))
 
@@ -1252,12 +1180,8 @@ For websites and blogs, embedding a functional coin flip is simple:
 ### Customization and Weighting
 
 Modern digital flips go beyond simple heads/tails:
--   **Custom Images/Labels**: Upload your own designs
-for branded flips.
--   **Weighted Probabilities**
-: Simulate unfair coins (e.g., 60% heads)
-for educational or game design
-purposes. ([Explore Custom Coins](https://flipacoinfree.com/custom-coin))
+-   **Custom Images/Labels**: Upload your own designs for branded flips.
+-   **Weighted Probabilities**: Simulate unfair coins (e.g., 60% heads) for educational or game design purposes. ([Explore Custom Coins](https://flipacoinfree.com/custom-coin))
 
 ## Experiments and Data Samples
 
@@ -1442,17 +1366,16 @@ Whether you're making a quick decision, teaching a class, or need random selecti
 **Ready to flip? Try our coin flipper above and see the fairness for yourself. Flip it 10 times, 100 times, or 1000 times—the results will consistently prove the randomness and fairness of digital coin flips.**
 
 **Key Takeaways:**
-- Online coin flips use Pseudo-Random Number Generators (PRNGs) or True Random Number Generators (TRNGs).
-- Cryptographically Secure PRNGs (CSPRNGs) are standard for fairness.
-- Fairness is ensured by lack of human bias, verifiable data, and transparent algorithms.
-- Use cases range from simple decisions to app integrations and education.
-- APIs and embeddable widgets make integration easy.
-- Customization and weighted flips offer advanced functionality.
+- Online coin flips use cryptographically secure random number generators
+- Digital flips eliminate physical bias and human manipulation
+- Statistical tests consistently prove the fairness of online coin flippers
+- Advanced features make digital flips more versatile than physical coins
+- You can verify fairness yourself by testing with large sample sizes
 `,
-},
-{
-  slug: "coin-flip-vs-spinner-vs-dice", title
-  : "Coin Flip vs Spinner vs Dice — Which Random Method Is Best?",
+  },
+  {
+    slug: "coin-flip-vs-spinner-vs-dice",
+    title: "Coin Flip vs Spinner vs Dice — Which Random Method Is Best?",
     description:
       "Compare coin flips, spinners, and dice for randomness, fairness, and practical use. Learn which method works best for your specific needs.",
     author: "Dr. James Chen",
@@ -1463,11 +1386,10 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 7,
     featured: false,
     content: ``,
-}
-,
-{
-  slug: "embed-coin-flip-widget", title
-  : "How to Embed a Coin Flip Widget on Your Site (WordPress, Blogger, HTML)",
+  },
+  {
+    slug: "embed-coin-flip-widget",
+    title: "How to Embed a Coin Flip Widget on Your Site (WordPress, Blogger, HTML)",
     description:
       "Step-by-step guide to adding a free coin flip widget to your website. Works with WordPress, Blogger, HTML, and all major platforms.",
     author: "Alex Rodriguez",
@@ -1478,11 +1400,10 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 5,
     featured: false,
     content: ``,
-}
-,
-{
-  slug: "how-random-online-coin-flips", title
-  : "How Random Are Online Coin Flips? (Explained with Experiments)",
+  },
+  {
+    slug: "how-random-online-coin-flips",
+    title: "How Random Are Online Coin Flips? (Explained with Experiments)",
     description:
       "Deep dive into the randomness of online coin flips with real experiments, statistical analysis, and 1000+ flip data samples you can download.",
     author: "Dr. Emily Watson",
@@ -1493,11 +1414,10 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 9,
     featured: true,
     content: ``,
-}
-,
-{
-  slug: "coin-flip-api-developer-guide", title
-  : "Developer Guide: Use the Flip API in JavaScript, PHP, Python",
+  },
+  {
+    slug: "coin-flip-api-developer-guide",
+    title: "Developer Guide: Use the Flip API in JavaScript, PHP, Python",
     description:
       "Complete developer guide for integrating coin flip functionality into your apps using our free API. Includes code examples and best practices.",
     author: "Marcus Johnson",
@@ -1508,11 +1428,10 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 7,
     featured: false,
     content: ``,
-}
-,
-{
-  slug: "history-superstitions-coin-flipping", title
-  : "History & Superstitions: Why People Flip Coins",
+  },
+  {
+    slug: "history-superstitions-coin-flipping",
+    title: "History & Superstitions: Why People Flip Coins",
     description:
       "Explore the fascinating history of coin flipping from ancient Rome to modern sports. Discover cultural superstitions and famous coin flip moments.",
     author: "Dr. Patricia Lee",
@@ -1523,11 +1442,10 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 6,
     featured: false,
     content: ``,
-}
-,
-{
-  slug: "coin-flip-game-nights-dnd", title
-  : "How to Use a Coin Flip in Game Nights & DnD Sessions",
+  },
+  {
+    slug: "coin-flip-game-nights-dnd",
+    title: "How to Use a Coin Flip in Game Nights & DnD Sessions",
     description:
       "Creative ways to use coin flips in tabletop games, DnD campaigns, and game nights. Add randomness and excitement to your gaming sessions.",
     author: "Tyler Brooks",
@@ -1538,11 +1456,10 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 5,
     featured: false,
     content: ``,
-}
-,
-{
-  slug: "create-custom-coin-design", title
-  : "How to Create Your Own Coin Design (and Upload It)",
+  },
+  {
+    slug: "create-custom-coin-design",
+    title: "How to Create Your Own Coin Design (and Upload It)",
     description:
       "Learn how to design and upload custom coin faces for personalized coin flips. Perfect for branding, events, and special occasions.",
     author: "Nina Patel",
@@ -1553,9 +1470,8 @@ Whether you're making a quick decision, teaching a class, or need random selecti
     readingTime: 6,
     featured: false,
     content: ``,
-}
-,
-{
+  },
+  {
     slug: "online-randomizer-mistakes",
     title: "Top 5 Mistakes When Using Online Randomizers",
     description:
