@@ -60,8 +60,8 @@ export function FlipCounter({ onFlipNow }: FlipCounterProps) {
         const fallback = await fetch("/data/stats.json")
         const data = await fallback.json()
         animateStats(data)
-      } catch (err) {
-        console.error("[v0] Failed to load stats:", err)
+      } catch {
+        // Silent fail - use default values
       }
     } finally {
       setIsLoading(false)

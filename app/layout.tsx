@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Poppins } from "next/font/google"
+import { Inter, Poppins } from 'next/font/google'
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
@@ -99,11 +99,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        {/* <CHANGE> Updated favicon links with complete professional set */}
+        {/* Favicons */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="mask-icon" href="/favicon/mask-icon.svg" color="#FFD25A" />
         <meta name="theme-color" content="#FFD25A" />
+        <meta name="msapplication-TileColor" content="#FFD25A" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -121,7 +128,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "FlipACoinFree",
               url: "https://flipacoinfree.com/",
-              logo: "https://flipacoinfree.com/logo.png",
+              logo: "https://flipacoinfree.com/favicon/favicon-512x512.png",
               sameAs: ["https://twitter.com/flipacoinfree"],
             }),
           }}

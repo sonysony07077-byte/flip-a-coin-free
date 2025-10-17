@@ -66,8 +66,8 @@ function saveState(state: FlipACoinState): void {
 
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
-  } catch (e) {
-    console.error("[v0] Failed to save flip state:", e)
+  } catch {
+    // Silent fail - localStorage might be full or disabled
   }
 }
 
