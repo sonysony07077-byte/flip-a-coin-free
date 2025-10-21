@@ -135,11 +135,32 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "FlipACoinFree",
-              url: "https://flipacoinfree.com/",
-              logo: "https://flipacoinfree.com/favicon/favicon-512x512.png",
-              sameAs: ["https://twitter.com/flipacoinfree"],
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://flipacoinfree.com/#org",
+                  name: "FlipACoinFree",
+                  url: "https://flipacoinfree.com",
+                  logo: "https://flipacoinfree.com/logo.png",
+                  sameAs: ["https://twitter.com/flipacoinfree"],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://flipacoinfree.com/#website",
+                  url: "https://flipacoinfree.com",
+                  name: "FlipACoinFree",
+                  description: "Free realistic coin flip simulator — embeddable widget, API, multi-language.",
+                  publisher: { "@id": "https://flipacoinfree.com/#org" },
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  name: "FlipACoinFree Simulator",
+                  applicationCategory: "WebApplication",
+                  operatingSystem: "All",
+                  url: "https://flipacoinfree.com",
+                  description: "A realistic online coin flip tool with sound, embed widget and API.",
+                },
+              ],
             }),
           }}
         />
