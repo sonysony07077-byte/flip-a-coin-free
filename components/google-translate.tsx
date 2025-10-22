@@ -26,8 +26,9 @@ export function GoogleTranslate() {
               },
               "google_translate_element",
             )
+            console.log("[v0] Google Translate initialized successfully")
           } catch (error) {
-            // Silent error in production
+            console.log("[v0] Google Translate initialization error:", error)
           }
         }
       }
@@ -39,6 +40,12 @@ export function GoogleTranslate() {
         script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         script.async = true
         script.defer = true
+        script.onerror = () => {
+          console.log("[v0] Failed to load Google Translate script")
+        }
+        script.onload = () => {
+          console.log("[v0] Google Translate script loaded")
+        }
         document.body.appendChild(script)
 
         return () => {
@@ -53,12 +60,11 @@ export function GoogleTranslate() {
       }
     }
 
-    // Load after page is fully loaded
     if (document.readyState === "complete") {
-      setTimeout(loadGoogleTranslate, 1000)
+      setTimeout(loadGoogleTranslate, 500)
     } else {
       window.addEventListener("load", () => {
-        setTimeout(loadGoogleTranslate, 1000)
+        setTimeout(loadGoogleTranslate, 500)
       })
     }
   }, [])

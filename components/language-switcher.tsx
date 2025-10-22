@@ -43,9 +43,26 @@ export function LanguageSwitcher() {
   const [currentLang, setCurrentLang] = useState("en")
   const [mounted, setMounted] = useState(false)
   const [isChanging, setIsChanging] = useState(false)
+  const [isTranslateReady, setIsTranslateReady] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+
+    const checkTranslateReady = () => {
+      if (window.google && window.google.translate) {
+        setIsTranslateReady(true)
+        return true
+      }
+      return false
+    }
+
+    const pollInterval = setInterval(() => {
+      if (checkTranslateReady()) {
+        clearInterval(pollInterval)
+      }
+    }, 500)
+
+    setTimeout(() => clearInterval(pollInterval), 10000)
 
     const getCookie = (name: string) => {
       const value = `; ${document.cookie}`
@@ -56,47 +73,59 @@ export function LanguageSwitcher() {
 
     const googtransCookie = getCookie("googtrans")
     if (googtransCookie) {
-      // Cookie exists, just update the UI state, don't reload
       const langCode = googtransCookie.split("/")[2]
       if (langCode) {
         setCurrentLang(langCode)
         localStorage.setItem("selectedLanguage", langCode)
       }
     } else {
-      // No cookie exists, check if this is first visit or if user has a preference
       const hasVisited = localStorage.getItem("hasVisited")
 
       if (!hasVisited) {
-        // First visit - detect browser language and auto-translate
         localStorage.setItem("hasVisited", "true")
         const browserLang = navigator.language.split("-")[0]
         const supportedLang = languages.find((lang) => lang.code.startsWith(browserLang))
 
         if (supportedLang && supportedLang.code !== "en") {
-          // Auto-translate to browser language on first visit
-          changeLanguage(supportedLang.code)
+          const waitForTranslate = setInterval(() => {
+            if (checkTranslateReady()) {
+              clearInterval(waitForTranslate)
+              changeLanguage(supportedLang.code)
+            }
+          }, 500)
+          setTimeout(() => clearInterval(waitForTranslate), 5000)
         }
       } else {
-        // Returning visitor with no cookie - they probably cleared it or want English
         setCurrentLang("en")
         localStorage.setItem("selectedLanguage", "en")
       }
     }
+
+    return () => {
+      clearInterval(pollInterval)
+    }
   }, [])
 
   const changeLanguage = (langCode: string) => {
-    if (isChanging || currentLang === langCode) return
+    if (isChanging || currentLang === langCode || !isTranslateReady) {
+      console.log("[v0] Language change blocked:", { isChanging, currentLang, langCode, isTranslateReady })
+      return
+    }
 
+    console.log("[v0] Changing language to:", langCode)
     setIsChanging(true)
     setCurrentLang(langCode)
     localStorage.setItem("selectedLanguage", langCode)
 
-    const cookieValue = langCode === "en" ? "" : `/en/${langCode}`
-    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000`
-    document.cookie = `googtrans=${cookieValue}; path=/; domain=${window.location.hostname}; max-age=31536000`
+    const cookieValue = langCode === "en" ? "/en/en" : `/en/${langCode}`
+    const domain = window.location.hostname
 
-    // Reload to apply translation
-    window.location.reload()
+    document.cookie = `googtrans=${cookieValue}; path=/; max-age=31536000; SameSite=Lax`
+    document.cookie = `googtrans=${cookieValue}; path=/; domain=.${domain}; max-age=31536000; SameSite=Lax`
+
+    setTimeout(() => {
+      window.location.reload()
+    }, 100)
   }
 
   if (!mounted) {
@@ -112,16 +141,20 @@ export function LanguageSwitcher() {
           <Globe className="h-4 w-4" />
           <span className="hidden sm:inline text-lg">{currentLanguage.flag}</span>
           {isChanging && <span className="absolute -top-1 -right-1 h-2 w-2 bg-primary rounded-full animate-pulse" />}
+          {!isTranslateReady && mounted && (
+            <span className="absolute -top-1 -right-1 h-2 w-2 bg-yellow-500 rounded-full animate-pulse" />
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="max-h-[400px] overflow-y-auto w-56">
         <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Select Language</div>
+        {!isTranslateReady && <div className="px-2 py-2 text-xs text-muted-foreground">Loading translations...</div>}
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
             className="flex items-center gap-3 cursor-pointer"
-            disabled={isChanging}
+            disabled={isChanging || !isTranslateReady}
           >
             <span className="text-xl">{lang.flag}</span>
             <span className={currentLang === lang.code ? "font-semibold" : ""}>{lang.name}</span>
