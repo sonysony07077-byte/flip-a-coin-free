@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# Sitemap (referenced by crawlers)
-Sitemap: https://flipacoinfree.com/sitemap.xml
-
 # Block admin and sensitive folders
 Disallow: /admin/
 Disallow: /private/
@@ -21,7 +18,5 @@ Allow: /api/
 Allow: /public/assets/
 Allow: /public/og/
 
-# Note: Do not use Crawl-delay for Google.
-Host: flipacoinfree.com
+# Sitemap
 Sitemap: https://flipacoinfree.com/sitemap.xml
-IndexNow: https://api.indexnow.org/indexnow?url=https://flipacoinfree.com/&key=ad0c02f37f4a461096be763ac26d97c8
