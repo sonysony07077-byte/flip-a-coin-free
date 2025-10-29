@@ -42,8 +42,11 @@ export default function HomePage() {
 
       <Features />
       <HowItWorks />
-      <CTASection />
-      <MultilingualSection />
+      <div>
+        <h2 className="sr-only">Additional Information</h2>
+        <CTASection />
+        <MultilingualSection />
+      </div>
     </div>
   )
 }

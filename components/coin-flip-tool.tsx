@@ -118,7 +118,9 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
     if (savedVoice !== null) setVoiceEnabled(savedVoice === "true")
 
     if (typeof window !== "undefined" && soundEnabled) {
-      coinFlipAudioRef.current = new Audio("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coin-flip-88793-TwfvWak51tiNtgAnf4Yi95xAKdU5W2.mp3")
+      coinFlipAudioRef.current = new Audio(
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coin-flip-88793-TwfvWak51tiNtgAnf4Yi95xAKdU5W2.mp3",
+      )
       coinFlipAudioRef.current.preload = "none"
     }
 
@@ -487,14 +489,14 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
                 <ShareButtons />
 
                 <div className="flex items-center justify-between">
-                  <h3 className="font-display text-lg font-semibold">History</h3>
+                  <h2 className="font-display text-lg font-semibold">Flip History</h2>
                   <div className="flex gap-2">
                     <Button
                       size="sm"
                       variant="ghost"
                       onClick={exportHistory}
                       disabled={history.length === 0}
-                      aria-label="Export history"
+                      aria-label="Export flip history as CSV"
                       title="Export as CSV"
                     >
                       <DownloadIcon />
@@ -504,7 +506,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
                       variant="ghost"
                       onClick={resetHistory}
                       disabled={history.length === 0}
-                      aria-label="Clear history"
+                      aria-label="Clear flip history"
                       title="Clear history"
                     >
                       <RotateCcwIcon />
@@ -564,7 +566,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
           <TabsContent value="settings" className="mt-0">
             <div className="space-y-6 py-4">
               <div className="space-y-4">
-                <h3 className="font-display text-lg font-semibold">Audio Settings</h3>
+                <h2 className="font-display text-lg font-semibold">Audio Settings</h2>
 
                 <div className="flex items-center justify-between rounded-lg border border-border p-4">
                   <div className="space-y-0.5">
@@ -588,7 +590,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
               </div>
 
               <div className="space-y-4">
-                <h3 className="font-display text-lg font-semibold">Randomness</h3>
+                <h2 className="font-display text-lg font-semibold">Randomness</h2>
 
                 <div className="rounded-lg bg-muted/50 p-4">
                   <p className="text-sm text-muted-foreground leading-relaxed">
