@@ -71,11 +71,11 @@ export default function MultiCoinGamesPage() {
               </div>
             </div>
 
-            <h1 className="font-display text-4xl font-bold leading-tight mb-4 md:text-5xl">
+            <h1 className="font-display text-4xl font-bold leading-tight mb-4 md:text-5xl text-balance">
               Multi-Coin Games — 2 & 3 Coin Flip Ideas and Tactics
             </h1>
 
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-6 text-pretty">
               Explore 2-coin and 3-coin flip games, quarter flipper ideas, and tournament tactics. Game rules, classroom
               activities, and embed tips included.
             </p>
@@ -124,7 +124,7 @@ export default function MultiCoinGamesPage() {
             <div className="relative w-full h-[400px] rounded-lg overflow-hidden mb-8">
               <Image
                 src="/og/multi-coin-games-and-tactics.jpg"
-                alt="Flip a coin — multi-coin games and tactics"
+                alt="Multiple coins being flipped simultaneously for games and tournaments"
                 fill
                 className="object-cover"
                 priority
@@ -132,9 +132,50 @@ export default function MultiCoinGamesPage() {
             </div>
           </header>
 
+          <nav className="mb-12 p-6 bg-muted/50 rounded-lg border">
+            <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="#why-multiple-coins" className="text-primary hover:underline">
+                  Why Play with Multiple Coins?
+                </a>
+              </li>
+              <li>
+                <a href="#popular-games" className="text-primary hover:underline">
+                  Popular Multi-Coin Games
+                </a>
+              </li>
+              <li>
+                <a href="#tournament-formats" className="text-primary hover:underline">
+                  Tournament & Giveaway Formats Using Multi-Flips
+                </a>
+              </li>
+              <li>
+                <a href="#classroom-activities" className="text-primary hover:underline">
+                  Classroom & Educational Activities
+                </a>
+              </li>
+              <li>
+                <a href="#embedding" className="text-primary hover:underline">
+                  Embedding Multi-Flip Modes on Your Site or Stream
+                </a>
+              </li>
+              <li>
+                <a href="#hosting-tips" className="text-primary hover:underline">
+                  Tips for Hosts — Pacing, Sound, and Accessibility
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="text-primary hover:underline">
+                  Frequently Asked Questions
+                </a>
+              </li>
+            </ul>
+          </nav>
+
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="lead">
+            <p className="lead text-pretty">
               A single coin flip is simple—heads or tails, 50/50 odds. But when you flip a coin multiple times or flip
               several coins at once, the possibilities explode. Multi-coin games introduce probability layers, strategic
               depth, and exciting outcomes that make them perfect for parties, classrooms, tournaments, and online
@@ -142,16 +183,18 @@ export default function MultiCoinGamesPage() {
               guide covers everything you need to know.
             </p>
 
-            <h2>Why Play with Multiple Coins?</h2>
+            <h2 id="why-multiple-coins" className="text-balance">
+              Why Play with Multiple Coins?
+            </h2>
 
-            <p>
+            <p className="text-pretty">
               Flipping multiple coins simultaneously or in sequence transforms a simple binary choice into a rich
               probability space. Here's why multi-coin games are more engaging than single flips:
             </p>
 
             <h3>More Possible Outcomes</h3>
 
-            <p>
+            <p className="text-pretty">
               A single coin has 2 outcomes. A <strong>2 coin flip</strong> has 4 possible combinations:
             </p>
 
@@ -162,7 +205,7 @@ export default function MultiCoinGamesPage() {
               <li>Tails-Tails (TT)</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               A <strong>3 coin flip</strong> has 8 possible combinations:
             </p>
 
@@ -171,14 +214,25 @@ export default function MultiCoinGamesPage() {
               <li>THH, THT, TTH, TTT</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               With each additional coin, the number of outcomes doubles ($$2^n$$ where n is the number of coins). This
               exponential growth creates fascinating probability distributions and strategic opportunities.
             </p>
 
             <h3>Probability Lessons</h3>
 
-            <p>Multi-coin flips are perfect for teaching probability concepts:</p>
+            <p className="text-pretty">
+              Multi-coin flips are perfect for teaching probability concepts. According to{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Probability_theory"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                probability theory
+              </a>
+              , understanding independent events and combinations is fundamental to statistical thinking:
+            </p>
 
             <ul>
               <li>
@@ -195,14 +249,14 @@ export default function MultiCoinGamesPage() {
               </li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               For example, in a 3 coin flip, getting all heads (HHH) has only a 1/8 (12.5%) chance, while getting
               exactly 2 heads has a 3/8 (37.5%) chance because there are three ways to achieve it: HHT, HTH, THH.
             </p>
 
             <h3>Strategic Depth</h3>
 
-            <p>
+            <p className="text-pretty">
               Multi-coin games allow for scoring systems, betting strategies, and tactical decisions that single flips
               can't provide. Players can:
             </p>
@@ -216,7 +270,7 @@ export default function MultiCoinGamesPage() {
 
             <h3>Entertainment Value</h3>
 
-            <p>
+            <p className="text-pretty">
               Watching multiple coins flip creates suspense and excitement. Will you get all heads? Will you match your
               opponent's pattern? The drama builds with each coin that lands.
             </p>
@@ -230,17 +284,21 @@ export default function MultiCoinGamesPage() {
               />
             </div>
 
-            <h2>Popular Multi-Coin Games</h2>
+            <h2 id="popular-games" className="text-balance">
+              Popular Multi-Coin Games
+            </h2>
 
-            <p>Here are the most popular multi-coin games, complete with rules, probability analysis, and use cases.</p>
+            <p className="text-pretty">
+              Here are the most popular multi-coin games, complete with rules, probability analysis, and use cases.
+            </p>
 
             <h3>Best-of-3 (Classic Heads and Tails Coin Flip)</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Players:</strong> 2
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Rules:</strong>
             </p>
 
@@ -251,16 +309,16 @@ export default function MultiCoinGamesPage() {
               <li>If tied 1-1 after two flips, the third flip decides</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Probability:</strong>
             </p>
 
-            <p>
+            <p className="text-pretty">
               Each player has exactly 50% chance to win overall, but the game can end in 2 flips (if one player wins
               both) or require all 3 flips (if tied 1-1).
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Use Cases:</strong>
             </p>
 
@@ -273,11 +331,11 @@ export default function MultiCoinGamesPage() {
 
             <h3>Triple Heads Challenge</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Players:</strong> 1 or more (competing for best time/fewest attempts)
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Rules:</strong>
             </p>
 
@@ -290,16 +348,16 @@ export default function MultiCoinGamesPage() {
               <li>Lowest number of attempts wins</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Probability:</strong>
             </p>
 
-            <p>
+            <p className="text-pretty">
               The chance of getting HHH on any single attempt is 1/8 (12.5%). On average, you'll need 8 attempts to
               succeed. But variance is high—you might get it on your first try or take 20+ attempts!
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Use Cases:</strong>
             </p>
 
@@ -312,11 +370,11 @@ export default function MultiCoinGamesPage() {
 
             <h3>Penny Flip Tournament</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Players:</strong> 4-16 (bracket-style elimination)
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Rules:</strong>
             </p>
 
@@ -327,16 +385,16 @@ export default function MultiCoinGamesPage() {
               <li>Continue until one champion remains</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Probability:</strong>
             </p>
 
-            <p>
+            <p className="text-pretty">
               Each match is fair (50/50), but the tournament structure creates excitement. With 8 players, you need to
               win 3 matches to become champion.
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Use Cases:</strong>
             </p>
 
@@ -349,11 +407,11 @@ export default function MultiCoinGamesPage() {
 
             <h3>Quarter Flipper Showdown</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Players:</strong> 2-4
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Rules:</strong>
             </p>
 
@@ -366,7 +424,7 @@ export default function MultiCoinGamesPage() {
               <li>Highest total score wins</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Probability:</strong>
             </p>
 
@@ -401,9 +459,11 @@ export default function MultiCoinGamesPage() {
               </tbody>
             </table>
 
-            <p>Expected score per round: 1.25 points. Expected total after 5 rounds: 6.25 points.</p>
+            <p className="text-pretty">
+              Expected score per round: 1.25 points. Expected total after 5 rounds: 6.25 points.
+            </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Use Cases:</strong>
             </p>
 
@@ -425,11 +485,11 @@ export default function MultiCoinGamesPage() {
 
             <h3>Match the Pattern</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Players:</strong> 2+
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Rules:</strong>
             </p>
 
@@ -440,16 +500,16 @@ export default function MultiCoinGamesPage() {
               <li>First to match wins; if no one matches, setter wins</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Probability:</strong>
             </p>
 
-            <p>
+            <p className="text-pretty">
               Chance of matching a specific 3-coin pattern on one attempt: 1/8 (12.5%). With 3 attempts, probability of
               at least one match: approximately 33%.
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Use Cases:</strong>
             </p>
 
@@ -460,16 +520,29 @@ export default function MultiCoinGamesPage() {
               <li>Online multiplayer challenges</li>
             </ul>
 
-            <h2>Tournament & Giveaway Formats Using Multi-Flips</h2>
+            <h2 id="tournament-formats" className="text-balance">
+              Tournament & Giveaway Formats Using Multi-Flips
+            </h2>
 
-            <p>
-              Multi-coin flips are perfect for running fair, transparent tournaments and giveaways. Here are proven
-              formats that work for online communities, classrooms, and events.
+            <p className="text-pretty">
+              Multi-coin flips are perfect for running fair, transparent tournaments and giveaways. Learn more about{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Tournament"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                tournament structures
+              </a>{" "}
+              and how randomness ensures fairness. Here are proven formats that work for online communities, classrooms,
+              and events.
             </p>
 
             <h3>Best-of-N Tie-Breakers</h3>
 
-            <p>When two contestants are tied, use a best-of-N coin flip series to determine the winner:</p>
+            <p className="text-pretty">
+              When two contestants are tied, use a best-of-N coin flip series to determine the winner:
+            </p>
 
             <ul>
               <li>
@@ -483,14 +556,14 @@ export default function MultiCoinGamesPage() {
               </li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Implementation tip:</strong> Use a <strong>coin toss simulation</strong> tool with history logging
               so all participants can verify the results.
             </p>
 
             <h3>Aggregated Score Format</h3>
 
-            <p>Perfect for giveaways with multiple winners:</p>
+            <p className="text-pretty">Perfect for giveaways with multiple winners:</p>
 
             <ol>
               <li>Each participant gets 5 coin flips</li>
@@ -500,7 +573,7 @@ export default function MultiCoinGamesPage() {
               <li>Use timestamp as tie-breaker</li>
             </ol>
 
-            <p>
+            <p className="text-pretty">
               <strong>Probability distribution:</strong>
             </p>
 
@@ -546,11 +619,13 @@ export default function MultiCoinGamesPage() {
               </tbody>
             </table>
 
-            <p>This creates a natural distribution with clear winners while remaining completely fair.</p>
+            <p className="text-pretty">
+              This creates a natural distribution with clear winners while remaining completely fair.
+            </p>
 
             <h3>Bracket Tournament with Multi-Flip Rounds</h3>
 
-            <p>Combine traditional brackets with multi-coin mechanics:</p>
+            <p className="text-pretty">Combine traditional brackets with multi-coin mechanics:</p>
 
             <ul>
               <li>
@@ -567,14 +642,14 @@ export default function MultiCoinGamesPage() {
               </li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               Increasing the number of flips in later rounds reduces variance and ensures the "luckiest" player doesn't
               always win—though of course, with fair coins, everyone has equal odds!
             </p>
 
             <h3>Fairness & Logging Best Practices</h3>
 
-            <p>To ensure trust and transparency in tournaments:</p>
+            <p className="text-pretty">To ensure trust and transparency in tournaments:</p>
 
             <ul>
               <li>
@@ -597,24 +672,35 @@ export default function MultiCoinGamesPage() {
               </li>
             </ul>
 
-            <h2>Classroom & Educational Activities</h2>
+            <h2 id="classroom-activities" className="text-balance">
+              Classroom & Educational Activities
+            </h2>
 
-            <p>
-              Multi-coin flips are powerful teaching tools for probability, statistics, and critical thinking. Here are
-              classroom-tested activities that engage students and build mathematical intuition.
+            <p className="text-pretty">
+              Multi-coin flips are powerful teaching tools for probability, statistics, and critical thinking. The{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Binomial_distribution"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                binomial distribution
+              </a>{" "}
+              that emerges from multiple coin flips is a cornerstone of statistical education. Here are classroom-tested
+              activities that engage students and build mathematical intuition.
             </p>
 
             <h3>Activity 1: Probability Prediction Challenge</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Grade Level:</strong> 6-12
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Objective:</strong> Students predict outcomes and compare to actual results
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Instructions:</strong>
             </p>
 
@@ -635,7 +721,7 @@ export default function MultiCoinGamesPage() {
               <li>Discuss why results might differ from expectations</li>
             </ol>
 
-            <p>
+            <p className="text-pretty">
               <strong>Learning Outcomes:</strong>
             </p>
 
@@ -647,15 +733,15 @@ export default function MultiCoinGamesPage() {
 
             <h3>Activity 2: Three-Coin Histogram</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Grade Level:</strong> 7-12
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Objective:</strong> Visualize probability distributions
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Instructions:</strong>
             </p>
 
@@ -668,7 +754,7 @@ export default function MultiCoinGamesPage() {
               <li>Compare to the theoretical distribution (binomial distribution)</li>
             </ol>
 
-            <p>
+            <p className="text-pretty">
               <strong>Expected Distribution (for 3 coins):</strong>
             </p>
 
@@ -679,7 +765,7 @@ export default function MultiCoinGamesPage() {
               <li>3 heads: 12.5%</li>
             </ul>
 
-            <p>
+            <p className="text-pretty">
               <strong>Learning Outcomes:</strong>
             </p>
 
@@ -691,15 +777,15 @@ export default function MultiCoinGamesPage() {
 
             <h3>Activity 3: Tournament Simulation</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Grade Level:</strong> 8-12
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Objective:</strong> Explore tournament structures and fairness
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Instructions:</strong>
             </p>
 
@@ -711,7 +797,7 @@ export default function MultiCoinGamesPage() {
               <li>Discuss: How could you design a fairer tournament?</li>
             </ol>
 
-            <p>
+            <p className="text-pretty">
               <strong>Learning Outcomes:</strong>
             </p>
 
@@ -723,15 +809,15 @@ export default function MultiCoinGamesPage() {
 
             <h3>Activity 4: Expected Value Game</h3>
 
-            <p>
+            <p className="text-pretty">
               <strong>Grade Level:</strong> 9-12 (Algebra II or Statistics)
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Objective:</strong> Calculate and test expected value
             </p>
 
-            <p>
+            <p className="text-pretty">
               <strong>Instructions:</strong>
             </p>
 
@@ -743,7 +829,7 @@ export default function MultiCoinGamesPage() {
               <li>Discuss variance and why individual results differ</li>
             </ol>
 
-            <p>
+            <p className="text-pretty">
               <strong>Learning Outcomes:</strong>
             </p>
 
@@ -753,9 +839,11 @@ export default function MultiCoinGamesPage() {
               <li>Real-world application of probability theory</li>
             </ul>
 
-            <h2>Embedding Multi-Flip Modes on Your Site or Stream</h2>
+            <h2 id="embedding" className="text-balance">
+              Embedding Multi-Flip Modes on Your Site or Stream
+            </h2>
 
-            <p>
+            <p className="text-pretty">
               Want to add multi-coin flip functionality to your website, blog, or streaming setup? Our{" "}
               <Link href="https://flipacoinfree.com/embed" className="text-primary hover:underline">
                 embed coin flip widget
@@ -814,14 +902,16 @@ export default function MultiCoinGamesPage() {
               <li>Add a hotkey to trigger flips (optional)</li>
             </ol>
 
-            <p>
+            <p className="text-pretty">
               Perfect for giveaways, viewer challenges, and interactive stream content. Viewers can see the flips happen
               in real-time!
             </p>
 
-            <h2>Tips for Hosts — Pacing, Sound, and Accessibility</h2>
+            <h2 id="hosting-tips" className="text-balance">
+              Tips for Hosts — Pacing, Sound, and Accessibility
+            </h2>
 
-            <p>
+            <p className="text-pretty">
               Whether you're hosting a classroom activity, online tournament, or party game, these tips will help you
               create an inclusive and engaging experience.
             </p>
@@ -900,11 +990,13 @@ export default function MultiCoinGamesPage() {
               </li>
             </ul>
 
-            <h2>Frequently Asked Questions</h2>
+            <h2 id="faq" className="text-balance">
+              Frequently Asked Questions
+            </h2>
 
-            <h3>How do I run a 3-coin flip?</h3>
+            <h3 className="text-balance">How do I run a 3-coin flip?</h3>
 
-            <p>
+            <p className="text-pretty">
               To run a <strong>3 coin flip</strong>, visit FlipACoinFree and select "Multi-Flip" mode. Enter "3" as the
               number of coins and click "Flip." The tool will flip three coins simultaneously and display all possible
               outcomes: HHH, HHT, HTH, HTT, THH, THT, TTH, or TTT. Each outcome has a 1/8 (12.5%) probability. You can
@@ -912,20 +1004,20 @@ export default function MultiCoinGamesPage() {
               results are cryptographically random and can be exported as CSV for record-keeping.
             </p>
 
-            <h3>What is a quarter flipper?</h3>
+            <h3 className="text-balance">What is a quarter flipper?</h3>
 
-            <p>
+            <p className="text-pretty">
               A <strong>quarter flipper</strong> is a coin flip tool that uses the design of a US quarter (George
               Washington on heads, eagle on tails). The term is also used for games and contests that specifically use
-              quarters instead of generic coins. Quarter flippers are popular in American contexts because quarters are
-              the most common coin used for physical flips. Our tool offers a realistic quarter design option with
-              authentic graphics and sound effects. The randomness is identical to any other coin flip—it's purely a
-              cosmetic choice that adds authenticity and regional flavor to your flips.
+              quarters. Quarter flippers are popular in American contexts because quarters are the most common coin used
+              for physical flips. Our tool offers a realistic quarter design option with authentic graphics and sound
+              effects. The randomness is identical to any other coin flip—it's purely a cosmetic choice that adds
+              authenticity and regional flavor to your flips.
             </p>
 
-            <h3>How to log results for tournaments?</h3>
+            <h3 className="text-balance">How to log results for tournaments?</h3>
 
-            <p>
+            <p className="text-pretty">
               To log results for tournaments, use FlipACoinFree's built-in history tracking feature. Every flip is
               automatically recorded with a timestamp, result, and flip number. After your tournament, click "Export
               CSV" to download a complete record of all flips. The CSV file includes columns for timestamp, flip number,
@@ -935,22 +1027,28 @@ export default function MultiCoinGamesPage() {
               real-time, ensuring complete transparency.
             </p>
 
-            <h2>Conclusion & Next Steps</h2>
+            <h3 className="text-balance">What is the probability of getting all heads in a 3-coin flip?</h3>
 
-            <p>
+            <p className="text-pretty">
+              The probability of getting all heads (HHH) in a 3-coin flip is 1/8 or 12.5%. This is calculated by
+              multiplying the probability of each independent event: (1/2) × (1/2) × (1/2) = 1/8. Similarly, the
+              probability of getting exactly 2 heads is 3/8 or 37.5%, because there are three different ways to achieve
+              this outcome: HHT, HTH, and THH. Understanding these probabilities is essential for designing fair games
+              and educational activities.
+            </p>
+
+            <h2 className="text-balance">Conclusion & Next Steps</h2>
+
+            <p className="text-pretty">
               Multi-coin games transform simple coin flips into engaging probability experiences. Whether you're running
               a classroom lesson, hosting a tournament, or just looking for a fun party game, the principles remain the
               same: fair randomness, clear rules, and transparent results.
             </p>
 
-            <p>
+            <p className="text-pretty">
               The beauty of multi-coin flips is their scalability. Start with a simple 2-coin game and gradually
               introduce more complex formats as participants become comfortable with the mechanics. The probability
               lessons learned through play are far more memorable than textbook examples.
-            </p>
-
-            <p>
-              <strong>Ready to start your multi-coin adventure?</strong>
             </p>
 
             <div className="my-8 p-6 bg-primary/10 rounded-lg border-2 border-primary/20">
@@ -972,6 +1070,83 @@ export default function MultiCoinGamesPage() {
               </div>
             </div>
 
+            <div className="my-8 p-6 bg-muted/50 rounded-lg border">
+              <h3 className="text-xl font-bold mb-3">External Resources</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Probability_theory"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Wikipedia: Probability Theory
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Binomial_distribution"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Wikipedia: Binomial Distribution
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Tournament"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Wikipedia: Tournament Structures
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Coin_flipping"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Wikipedia: Coin Flipping
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="my-12">
+              <h3 className="text-2xl font-bold mb-6">Related Articles</h3>
+              <div className="grid gap-6 md:grid-cols-2">
+                <Card>
+                  <CardContent className="p-6">
+                    <h4 className="font-semibold mb-2 text-balance">
+                      <Link href="/blog/coin-flip-games-multiflip" className="text-primary hover:underline">
+                        Coin Flip Games & Multi-Flip Modes
+                      </Link>
+                    </h4>
+                    <p className="text-sm text-muted-foreground text-pretty">
+                      Discover more coin flip games and learn how to use multi-flip modes for entertainment and
+                      education.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-6">
+                    <h4 className="font-semibold mb-2 text-balance">
+                      <Link href="/blog/top-coin-flip-games" className="text-primary hover:underline">
+                        Top Coin Flip Games
+                      </Link>
+                    </h4>
+                    <p className="text-sm text-muted-foreground text-pretty">
+                      Explore the best coin flip games for parties, classrooms, and online competitions.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
             <p className="text-sm text-muted-foreground mt-8">
               <strong>Tags:</strong> 2 coin flip, 3 coin flip, flip a coin simulator, head tails flip coin, heads and
               tails coin flip, head tail toss, heads and tails coin toss, quarter flipper
@@ -980,7 +1155,36 @@ export default function MultiCoinGamesPage() {
         </div>
       </article>
 
-      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://flipacoinfree.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://flipacoinfree.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Multi-Coin Games and Tactics",
+                item: "https://flipacoinfree.com/blog/multi-coin-games-and-tactics",
+              },
+            ],
+          }),
+        }}
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1010,13 +1214,14 @@ export default function MultiCoinGamesPage() {
             datePublished: "2025-10-10",
             dateModified: "2025-10-10",
             inLanguage: "en",
+            articleSection: "Games & Education",
+            wordCount: 4200,
             keywords:
               "2 coin flip, 3 coin flip, flip a coin simulator, head tails flip coin, heads and tails coin flip, quarter flipper",
           }),
         }}
       />
 
-      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -1046,6 +1251,14 @@ export default function MultiCoinGamesPage() {
                 acceptedAnswer: {
                   "@type": "Answer",
                   text: "Use FlipACoinFree's built-in history tracking feature. Every flip is automatically recorded with a timestamp, result, and flip number. After your tournament, click Export CSV to download a complete record. The CSV file provides an auditable trail for fairness verification. You can also enable the public history view so all participants can see the flip log in real-time.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is the probability of getting all heads in a 3-coin flip?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "The probability of getting all heads (HHH) in a 3-coin flip is 1/8 or 12.5%. This is calculated by multiplying the probability of each independent event: (1/2) × (1/2) × (1/2) = 1/8. Similarly, the probability of getting exactly 2 heads is 3/8 or 37.5%, because there are three different ways to achieve this outcome: HHT, HTH, and THH.",
                 },
               },
             ],
