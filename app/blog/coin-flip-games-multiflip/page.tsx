@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Clock, Calendar, User, Share2, Gamepad2, Users, Trophy } from "lucide-react"
+import { Clock, Calendar, User, Share2, Gamepad2, Users, Trophy, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Coin Flip Games & Multi-Flip Ideas — Play Now",
@@ -64,6 +64,36 @@ export default function CoinFlipGamesMultiflipPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://flipacoinfree.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://flipacoinfree.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Coin Flip Games & Multi-Flip",
+                item: "https://flipacoinfree.com/blog/coin-flip-games-multiflip",
+              },
+            ],
+          }),
+        }}
+      />
+
       <article className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
@@ -141,9 +171,41 @@ export default function CoinFlipGamesMultiflipPage() {
             </div>
           </header>
 
+          <Card className="mb-8 bg-muted/50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen className="h-5 w-5" />
+                <h2 className="text-lg font-semibold">Table of Contents</h2>
+              </div>
+              <nav className="space-y-2 text-sm">
+                <a href="#quick-games" className="block text-primary hover:underline">
+                  Quick Games You Can Start With a Coin
+                </a>
+                <a href="#multi-coin" className="block text-primary hover:underline">
+                  3-Coin & Multi-Coin Modes
+                </a>
+                <a href="#tournaments" className="block text-primary hover:underline">
+                  Building Tournaments and Giveaways
+                </a>
+                <a href="#classroom-party" className="block text-primary hover:underline">
+                  Classroom & Party Variations
+                </a>
+                <a href="#embedding" className="block text-primary hover:underline">
+                  Embedding the Game in Streams & Sites
+                </a>
+                <a href="#host-tips" className="block text-primary hover:underline">
+                  Tips for Hosts
+                </a>
+                <a href="#faq" className="block text-primary hover:underline">
+                  Frequently Asked Questions
+                </a>
+              </nav>
+            </CardContent>
+          </Card>
+
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="lead">
+            <p className="lead text-pretty">
               Looking for fun ways to use coin flips beyond simple yes-or-no decisions? Coin flipping games add
               excitement to parties, create fair tournament brackets, and make learning probability engaging for
               students. Whether you want to{" "}
@@ -154,7 +216,9 @@ export default function CoinFlipGamesMultiflipPage() {
               about coin flip games and multi-flip experiences.
             </p>
 
-            <h2>Quick Games You Can Start With a Coin</h2>
+            <h2 id="quick-games" className="text-balance">
+              Quick Games You Can Start With a Coin
+            </h2>
 
             <p>
               Coin flip games are perfect for breaking the ice, making group decisions, or adding an element of chance
@@ -222,7 +286,9 @@ export default function CoinFlipGamesMultiflipPage() {
               />
             </div>
 
-            <h2>3-Coin & Multi-Coin Modes — How They Work</h2>
+            <h2 id="multi-coin" className="text-balance">
+              3-Coin & Multi-Coin Modes — How They Work
+            </h2>
 
             <p>
               When you flip 3 coins or more simultaneously, you unlock a whole new dimension of probability and game
@@ -332,7 +398,9 @@ export default function CoinFlipGamesMultiflipPage() {
               classroom demonstrations, and game tournaments where you need to verify results.
             </p>
 
-            <h2>Building Tournaments and Giveaways with Coins</h2>
+            <h2 id="tournaments" className="text-balance">
+              Building Tournaments and Giveaways with Coins
+            </h2>
 
             <p>
               Coin flip tournaments are an excellent way to narrow down large groups to a single winner fairly and
@@ -460,7 +528,9 @@ export default function CoinFlipGamesMultiflipPage() {
               />
             </div>
 
-            <h2>Classroom & Party Variations</h2>
+            <h2 id="classroom-party" className="text-balance">
+              Classroom & Party Variations
+            </h2>
 
             <p>
               Coin flip games are incredibly versatile for both educational settings and social gatherings. Here are
@@ -565,7 +635,9 @@ export default function CoinFlipGamesMultiflipPage() {
               the selection fair and adds suspense to who performs next.
             </p>
 
-            <h2>Embedding the Game in Streams & Sites</h2>
+            <h2 id="embedding" className="text-balance">
+              Embedding the Game in Streams & Sites
+            </h2>
 
             <p>
               Want to add coin flip games directly to your website, blog, or live stream? Our embeddable widget makes it
@@ -690,7 +762,9 @@ export default function CoinFlipGamesMultiflipPage() {
               page for a live preview and widget generator with all customization options!
             </p>
 
-            <h2>Tips for Hosts — Pacing, Sound, and Accessibility</h2>
+            <h2 id="host-tips" className="text-balance">
+              Tips for Hosts — Pacing, Sound, and Accessibility
+            </h2>
 
             <p>
               Running coin flip games for a group requires more than just flipping coins. Here are professional tips to
@@ -798,7 +872,9 @@ export default function CoinFlipGamesMultiflipPage() {
               </li>
             </ul>
 
-            <h2>Frequently Asked Questions</h2>
+            <h2 id="faq" className="text-balance">
+              Frequently Asked Questions
+            </h2>
 
             <h3>How do I run a fair tournament using coin flips?</h3>
 
@@ -840,54 +916,31 @@ export default function CoinFlipGamesMultiflipPage() {
               online flips, the choice is purely aesthetic—pick whichever coin design you prefer!
             </p>
 
-            <h2>Conclusion & Get Started</h2>
-
-            <p>
-              Coin flip games offer endless entertainment possibilities, from quick party icebreakers to complex
-              multi-coin challenges. Whether you're running a tournament, teaching probability, or just looking for a
-              fair way to make group decisions, coin flips provide the perfect combination of simplicity, fairness, and
-              excitement.
-            </p>
-
-            <p>
-              The versatility of coin flipping games means you can adapt them to any situation—flip a coin 3 times for
-              pattern games, flip a coin 100 times for probability experiments, or use single flips for quick decisions.
-              With our multi-flip tools and embeddable widgets, you have everything you need to create engaging
-              experiences for any audience.
-            </p>
-
-            <p>
-              Ready to start playing? Try our{" "}
-              <Link href="https://flipacoinfree.com/" className="text-primary hover:underline">
-                flip a coin online
-              </Link>{" "}
-              tool right now—it's free, works on any device, and includes all the features mentioned in this guide. No
-              app download or registration required!
-            </p>
-
-            <div className="my-8 p-6 bg-primary/10 rounded-lg border-2 border-primary/20">
-              <h3 className="text-xl font-bold mb-3">🎮 Start Your Coin Flip Games Now!</h3>
-              <p className="mb-4">
-                Try these games at your next event, embed the widget on your site, or explore our classroom activities
-                for educational fun. Everything you need is free and ready to use!
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Button asChild>
-                  <Link href="https://flipacoinfree.com/">Flip Coins Now</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="https://flipacoinfree.com/embed">Get Embed Widget</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="https://flipacoinfree.com/classroom">Download Activities</Link>
-                </Button>
-              </div>
-            </div>
-
-            <p className="text-sm text-muted-foreground mt-8">
-              <strong>Tags:</strong> coin flip, coin toss, flip a coin, coin games, flip 3 coins, flip a coin 3 times,
-              multi-flip, coin flip games, heads or tails, coin toss online
-            </p>
+            <h2 id="external-resources" className="text-balance">
+              External Resources & Further Reading
+            </h2>
+            <ul>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Coin_flipping"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Coin Flipping History & Culture (Wikipedia)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Probability"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Understanding Probability (Wikipedia)
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </article>
@@ -922,6 +975,8 @@ export default function CoinFlipGamesMultiflipPage() {
             datePublished: "2025-10-10",
             dateModified: "2025-10-10",
             inLanguage: "en",
+            articleSection: "Games & Entertainment",
+            wordCount: 3600,
             keywords:
               "coin flipping game, coin toss online, flip a coin heads or tails, flip 3 coins, flip a coin 3 times, flip a coin 100 times, heads and tails, coin flip game, multi-flip",
           }),

@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Clock, Calendar, User, Share2, Code2, BarChart3, Shield } from "lucide-react"
+import { Clock, Calendar, User, Share2, Code2, BarChart3, Shield, BookOpen } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Digital Coin Toss: Randomness, Experiments & API Tips",
@@ -60,6 +60,36 @@ export default function DigitalCoinTossRandomnessPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://flipacoinfree.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://flipacoinfree.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Digital Coin Toss Randomness",
+                item: "https://flipacoinfree.com/blog/digital-coin-toss-randomness",
+              },
+            ],
+          }),
+        }}
+      />
+
       <article className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
@@ -137,9 +167,38 @@ export default function DigitalCoinTossRandomnessPage() {
             </div>
           </header>
 
+          <Card className="mb-8 bg-muted/50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen className="h-5 w-5" />
+                <h2 className="text-lg font-semibold">Table of Contents</h2>
+              </div>
+              <nav className="space-y-2 text-sm">
+                <a href="#what-is-digital" className="block text-primary hover:underline">
+                  What Is a Digital Coin Toss?
+                </a>
+                <a href="#randomness-generation" className="block text-primary hover:underline">
+                  How Randomness Is Generated Online
+                </a>
+                <a href="#experiments" className="block text-primary hover:underline">
+                  Running Large Experiments (100 & 1,000 Flips)
+                </a>
+                <a href="#developer-api" className="block text-primary hover:underline">
+                  Developer Notes & API Tips
+                </a>
+                <a href="#use-cases" className="block text-primary hover:underline">
+                  Practical Advice — Use Cases & Privacy
+                </a>
+                <a href="#faq" className="block text-primary hover:underline">
+                  Frequently Asked Questions
+                </a>
+              </nav>
+            </CardContent>
+          </Card>
+
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="lead">
+            <p className="lead text-pretty">
               How do you know a digital coin toss is truly random? When you{" "}
               <Link href="https://flipacoinfree.com/" className="text-primary hover:underline">
                 flip a coin online
@@ -149,7 +208,9 @@ export default function DigitalCoinTossRandomnessPage() {
               developers how to integrate coin flip functionality into their own applications using our API.
             </p>
 
-            <h2>What Is a Digital Coin Toss?</h2>
+            <h2 id="what-is-digital" className="text-balance">
+              What Is a Digital Coin Toss?
+            </h2>
 
             <p>
               A digital coin toss is a virtual simulation of flipping a physical coin, designed to produce random binary
@@ -228,7 +289,9 @@ export default function DigitalCoinTossRandomnessPage() {
               />
             </div>
 
-            <h2>How Randomness Is Generated Online</h2>
+            <h2 id="randomness-generation" className="text-balance">
+              How Randomness Is Generated Online
+            </h2>
 
             <p>
               The heart of any digital coin toss is its random number generator. Understanding the different types of
@@ -347,7 +410,9 @@ export default function DigitalCoinTossRandomnessPage() {
               cryptographically secure seeding that combines multiple unpredictable sources.
             </p>
 
-            <h2>Running Large Experiments — 100 & 1,000 Flips</h2>
+            <h2 id="experiments" className="text-balance">
+              Running Large Experiments — 100 & 1,000 Flips
+            </h2>
 
             <p>
               The best way to verify the fairness of a random coin flipper is to run large-scale experiments. Let's
@@ -488,7 +553,9 @@ export default function DigitalCoinTossRandomnessPage() {
               />
             </div>
 
-            <h2>Developer Notes & API Tips</h2>
+            <h2 id="developer-api" className="text-balance">
+              Developer Notes & API Tips
+            </h2>
 
             <p>
               Want to integrate coin flip functionality into your own application? Our{" "}
@@ -711,7 +778,9 @@ const data = await history.json();
               for complete endpoint references, error codes, and integration examples.
             </p>
 
-            <h2>Practical Advice — Use Cases & Privacy</h2>
+            <h2 id="use-cases" className="text-balance">
+              Practical Advice — Use Cases & Privacy
+            </h2>
 
             <p>
               Now that you understand how digital coin tosses work, let's explore practical applications and important
@@ -847,7 +916,9 @@ const data = await history.json();
               for contests or situations requiring third-party verification.
             </p>
 
-            <h2>Frequently Asked Questions</h2>
+            <h2 id="faq" className="text-balance">
+              Frequently Asked Questions
+            </h2>
 
             <h3>Are online coin flips truly random?</h3>
 
@@ -892,66 +963,41 @@ const data = await history.json();
               testing, run multiple 100-flip experiments and average the results.
             </p>
 
-            <h2>Conclusion & Further Reading</h2>
-
-            <p>
-              Digital coin tosses represent a fascinating intersection of mathematics, computer science, and practical
-              utility. Understanding how they work—from the algorithms that generate randomness to the statistical
-              principles that govern large-scale experiments—helps you use these tools effectively and trust their
-              results.
-            </p>
-
-            <p>
-              Whether you're a developer integrating coin flip functionality into your app, a researcher conducting
-              probability experiments, or simply someone who wants to make fair decisions, digital coin flips offer a
-              reliable, verifiable, and convenient solution.
-            </p>
-
-            <p>Key takeaways from this guide:</p>
-
+            <h2 id="external-resources" className="text-balance">
+              External Resources & Further Reading
+            </h2>
             <ul>
-              <li>Digital coin flips use PRNGs that produce statistically fair results for practical applications</li>
-              <li>Large sample sizes (100+ flips) reveal the true fairness of a random number generator</li>
-              <li>Our API makes it easy to integrate coin flip functionality into any application</li>
-              <li>Privacy-first design ensures your decisions remain private</li>
-              <li>Offline support and PWA functionality provide flexibility for any situation</li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Pseudorandom Number Generators (Wikipedia)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.random.org/randomness/"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Introduction to Randomness (Random.org)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Law_of_large_numbers"
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Law of Large Numbers (Wikipedia)
+                </a>
+              </li>
             </ul>
-
-            <p>
-              Ready to start experimenting? Try our{" "}
-              <Link href="https://flipacoinfree.com/" className="text-primary hover:underline">
-                flip a coin online
-              </Link>{" "}
-              tool right now, run your own 1,000-flip experiment, or explore our{" "}
-              <Link href="https://flipacoinfree.com/api-docs" className="text-primary hover:underline">
-                API documentation
-              </Link>{" "}
-              to integrate coin flips into your projects.
-            </p>
-
-            <div className="my-8 p-6 bg-primary/10 rounded-lg border-2 border-primary/20">
-              <h3 className="text-xl font-bold mb-3">🔬 Explore Digital Randomness!</h3>
-              <p className="mb-4">
-                Run your own experiments, integrate our API, or dive deeper into the science of randomness. All tools
-                are free and ready to use!
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Button asChild>
-                  <Link href="https://flipacoinfree.com/">Start Flipping</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="https://flipacoinfree.com/api-docs">View API Docs</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="https://flipacoinfree.com/embed">Get Embed Code</Link>
-                </Button>
-              </div>
-            </div>
-
-            <p className="text-sm text-muted-foreground mt-8">
-              <strong>Tags:</strong> digital coin toss, digital coin flip, virtual flip a coin, random coin flipper,
-              coin flip API, randomness, probability, flip a coin site, coin flip website
-            </p>
           </div>
         </div>
       </article>
@@ -986,6 +1032,8 @@ const data = await history.json();
             datePublished: "2025-10-10",
             dateModified: "2025-10-10",
             inLanguage: "en",
+            articleSection: "Technology & Science",
+            wordCount: 4200,
             keywords:
               "digital coin toss, digital coin flip, virtual flip a coin, random coin flipper, flip random coin, coin flip API, randomness, probability, flip a coin site",
           }),

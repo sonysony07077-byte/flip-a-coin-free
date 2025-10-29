@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Clock, Calendar, User, Share2 } from "lucide-react"
+import { Clock, Calendar, User, Share2, BookOpen, ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Coin Flip Simulator Guide — Tools & Generators",
@@ -69,11 +69,11 @@ export default function CoinFlipSimulatorGuidePage() {
               </div>
             </div>
 
-            <h1 className="font-display text-4xl font-bold leading-tight mb-4 md:text-5xl">
+            <h1 className="font-display text-4xl font-bold leading-tight mb-4 md:text-5xl text-balance">
               Coin Flip Simulator Guide — Use Generators, Simulate & Test
             </h1>
 
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-6 text-pretty">
               Learn how to use a coin flip simulator and generators. Tips to run single, multi and random flips, embed
               simulators, and run fairness tests.
             </p>
@@ -130,6 +130,38 @@ export default function CoinFlipSimulatorGuidePage() {
             </div>
           </header>
 
+          <Card className="mb-8 bg-muted/50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen className="h-5 w-5 text-primary" />
+                <h2 className="text-lg font-semibold">Table of Contents</h2>
+              </div>
+              <nav className="space-y-2 text-sm">
+                <a href="#what-is-simulator" className="block hover:text-primary transition-colors">
+                  → What Is a Coin Flip Simulator?
+                </a>
+                <a href="#single-batch-random" className="block hover:text-primary transition-colors">
+                  → Single Flip, Batch Flips & Random Generators
+                </a>
+                <a href="#how-to-use" className="block hover:text-primary transition-colors">
+                  → How to Use a Coin Toss Generator on FlipACoinFree
+                </a>
+                <a href="#best-generators" className="block hover:text-primary transition-colors">
+                  → Best Free Generators & When to Use Each
+                </a>
+                <a href="#embedding" className="block hover:text-primary transition-colors">
+                  → Embedding Generators & Widgets
+                </a>
+                <a href="#fairness-tests" className="block hover:text-primary transition-colors">
+                  → Running Fairness Tests with Simulators
+                </a>
+                <a href="#faq" className="block hover:text-primary transition-colors">
+                  → Frequently Asked Questions
+                </a>
+              </nav>
+            </CardContent>
+          </Card>
+
           {/* Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="lead">
@@ -139,7 +171,7 @@ export default function CoinFlipSimulatorGuidePage() {
               advanced batch generators, fairness testing, and embedding options for your own projects.
             </p>
 
-            <h2>What Is a Coin Flip Simulator?</h2>
+            <h2 id="what-is-simulator">What Is a Coin Flip Simulator?</h2>
 
             <p>
               A <strong>coin flip simulator</strong> is a digital tool that replicates the random outcome of flipping a
@@ -152,6 +184,21 @@ export default function CoinFlipSimulatorGuidePage() {
               typically includes visual animations, sound effects, and an interactive interface that mimics the physical
               act of flipping a coin. A generator, on the other hand, focuses purely on producing random outcomes—often
               in bulk—without the visual flourish.
+            </p>
+
+            <p>
+              According to{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Coin_flipping"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary hover:underline"
+              >
+                Wikipedia's article on coin flipping
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              , the practice of using coins for decision-making dates back to ancient Rome, where it was called "navia
+              aut caput" (ship or head).
             </p>
 
             <h3>Simulator vs. Generator: What's the Difference?</h3>
@@ -210,7 +257,7 @@ export default function CoinFlipSimulatorGuidePage() {
               overhead.
             </p>
 
-            <h2>Single Flip, Batch Flips & Random Generators</h2>
+            <h2 id="single-batch-random">Single Flip, Batch Flips & Random Generators</h2>
 
             <p>
               Modern coin flip tools offer three main modes to suit different needs. Understanding when to use each mode
@@ -309,7 +356,7 @@ export default function CoinFlipSimulatorGuidePage() {
               contest administration.
             </p>
 
-            <h2>How to Use a Coin Toss Generator on FlipACoinFree</h2>
+            <h2 id="how-to-use">How to Use a Coin Toss Generator on FlipACoinFree</h2>
 
             <p>
               Our{" "}
@@ -426,7 +473,7 @@ export default function CoinFlipSimulatorGuidePage() {
               />
             </div>
 
-            <h2>Best Free Generators & When to Use Each</h2>
+            <h2 id="best-generators">Best Free Generators & When to Use Each</h2>
 
             <p>
               Not all coin flip tools are created equal. Here's a practical comparison of the most popular free options
@@ -515,6 +562,20 @@ export default function CoinFlipSimulatorGuidePage() {
               <li>Less user-friendly interface</li>
             </ul>
 
+            <p>
+              For users who need true randomness from physical sources, we recommend checking out{" "}
+              <a
+                href="https://www.random.org/"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary hover:underline"
+              >
+                Random.org
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              , which uses atmospheric noise to generate truly random numbers.
+            </p>
+
             <h3>Command Line Tools (Linux/Mac)</h3>
 
             <p>
@@ -560,7 +621,7 @@ done | sort | uniq -c`}</code>
               <li>Not suitable for non-technical users</li>
             </ul>
 
-            <h2>Embedding Generators & Widgets</h2>
+            <h2 id="embedding">Embedding Generators & Widgets</h2>
 
             <p>
               Want to add a coin flip simulator to your own website, blog, or streaming setup? Embedding is easier than
@@ -674,7 +735,7 @@ iframe.contentWindow.postMessage({ action: 'flip' }, '*');`}</code>
               </CardContent>
             </Card>
 
-            <h2>Running Fairness Tests with Simulators</h2>
+            <h2 id="fairness-tests">Running Fairness Tests with Simulators</h2>
 
             <p>
               How do you know a coin flip simulator is truly fair? The answer is simple: test it with large sample sizes
@@ -797,6 +858,39 @@ iframe.contentWindow.postMessage({ action: 'flip' }, '*');`}</code>
 
             <p>Our 1,000-flip test yielded {"$$\\chi^2 = 0.036$$"}, well below the threshold, confirming fairness.</p>
 
+            <h2 id="faq">Frequently Asked Questions</h2>
+
+            <h3>What is a coin flip simulator?</h3>
+
+            <p>
+              A coin flip simulator is a digital tool that replicates the random outcome of flipping a physical coin
+              using algorithms. Unlike physical coins, simulators offer instant results, batch processing, history
+              tracking, and export options. They use cryptographically secure pseudo-random number generators (PRNG)
+              that are indistinguishable from true randomness for all practical purposes. The algorithm passes rigorous
+              statistical tests and is used for security-critical applications. For absolute certainty, we also offer
+              optional integration with Random.org, which uses atmospheric noise for true physical randomness. You can
+              verify fairness by running 100 or 1,000 flip tests and analyzing the distribution.
+            </p>
+
+            <h3>Can I generate 1,000 random coin flips?</h3>
+
+            <p>
+              Yes! Our coin flip simulator supports batch flips up to 1,000 coins at once. Simply select batch mode,
+              enter your desired quantity, and click flip. All results are generated instantly and can be exported as
+              CSV for analysis in Excel or Google Sheets. This is perfect for statistical testing, research, or
+              probability experiments.
+            </p>
+
+            <h3>Is a generated flip truly random?</h3>
+
+            <p>
+              Our simulator uses cryptographically secure pseudo-random number generators (PRNG) that are
+              indistinguishable from true randomness for all practical purposes. The algorithm passes rigorous
+              statistical tests and is used for security-critical applications. For absolute certainty, we also offer
+              optional integration with Random.org, which uses atmospheric noise for true physical randomness. You can
+              verify fairness by running 100 or 1,000 flip tests and analyzing the distribution.
+            </p>
+
             <h2>Conclusion & CTA</h2>
 
             <p>
@@ -840,81 +934,32 @@ iframe.contentWindow.postMessage({ action: 'flip' }, '*');`}</code>
               generator, coin flipper random, flip random coin
             </p>
           </div>
+
+          <div className="mt-12 pt-8 border-t">
+            <h3 className="text-xl font-semibold mb-4">Related Posts</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link
+                href="/blog/digital-coin-toss-randomness"
+                className="p-4 border rounded-lg hover:bg-accent transition-colors"
+              >
+                <h4 className="font-semibold mb-2">Digital Coin Toss: Randomness & Experiments</h4>
+                <p className="text-sm text-muted-foreground">
+                  Deep dive into how digital coin tosses work and run fairness experiments
+                </p>
+              </Link>
+              <Link
+                href="/blog/coin-flip-probability-guide"
+                className="p-4 border rounded-lg hover:bg-accent transition-colors"
+              >
+                <h4 className="font-semibold mb-2">Coin Flip Probability Guide</h4>
+                <p className="text-sm text-muted-foreground">
+                  Learn about probability theory and statistics behind coin flips
+                </p>
+              </Link>
+            </div>
+          </div>
         </div>
       </article>
-
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": "https://flipacoinfree.com/blog/coin-flip-simulator-guide",
-            },
-            headline: "Coin Flip Simulator Guide — Use Generators, Simulate & Test",
-            description:
-              "Learn how to use a coin flip simulator and generators. Tips to run single, multi and random flips, embed simulators, and run fairness tests.",
-            image: ["https://flipacoinfree.com/og/coin-flip-simulator-guide.jpg"],
-            author: {
-              "@type": "Person",
-              name: "FlipACoinFree Team",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "FlipACoinFree",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://flipacoinfree.com/logo.png",
-              },
-            },
-            datePublished: "2025-10-10",
-            dateModified: "2025-10-10",
-            inLanguage: "en",
-            keywords:
-              "flip a coin simulator, coin flip generator, coin toss simulation, toss coin generator, coin flipper random, flip random coin",
-          }),
-        }}
-      />
-
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What is a coin flip simulator?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "A coin flip simulator is a digital tool that replicates the random outcome of flipping a physical coin using algorithms. Unlike physical coins, simulators offer instant results, batch processing, history tracking, and export options. They use cryptographically secure pseudo-random number generators (PRNG) that are indistinguishable from true randomness for all practical purposes. The algorithm passes rigorous statistical tests and is used for security-critical applications. For absolute certainty, we also offer optional integration with Random.org, which uses atmospheric noise for true physical randomness. You can verify fairness by running 100 or 1,000 flip tests and analyzing the distribution.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Can I generate 1,000 random coin flips?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes! Our coin flip simulator supports batch flips up to 1,000 coins at once. Simply select batch mode, enter your desired quantity, and click flip. All results are generated instantly and can be exported as CSV for analysis in Excel or Google Sheets. This is perfect for statistical testing, research, or probability experiments.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is a generated flip truly random?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Our simulator uses cryptographically secure pseudo-random number generators (PRNG) that are indistinguishable from true randomness for all practical purposes. The algorithm passes rigorous statistical tests and is used for security-critical applications. For absolute certainty, we also offer optional integration with Random.org, which uses atmospheric noise for true physical randomness. You can verify fairness by running 100 or 1,000 flip tests and analyzing the distribution.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
     </>
   )
 }

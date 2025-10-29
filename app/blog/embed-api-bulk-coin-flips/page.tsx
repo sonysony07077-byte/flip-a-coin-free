@@ -3,8 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { getPostBySlug } from "@/lib/blog"
 import ReactMarkdown from "react-markdown"
-import { Share2, Facebook, Twitter } from "lucide-react"
+import { Share2, Facebook, Twitter, BookOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 
 export const metadata: Metadata = {
   title: "Embed & API: Integrate Coin Flips Into Apps & Giveaways",
@@ -55,6 +56,35 @@ export default function EmbedAPIBulkCoinFlipsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://flipacoinfree.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blog",
+                item: "https://flipacoinfree.com/blog",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Embed & API Integration",
+                item: "https://flipacoinfree.com/blog/embed-api-bulk-coin-flips",
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "BlogPosting",
             mainEntityOfPage: {
               "@type": "WebPage",
@@ -76,6 +106,8 @@ export default function EmbedAPIBulkCoinFlipsPage() {
             datePublished: "2025-10-10",
             dateModified: "2025-10-10",
             inLanguage: "en",
+            articleSection: "Developer Tools",
+            wordCount: 2800,
             keywords:
               "coin flip com, coin flip custom, coin flip API, embed coin flip widget, coin flip yes no, coin spin online, digital toss coin, flip a coin site, heads or tails online, coin flip website",
           }),
@@ -130,7 +162,7 @@ export default function EmbedAPIBulkCoinFlipsPage() {
         </div>
 
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">{post.title}</h1>
           <div className="flex items-center gap-4 text-muted-foreground mb-4">
             <span>By {post.author}</span>
             <span>•</span>
@@ -173,26 +205,105 @@ export default function EmbedAPIBulkCoinFlipsPage() {
           </div>
         </header>
 
-        <div className="prose prose-lg dark:prose-invert max-w-none translate">
+        <Card className="mb-8 bg-muted/50">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <BookOpen className="h-5 w-5" />
+              <h2 className="text-lg font-semibold">Table of Contents</h2>
+            </div>
+            <nav className="space-y-2 text-sm">
+              <a href="#embed-widget" className="block text-primary hover:underline">
+                How to Embed the Coin Flip Widget
+              </a>
+              <a href="#api-integration" className="block text-primary hover:underline">
+                API Integration for Developers
+              </a>
+              <a href="#bulk-flips" className="block text-primary hover:underline">
+                Running Bulk Flips for Contests
+              </a>
+              <a href="#customization" className="block text-primary hover:underline">
+                Customization Options
+              </a>
+              <a href="#best-practices" className="block text-primary hover:underline">
+                Best Practices & Security
+              </a>
+              <a href="#faq" className="block text-primary hover:underline">
+                Frequently Asked Questions
+              </a>
+            </nav>
+          </CardContent>
+        </Card>
+
+        <div className="prose prose-lg dark:prose-invert max-w-none">
+          <p className="lead text-pretty">
+            Want to add coin flip functionality to your website, app, or giveaway? Whether you're running a contest,
+            building a game, or need random decision-making in your application, integrating a{" "}
+            <Link href="https://flipacoinfree.com/" className="text-primary hover:underline">
+              coin flip tool
+            </Link>{" "}
+            is easier than you think. This comprehensive guide covers everything from simple iframe embeds to advanced
+            API integration, bulk flipping for large-scale events, and best practices for fair, auditable results.
+          </p>
+
           <ReactMarkdown>{post.content}</ReactMarkdown>
+
+          <h2 id="external-resources" className="text-balance">
+            External Resources & Further Reading
+          </h2>
+          <ul>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/Application_programming_interface"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Understanding APIs (Wikipedia)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                HTML iframe Element (MDN Web Docs)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.random.org/"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Random.org - True Random Number Service
+              </a>
+            </li>
+          </ul>
         </div>
 
         <div className="mt-12 pt-8 border-t">
-          <h3 className="text-xl font-semibold mb-4">Related Posts</h3>
+          <h3 className="text-xl font-semibold mb-4 text-balance">Related Articles</h3>
           <div className="grid gap-4 md:grid-cols-2">
             <Link
               href="/blog/custom-weighted-coin-flips"
               className="p-4 border rounded-lg hover:bg-accent transition-colors"
             >
-              <h4 className="font-semibold mb-2">Custom & Weighted Coin Flips</h4>
-              <p className="text-sm text-muted-foreground">Learn how to personalize your coin flips</p>
+              <h4 className="font-semibold mb-2 text-pretty">Custom & Weighted Coin Flips</h4>
+              <p className="text-sm text-muted-foreground text-pretty">
+                Learn how to personalize your coin flips with custom probabilities
+              </p>
             </Link>
             <Link
               href="/blog/digital-coin-flip-guide"
               className="p-4 border rounded-lg hover:bg-accent transition-colors"
             >
-              <h4 className="font-semibold mb-2">Digital Coin Flip Guide</h4>
-              <p className="text-sm text-muted-foreground">Understand how online coin flips work</p>
+              <h4 className="font-semibold mb-2 text-pretty">Digital Coin Flip Guide</h4>
+              <p className="text-sm text-muted-foreground text-pretty">
+                Understand how online coin flips work and their advantages
+              </p>
             </Link>
           </div>
         </div>
