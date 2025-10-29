@@ -43,7 +43,7 @@ The design is simplified for maximum legibility at small sizes (16x16, 32x32).
 For optimal performance, set long cache headers for favicon files:
 
 ### Vercel (vercel.json)
-```json
+\`\`\`json
 {
   "headers": [
     {
