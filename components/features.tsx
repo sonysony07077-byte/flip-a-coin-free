@@ -5,36 +5,36 @@ const features = [
   {
     icon: Sparkles,
     title: "Realistic Animation",
-    description: "3D animated coin toss with authentic physics and smooth animations that feel real.",
+    description:
+      "Watch a 3D coin spin through the air with physics that actually feels right. It's surprisingly satisfying!",
   },
   {
     icon: Zap,
     title: "Instant Results",
-    description: "Lightning-fast instant coin flip with no delays. Quick coin flip for decision making in seconds.",
+    description: "No waiting around—flip and get your answer immediately. Perfect when you need to make a quick call.",
   },
   {
     icon: Shield,
     title: "Provably Fair",
     description:
-      "Cryptographically secure random coin flip generation. Optional Random.org integration for true randomness in every coin toss online.",
+      "We use cryptographically secure randomness to ensure every flip is genuinely fair. You can even connect to Random.org for true randomness if you want extra confidence.",
   },
   {
     icon: Download,
     title: "Export History",
     description:
-      "Download your flip coin history as CSV or JSON. Track bulk coin flips and coin flip with stats for analysis.",
+      "Download your flip history as CSV or JSON files. Great for tracking patterns or running your own experiments.",
   },
   {
     icon: Code,
     title: "Developer API",
-    description:
-      "Free REST API for integrating our coin flip online app into your services. Perfect for HTML coin flip implementations.",
+    description: "Free REST API that lets you add coin flips to your own projects. We've made it simple to integrate.",
   },
   {
     icon: Globe,
     title: "Embeddable Widget",
     description:
-      "Add our flip a coin widget to your website with simple embed coin flip widget code. Coin flip widget html ready.",
+      "Drop our coin flipper right into your website with a simple code snippet. Works great on blogs, gaming sites, and more.",
   },
 ]
 
@@ -43,12 +43,10 @@ export function Features() {
     <section className="border-b border-border py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold md:text-4xl">
-            Everything You Need for Fair Decisions with Heads or Tails
-          </h2>
+          <h2 className="font-display text-3xl font-bold md:text-4xl">Everything You Need for Fair Decisions</h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            More than just a simple coin flip. A complete coin toss simulator online toolkit for randomization and
-            decision-making with our flip a coin decision maker.
+            This isn't just another coin flipper. We've built a complete toolkit for randomization and decision-making
+            that actually works the way you need it to.
           </p>
         </div>
 

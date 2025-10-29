@@ -20,7 +20,7 @@ export function Footer() {
               <span className="font-display text-lg font-bold">Flip A Coin Free</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The most trusted online coin flipper. Fair, fast, and free.
+              The online coin flipper people actually trust. Fair, fast, and free.
             </p>
             <div className="flex gap-4">
               <Link
@@ -123,7 +123,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} flipacoinfree.com. All rights reserved.</p>
-          <p className="mt-2">Made with ❤️ for fair decisions everywhere.</p>
+          <p className="mt-2">Built with care for fair decisions everywhere.</p>
         </div>
       </div>
     </footer>

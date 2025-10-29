@@ -19,7 +19,7 @@ export default function HomePage() {
               Flip a Coin <span className="text-primary">Free</span> Online
             </h1>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed text-balance md:text-lg">
-              Flip a Coin instantly with realistic sound and fair results—free in your browser.
+              Get instant, fair results with realistic sound effects—right in your browser, completely free.
             </p>
           </div>
 
