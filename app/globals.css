@@ -217,7 +217,7 @@ body {
 }
 
 .large-text h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 .large-text h2 {
