@@ -42,7 +42,7 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <Card key={step.number} className="relative overflow-hidden">
               <CardContent className="p-6">
-                <div className="mb-4 text-6xl font-bold text-primary/20">{step.number}</div>
+                <div className="mb-4 text-6xl font-bold text-primary/40">{step.number}</div>
                 <h3 className="mb-2 font-display text-xl font-semibold">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </CardContent>
