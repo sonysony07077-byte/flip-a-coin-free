@@ -2,7 +2,7 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <!-- Updated to use the new favicon path with proper logo -->
+      <!-- Updated to use PNG instead of JPG for better compatibility -->
       <square150x150logo src="/favicon/favicon-192x192.jpg"/>
       <TileColor>#FFD25A</TileColor>
     </tile>
