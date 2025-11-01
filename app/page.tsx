@@ -3,6 +3,7 @@
 import { TrustBadges } from "@/components/trust-badges"
 import { Features } from "@/components/features"
 import { HowItWorks } from "@/components/how-it-works"
+import { BlogCTASection } from "@/components/blog-cta-section"
 import { CTASection } from "@/components/cta-section"
 import { MultilingualSection } from "@/components/multilingual-section"
 import { CoinFlipToolTabs } from "@/components/coin-flip-tool-tabs"
@@ -42,6 +43,7 @@ export default function HomePage() {
 
       <Features />
       <HowItWorks />
+      <BlogCTASection />
       <div>
         <h2 className="sr-only">Additional Information</h2>
         <CTASection />
