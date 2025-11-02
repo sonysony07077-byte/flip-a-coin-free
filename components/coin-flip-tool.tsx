@@ -12,6 +12,7 @@ import { getFlipACoinState, onFlipACoinStateChange, type FlipACoinState } from "
 import { getCoinAsset } from "@/lib/coin-assets"
 import { trackFlip } from "@/lib/analytics"
 import { rateLimiter } from "@/lib/rate-limiter"
+import confetti from "canvas-confetti"
 
 type FlipResult = "heads" | "tails"
 
@@ -213,6 +214,52 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
     [voiceEnabled],
   )
 
+  const celebrateResult = useCallback((result: FlipResult) => {
+    const colors = result === "heads" ? ["#FFD25A", "#FFB020", "#FFA500"] : ["#0066FF", "#0052CC", "#0099FF"]
+
+    // Fire confetti from multiple angles
+    const count = 200
+    const defaults = {
+      origin: { y: 0.7 },
+      colors: colors,
+    }
+
+    function fire(particleRatio: number, opts: confetti.Options) {
+      confetti({
+        ...defaults,
+        ...opts,
+        particleCount: Math.floor(count * particleRatio),
+      })
+    }
+
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    })
+
+    fire(0.2, {
+      spread: 60,
+    })
+
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8,
+    })
+
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2,
+    })
+
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    })
+  }, [])
+
   const flipCoin = async () => {
     if (isFlipping) return
 
@@ -238,6 +285,7 @@ export function CoinFlipTool({ onFlipNow }: CoinFlipToolProps) {
 
     playCoinDrop()
     setTimeout(() => speakResult(newResult), 200)
+    setTimeout(() => celebrateResult(newResult), 300)
 
     const newFlip: FlipHistory = {
       result: newResult,
