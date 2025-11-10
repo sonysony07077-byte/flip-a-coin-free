@@ -14,7 +14,6 @@ const nextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    // optimizeCss: true,
   },
 
   async headers() {
@@ -78,6 +77,31 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=()'
           },
         ],
+      },
+    ]
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/coin-flip',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/flip-coin',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/coin-toss',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/heads-or-tails',
+        destination: '/',
+        permanent: true,
       },
     ]
   },

@@ -49,6 +49,50 @@ export default function HomePage() {
         <CTASection />
         <MultilingualSection />
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Is the coin flip truly random?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! Our coin flip uses cryptographically secure randomness (crypto.getRandomValues()) to ensure completely fair and unbiased results every time.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I use this for free?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Flip A Coin Free is 100% free with no registration, no downloads, and no hidden costs. All features including multi-flip, weighted coins, and API access are completely free.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does it work offline?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! Once you've visited the site, it works offline thanks to Progressive Web App (PWA) technology. You can flip coins anytime, anywhere.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can I embed this on my website?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! We provide a free embeddable widget that you can add to any website. Just copy the embed code and paste it into your site.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </div>
   )
 }
