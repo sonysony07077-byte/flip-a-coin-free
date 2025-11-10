@@ -30,10 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://flipacoinfree.com",
   },
-  title: {
-    default: "Flip a Coin Free - Realistic Online Coin Flipper with Sound",
-    template: "%s | Flip a Coin Free",
-  },
+  title: "Flip a Coin Free - Realistic Online Coin Flipper with Sound",
   description:
     "Flip a coin free online - realistic heads or tails coin toss with human voice and sound. Now in 30+ languages! Fast, fair, multi-flip & export. Try now - no app.",
   keywords: [
@@ -49,19 +46,8 @@ export const metadata: Metadata = {
     "coin flip widget embed",
     "coin flip api",
     "weighted coin simulator",
-    "random decision maker",
-    "yes no coin flip",
-    "coin toss simulator",
-    "virtual coin flip",
   ],
-  authors: [{ name: "Flip A Coin Free", url: "https://flipacoinfree.com" }],
-  creator: "Flip A Coin Free",
-  publisher: "Flip A Coin Free",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  authors: [{ name: "Flip A Coin Free" }],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -86,35 +72,22 @@ export const metadata: Metadata = {
       "Flip a coin free online - realistic heads or tails coin toss with human voice and sound. Now in 30+ languages! Fast, fair, multi-flip & export. Try now - no app.",
     images: ["/og-image.png"],
     creator: "@flipacoinfree",
-    site: "@flipacoinfree",
   },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon/favicon-16x16.jpg", sizes: "16x16", type: "image/png" },
-      { url: "/favicon/favicon-32x32.jpg", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.jpg", sizes: "180x180", type: "image/png" }],
-  },
-  manifest: "/site.webmanifest",
   verification: {
     google: "your-google-verification-code",
   },
-  category: "technology",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -127,8 +100,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
@@ -149,10 +120,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-1Z8E1XBFE0', {
-              page_path: window.location.pathname,
-              send_page_view: true
-            });
+            gtag('config', 'G-1Z8E1XBFE0');
           `}
         </Script>
 
@@ -164,7 +132,6 @@ export default function RootLayout({
           </div>
           <GoogleTranslate />
         </ThemeProvider>
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -174,76 +141,26 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "@id": "https://flipacoinfree.com/#org",
-                  name: "Flip A Coin Free",
+                  name: "FlipACoinFree",
                   url: "https://flipacoinfree.com",
-                  logo: {
-                    "@type": "ImageObject",
-                    url: "https://flipacoinfree.com/logo.png",
-                    width: 512,
-                    height: 512,
-                  },
+                  logo: "https://flipacoinfree.com/logo.png",
                   sameAs: ["https://twitter.com/flipacoinfree"],
-                  contactPoint: {
-                    "@type": "ContactPoint",
-                    contactType: "Customer Support",
-                    url: "https://flipacoinfree.com/contact",
-                  },
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://flipacoinfree.com/#website",
                   url: "https://flipacoinfree.com",
-                  name: "Flip A Coin Free",
-                  description:
-                    "Free realistic coin flip simulator with sound, multi-language support, embeddable widget, and API access.",
+                  name: "FlipACoinFree",
+                  description: "Free realistic coin flip simulator — embeddable widget, API, multi-language.",
                   publisher: { "@id": "https://flipacoinfree.com/#org" },
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate: "https://flipacoinfree.com/blog?q={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
-                  },
-                  inLanguage: "en-US",
                 },
                 {
-                  "@type": "WebApplication",
-                  name: "Flip A Coin Free Simulator",
-                  applicationCategory: "UtilityApplication",
+                  "@type": "SoftwareApplication",
+                  name: "FlipACoinFree Simulator",
+                  applicationCategory: "WebApplication",
                   operatingSystem: "All",
                   url: "https://flipacoinfree.com",
-                  description:
-                    "A realistic online coin flip tool with sound effects, voice announcements, multi-flip capability, embed widget, and developer API.",
-                  offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "USD",
-                  },
-                  browserRequirements: "Requires JavaScript. Modern browser recommended.",
-                  featureList: [
-                    "Realistic coin flip animation",
-                    "Voice announcements in 30+ languages",
-                    "Multi-flip capability (up to 10,000 flips)",
-                    "Weighted coin simulation",
-                    "Export results to CSV/JSON",
-                    "Embeddable widget",
-                    "Developer API",
-                    "Offline mode",
-                  ],
-                  screenshot: "https://flipacoinfree.com/og-image.png",
-                },
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "https://flipacoinfree.com/#breadcrumb",
-                  itemListElement: [
-                    {
-                      "@type": "ListItem",
-                      position: 1,
-                      name: "Home",
-                      item: "https://flipacoinfree.com",
-                    },
-                  ],
+                  description: "A realistic online coin flip tool with sound, embed widget and API.",
                 },
               ],
             }),
