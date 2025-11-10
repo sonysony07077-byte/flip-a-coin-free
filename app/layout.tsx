@@ -130,15 +130,29 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-        {/* Favicons */}
+        {/* Primary favicon - ICO format for broad compatibility */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon/icon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
+
+        {/* SVG favicon for modern browsers - scalable and sharp */}
+        <link rel="icon" href="/favicon/icon.jpg" type="image/svg+xml" />
+
+        {/* PNG favicons for different sizes */}
+        <link rel="icon" href="/favicon/favicon-16x16.jpg" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/favicon/favicon-32x32.jpg" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon/favicon-48x48.jpg" type="image/png" sizes="48x48" />
+
+        {/* Apple Touch Icon - 180x180 is the standard size */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.jpg" />
+
+        {/* Web App Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="mask-icon" href="/favicon/mask-icon.svg" color="#FFD25A" />
-        <meta name="theme-color" content="#FFD25A" />
+
+        {/* Safari Pinned Tab Icon */}
+        <link rel="mask-icon" href="/favicon/icon.jpg" color="#FFD25A" />
+
+        {/* Theme colors for browser UI */}
+        <meta name="theme-color" content="#FFD25A" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
         <meta name="msapplication-TileColor" content="#FFD25A" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
