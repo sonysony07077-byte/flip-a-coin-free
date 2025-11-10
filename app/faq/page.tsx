@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { FAQJsonLd, BreadcrumbJsonLd } from "@/components/json-ld"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { HelpCircle, MessageCircle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "FAQ - Frequently Asked Questions | Flip A Coin Free",
@@ -11,14 +10,6 @@ export const metadata: Metadata = {
     description: "Find answers to common questions about our online coin flip tool, embed widget, API, and more.",
     url: "https://flipacoinfree.com/faq",
     type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Flip A Coin Free - FAQ",
-      },
-    ],
   },
 }
 
@@ -93,76 +84,6 @@ const faqs = [
     answer:
       "While you can flip a coin google or use google flip coin, our tool offers more features: customizable coins (dollar, euro, rupee), weighted probabilities, multi-flip options, export history, embeddable widget, and a free API. We provide a more comprehensive coin flipper experience than toss google.",
   },
-  {
-    question: "How many times should I flip a coin to get accurate results?",
-    answer:
-      "Great question! For most casual decisions, one flip is enough. But if you're studying probability or want to see the law of averages in action, try flipping 100 or even 1,000 times. You'll notice the results get closer to 50/50 the more you flip. Our multi-flip feature makes this super easy - just enter how many flips you want and hit go!",
-  },
-  {
-    question: "Can a coin land on its edge?",
-    answer:
-      "In real life, yes, but it's incredibly rare - about 1 in 6,000 flips! Our digital coin flipper focuses on the two main outcomes (heads and tails) since that's what people use it for. But fun fact: if you're flipping a nickel on a soft surface, your odds of an edge landing go up slightly. Physics is wild!",
-  },
-  {
-    question: "Is flipping a coin really 50/50?",
-    answer:
-      "In theory, yes! A fair coin has equal probability for heads and tails. However, real-world physics can introduce tiny biases - like how you flip it, air resistance, or the surface it lands on. Our digital coin flipper eliminates these physical factors and uses cryptographic randomness to ensure a true 50/50 chance every single time.",
-  },
-  {
-    question: "What's the probability of getting 10 heads in a row?",
-    answer:
-      "The odds are pretty slim - about 1 in 1,024 (or 0.098%). Each individual flip is still 50/50, but getting the same result 10 times in a row is rare. Want to test it yourself? Use our multi-flip feature and see how long it takes to get a streak! It's a fun way to understand probability.",
-  },
-  {
-    question: "Can I use this for sports coin toss?",
-    answer:
-      "Many people use our tool for sports coin tosses - whether it's deciding who kicks off in soccer, who bats first in cricket, or settling any sports dispute. The results are instant, fair, and you can even customize the coin to match your team colors or logo. Perfect for virtual games or when you don't have a physical coin handy.",
-  },
-  {
-    question: "Does the coin flip work offline?",
-    answer:
-      "Yes! Once you've loaded the page, our Progressive Web App (PWA) works offline. You can flip coins even without an internet connection. Just add it to your home screen on mobile, and you'll have instant access anytime, anywhere - no data required after the initial load.",
-  },
-  {
-    question: "How do I flip a coin 100 times quickly?",
-    answer:
-      "Easy! Just use our multi-flip feature. Enter '100' in the number of flips field and click the flip button. You'll get all 100 results instantly, along with a breakdown showing how many heads and tails you got. You can even export the results to a CSV file for analysis. Perfect for probability experiments or homework!",
-  },
-  {
-    question: "Can I flip multiple coins at the same time?",
-    answer:
-      "Yes! Our multi-flip feature lets you flip multiple coins simultaneously. This is great for games, probability experiments, or when you need to make multiple random decisions at once. You can flip anywhere from 2 to 10,000 coins in a single click and see all the results instantly.",
-  },
-  {
-    question: "What's the best coin flip app?",
-    answer:
-      "We might be biased, but we think ours is pretty great! Unlike most coin flip apps, we offer realistic physics, authentic sound effects, customizable coins, multi-flip options, export features, and even an API - all completely free. Plus, it works in your browser, so no download required. Give it a try and see for yourself!",
-  },
-  {
-    question: "How do I make a weighted coin flip?",
-    answer:
-      "Head to our Weighted Coin tab! You can adjust the probability slider to favor heads or tails. For example, set it to 70% heads if you want heads to come up more often. This is perfect for teaching probability concepts, simulating biased scenarios, or just having fun with the odds. The tool shows you the exact percentage for transparency.",
-  },
-  {
-    question: "Can I flip a coin to make a decision between more than two options?",
-    answer:
-      "While a traditional coin flip is for two options, you can get creative! Flip multiple times and assign different outcomes to different combinations. Or, use our multi-flip feature and assign ranges of results to different choices. For example, if you have 4 options, flip twice and use the combination of results to decide.",
-  },
-  {
-    question: "Is there a coin flip simulator for probability homework?",
-    answer:
-      "Yes! Our tool is perfect for probability homework and experiments. You can flip coins hundreds or thousands of times, export the data to CSV for analysis, and even use the weighted coin feature to study biased probabilities. Teachers love it because it's free, easy to use, and helps students visualize probability concepts in real-time.",
-  },
-  {
-    question: "Why does my coin flip history reset?",
-    answer:
-      "Your flip history is stored locally in your browser's storage. If you clear your browser data or use incognito/private mode, the history will reset. To keep a permanent record, use the 'Export CSV' button to download your flip history before clearing your browser data. This way, you'll always have a backup!",
-  },
-  {
-    question: "Can I share my coin flip results?",
-    answer:
-      "Yes! After flipping, you can share your results on social media using our share buttons (Twitter, Facebook, LinkedIn, WhatsApp, and Reddit). You can also copy the link to share with friends. For multi-flip results, export them as a CSV file and share the data however you like. Perfect for settling debates or showing off lucky streaks!",
-  },
 ]
 
 export default function FAQPage() {
@@ -178,45 +99,27 @@ export default function FAQPage() {
 
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-            <HelpCircle className="w-8 h-8 text-primary" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Frequently Asked Questions</h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Everything you need to know about Flip A Coin Free - from how it works to advanced features
-          </p>
+          <h1 className="text-4xl font-bold mb-4">Frequently Asked Questions</h1>
+          <p className="text-lg text-muted-foreground">Everything you need to know about Flip A Coin Free</p>
         </div>
 
-        <div className="mb-8 h-1 w-24 bg-gradient-to-r from-primary to-primary/50 rounded-full mx-auto" />
-
-        <Accordion type="single" collapsible className="w-full space-y-4">
+        <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border rounded-lg px-6 bg-card hover:bg-accent/5 transition-colors"
-            >
-              <AccordionTrigger className="text-left hover:no-underline py-5">
-                <span className="font-semibold text-base md:text-lg pr-4">{faq.question}</span>
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-5 pt-2 leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
 
-        <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-xl border shadow-sm text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-            <MessageCircle className="w-6 h-6 text-primary" />
-          </div>
-          <h2 className="text-2xl font-bold mb-3">Still have questions?</h2>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto text-pretty">
-            Can't find the answer you're looking for? Our support team is here to help you out.
+        <div className="mt-12 p-6 bg-muted rounded-lg text-center">
+          <h2 className="text-xl font-semibold mb-2">Still have questions?</h2>
+          <p className="text-muted-foreground mb-4">
+            Can't find the answer you're looking for? Reach out to our support team.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-sm hover:shadow-md"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
             Contact Support
           </a>

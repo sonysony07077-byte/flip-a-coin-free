@@ -516,193 +516,304 @@ Virtual coin tosses provide a reliable, fair, and versatile way to introduce ran
     category: "Blog",
     readingTime: 9,
     featured: true,
+    content: ``,
+  },
+  {
+    slug: "custom-weighted-coin-flips",
+    title: "Custom & Weighted Coin Flips — Personalize Your Toss",
+    description:
+      "Learn how to customize coin flips, simulate weighted coins, and use two-coin games. Tips, examples, and how to make fair decisions with style.",
+    author: "FlipACoinFree Team",
+    publishedAt: "2025-10-10",
+    updatedAt: "2025-10-10",
+    keywords: [
+      "2 coin flip",
+      "coin toss game",
+      "head tails flip coin",
+      "coin flip game",
+      "custom flip coin",
+      "toss coin head tail",
+      "weighted coin",
+      "penny coin flips",
+      "coin flip a coin",
+    ],
+    category: "Blog",
+    readingTime: 9,
+    featured: true,
+    content: ``,
+  },
+  {
+    slug: "embed-api-bulk-coin-flips",
+    title: "Embed & API: Integrate Coin Flips Into Apps & Giveaways",
+    description:
+      "Integrate FlipACoinFree into sites and apps — embed code, API examples, bulk flips for contests and sports, plus tips for fair results and logging.",
+    author: "FlipACoinFree Team",
+    publishedAt: "2025-10-10",
+    updatedAt: "2025-10-10",
+    keywords: [
+      "coin flip com",
+      "coin flip custom",
+      "coin flip API",
+      "embed coin flip widget",
+      "coin flip yes no",
+      "coin spin online",
+      "digital toss coin",
+      "flip a coin site",
+      "heads or tails online",
+      "coin flip website",
+    ],
+    category: "Blog",
+    readingTime: 11,
+    featured: true,
     content: `
-# Digital Coin Toss: Randomness, Experiments & API Tips
+# Embed & API: Integrate Coin Flips Into Apps & Giveaways
 
-Need to make a quick decision but don't have a coin handy? 🪙 Digital coin toss tools have become the go-to solution for millions of people worldwide. But here's the real question: can you trust them? In this comprehensive guide, we'll dive deep into how digital coin tosses work, conduct real experiments to test their fairness, and show you how to integrate them into your own applications.
+Want to add coin flip functionality to your website, app, or live stream? Whether you're running online giveaways, building a decision-making tool, or need randomization for your application, integrating a coin flip is easier than you think.
 
-## Table of Contents
+In this comprehensive guide, we'll show you how to embed coin flips on your site, use our API for programmatic access, run bulk flips for contests, and ensure fair, auditable results for any use case.
 
-- [What is a Digital Coin Toss?](#what-is-digital-coin-toss)
-- [The Technology Behind Digital Randomness](#technology-behind)
-- [Our 1,000-Flip Experiment](#experiment)
-- [Statistical Analysis of Results](#statistical-analysis)
-- [How to Test Randomness Yourself](#test-yourself)
-- [API Integration Guide](#api-integration)
-- [Advanced Use Cases](#advanced-use-cases)
-- [FAQ](#faq)
+## Why Embed a Coin Flip on Your Site or Stream?
 
-## What is a Digital Coin Toss?
+### Live Streaming and Content Creation
 
-A digital coin toss is an online simulation of flipping a physical coin. Instead of tossing a quarter in the air, you click a button on a website or app, and a computer algorithm instantly generates a random result: Heads or Tails.
+Streamers and content creators use embedded coin flips for:
 
-### Why Use Digital Coin Tosses?
+-   **Viewer interaction**: Let chat decide game choices
+-   **Giveaway selection**: Fair, transparent winner selection
+-   **Challenge triggers**: Random events based on coin flips
+-   **Betting games**: Viewers predict outcomes for points
+-   **Content variety**: Add unpredictability to streams
 
-**Convenience**: No need to search for a physical coin—just open your browser or app.
+### Contest and Giveaway Pages
 
-**Speed**: Get instant results without the physical toss and catch.
+Businesses and influencers embed flips for:
 
-**Fairness**: Eliminates human bias from the flipping technique or coin imperfections.
+-   **Fair winner selection**: Transparent, unbiased results
+-   **Tie-breakers**: Quick resolution for tied entries
+-   **Random drawings**: Select from multiple participants
+-   **Instant results**: No waiting, immediate outcomes
+-   **Proof of fairness**: Shareable, verifiable results
 
-**Auditability**: Many tools provide flip IDs and history for transparent record-keeping.
+### Educational Websites
 
-**Accessibility**: Available 24/7 from any device with internet access.
+Teachers and educational platforms use embeds for:
 
-## The Technology Behind Digital Randomness
+-   **Interactive lessons**: Students flip coins in real-time
+-   **Probability experiments**: Collect data from multiple flips
+-   **Homework tools**: Practice problems with built-in randomization
+-   **Classroom games**: Embedded directly in learning management systems
 
-Understanding how digital coin tosses generate randomness helps build trust in the technology.
+### Sports and Gaming Sites
 
-### Random Number Generation Methods
+Sports sites and gaming platforms integrate flips for:
 
-#### 1. Cryptographic APIs (Recommended)
+-   **Match coin toss**: Official pre-game coin flip
+-   **Tournament brackets**: Random seeding or matchups
+-   **Fantasy sports**: Draft order determination
+-   **Betting simulations**: Practice with virtual coin flips
 
-Modern web browsers provide cryptographically secure random number generators through the Web Crypto API:
+### Decision-Making Tools
 
-\`\`\`javascript
-// Using crypto.getRandomValues() for secure randomness
-const randomArray = new Uint32Array(1);
-crypto.getRandomValues(randomArray);
-const result = randomArray[0] % 2 === 0 ? 'Heads' : 'Tails';
+Apps and websites use coin flips for:
+
+-   **Yes/no decisions**: Quick binary choices
+-   **Option selection**: Choose between two alternatives
+-   **Random selection**: Pick from a list of items
+-   **Tie-breaking**: Resolve deadlocks in voting or selection
+
+## Quick Embed — Copy-Paste Iframe & JS SDK
+
+### Method 1: Simple Iframe Embed
+
+The easiest way to [embed coin flip widget](https://flipacoinfree.com/embed) is with an iframe. Just copy and paste this code:
+
+\`\`\`html
+<iframe 
+  src="https://flipacoinfree.com/embed" 
+  width="360" 
+  height="420" 
+  title="Flip a coin"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 \`\`\`
 
-This method is:
-- ✅ Cryptographically secure
-- ✅ Unpredictable
-- ✅ Suitable for security-sensitive applications
-- ✅ Available in all modern browsers
+**Customization Options:**
 
-#### 2. Math.random() (Not Recommended for Important Decisions)
+Add URL parameters to customize the embed:
 
-Basic JavaScript randomness:
-
-\`\`\`javascript
-// Simple but not cryptographically secure
-const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
+\`\`\`html
+<iframe 
+  src="https://flipacoinfree.com/embed?theme=dark&sound=1&autoflip=0" 
+  width="360" 
+  height="420" 
+  title="Flip a coin">
+</iframe>
 \`\`\`
 
-While adequate for casual use, \`Math.random()\` is:
-- ❌ Not cryptographically secure
-- ❌ Potentially predictable
-- ❌ Not suitable for contests or gambling
+**Available Parameters:**
 
-#### 3. External True Random Number Generators
+| Parameter | Values | Description |
+|-----------|--------|-------------|
+| \`theme\` | \`light\`, \`dark\` | Color scheme |
+| \`sound\` | \`0\`, \`1\` | Enable/disable sound |
+| \`autoflip\` | \`0\`, \`1\` | Auto-flip on load |
+| \`preset\` | preset ID | Load custom coin design |
+| \`hidehistory\` | \`0\`, \`1\` | Hide flip history |
+| \`hidecontrols\` | \`0\`, \`1\` | Hide control buttons |
 
-Some services use physical phenomena (atmospheric noise, radioactive decay) for true randomness. While theoretically superior, cryptographic PRNGs are sufficient for virtually all coin flip applications.
+**Example with Multiple Parameters:**
 
-### How FlipACoinFree.com Generates Randomness
+\`\`\`html
+<iframe 
+  src="https://flipacoinfree.com/embed?theme=dark&sound=1&hidehistory=1" 
+  width="360" 
+  height="420" 
+  title="Flip a coin - dark theme with sound">
+</iframe>
+\`\`\`
 
-Our tool uses the Web Crypto API (\`crypto.getRandomValues()\`) to ensure:
+### Method 2: JavaScript SDK
 
-1. **Unpredictability**: Each flip is independent and cannot be predicted
-2. **Fairness**: Exactly 50% probability for Heads and Tails
-3. **Security**: Suitable for contests, giveaways, and important decisions
-4. **Transparency**: Our methodology is publicly documented
+For more control and integration with your site's functionality, use our JavaScript SDK:
 
-## Our 1,000-Flip Experiment
+\`\`\`html
+<!-- Include the SDK -->
+<script src="https://flipacoinfree.com/sdk.js"></script>
 
-To demonstrate the fairness of our digital coin toss, we conducted a comprehensive experiment.
+<!-- Create a container -->
+<div id="coin-flip-container"></div>
 
-### Experiment Setup
+<!-- Initialize the coin flip -->
+<script>
+  FlipACoinFree.init({
+    container: '#coin-flip-container',
+    theme: 'dark',
+    sound: true,
+    onFlip: function(result) {
+      console.log('Coin landed on:', result);
+      // Your custom logic here
+    }
+  });
+</script>
+\`\`\`
 
-- **Tool Used**: FlipACoinFree.com
-- **Number of Flips**: 1,000 consecutive flips
-- **Recording Method**: Automated logging with timestamps
-- **Analysis**: Statistical distribution and pattern detection
+**SDK Configuration Options:**
 
-### Results
+\`\`\`javascript
+FlipACoinFree.init({
+  container: '#coin-flip-container',  // CSS selector for container
+  theme: 'light',                      // 'light' or 'dark'
+  sound: true,                         // Enable sound effects
+  autoFlip: false,                     // Auto-flip on load
+  preset: null,                        // Custom coin preset ID
+  showHistory: true,                   // Show flip history
+  showControls: true,                  // Show control buttons
+  onFlip: function(result) {           // Callback when flip completes
+    // result is 'heads' or 'tails'
+  },
+  onReady: function() {                // Callback when widget loads
+    // Widget is ready
+  }
+});
+\`\`\`
 
-| Outcome | Count | Percentage |
-|---------|-------|------------|
-| **Heads** | 503 | 50.3% |
-| **Tails** | 497 | 49.7% |
-| **Total** | 1,000 | 100% |
+**Programmatic Control:**
 
-**Deviation from Perfect 50/50**: Only 0.3%
+\`\`\`javascript
+// Trigger a flip programmatically
+FlipACoinFree.flip();
 
-### Longest Streaks Observed
+// Get flip history
+const history = FlipACoinFree.getHistory();
 
-- Longest Heads streak: 7 consecutive
-- Longest Tails streak: 8 consecutive
-- Average streak length: 2.1 flips
+// Clear history
+FlipACoinFree.clearHistory();
 
-These results are exactly what we'd expect from a truly random system!
+// Change theme dynamically
+FlipACoinFree.setTheme('dark');
 
-## Statistical Analysis of Results
+// Enable/disable sound
+FlipACoinFree.setSound(true);
+\`\`\`
 
-### Chi-Square Test
+### Method 3: WordPress Plugin
 
-We performed a chi-square test to determine if our results differ significantly from expected values:
+For WordPress users, we offer a dedicated plugin:
 
-**Expected**: 500 Heads, 500 Tails  
-**Observed**: 503 Heads, 497 Tails  
-**Chi-Square Value**: 0.072  
-**P-Value**: 0.788
+1. Install "Flip A Coin Free" plugin from WordPress directory
+2. Add shortcode to any page or post: \`[flipacoin]\`
+3. Customize with shortcode attributes:
 
-**Conclusion**: With a p-value of 0.788 (well above the 0.05 threshold), we cannot reject the null hypothesis. The results are consistent with a fair coin.
+\`\`\`
+[flipacoin theme="dark" sound="true" width="360"]
+\`\`\`
 
-### Runs Test
+## Coin Flip API — Sample Requests & Use Cases
 
-The runs test checks for randomness by analyzing sequences:
+For developers building applications, our [coin flip API](https://flipacoinfree.com/api-docs) provides programmatic access to coin flip functionality.
 
-**Total Runs**: 487  
-**Expected Runs**: 501 ± 15.8  
-**Z-Score**: -0.89
+### API Endpoint
 
-**Conclusion**: The number of runs falls within the expected range, indicating no detectable patterns.
+\`\`\`
+POST https://flipacoinfree.com/api/flip
+\`\`\`
 
-### Independence Test
+### Authentication
 
-We analyzed whether each flip is independent of previous flips:
+Include your API key in the request header:
 
-**Serial Correlation Coefficient**: 0.012  
-**Expected for Random**: ~0
+\`\`\`
+Authorization: Bearer YOUR_API_KEY
+\`\`\`
 
-**Conclusion**: The near-zero correlations confirm each flip is independent.
+Get your free API key by signing up at [flipacoinfree.com/api-docs](https://flipacoinfree.com/api-docs).
 
-## How to Test Randomness Yourself
+### Basic Request (JavaScript)
 
-Want to verify the fairness of any digital coin toss tool? Follow these steps:
+\`\`\`javascript
+fetch('https://flipacoinfree.com/api/flip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    count: 1,
+    weighted: false
+  })
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Result:', data.result);  // 'heads' or 'tails'
+  console.log('Timestamp:', data.timestamp);
+})
+.catch(error => console.error('Error:', error));
+\`\`\`
 
-### Step 1: Run Multiple Flips
+### Basic Request (Python)
 
-Perform at least 100 flips (1,000+ for more reliable results). Most tools offer bulk flip features.
+\`\`\`python
+import requests
+url = 'https://flipacoinfree.com/api/flip'
+headers = {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+}
+data = {
+    'count': 1,
+    'weighted': False
+}
 
-### Step 2: Record Results
+response = requests.post(url, headers=headers, json=data)
+result = response.json()
 
-Keep a detailed log:
-- Timestamp of each flip
-- Result (Heads or Tails)
-- Any flip IDs provided by the tool
+print(f"Result: {result['result']}")
+print(f"Timestamp: {result['timestamp']}")
+\`\`\`
 
-### Step 3: Calculate Distribution
-
-Count the total Heads and Tails:
-- **Expected**: Close to 50% each
-- **Acceptable variance**: 45-55% for 100 flips, 48-52% for 1,000 flips
-
-### Step 4: Look for Patterns
-
-Check for:
-- Alternating patterns (H-T-H-T-H-T)
-- Excessive streaks (10+ consecutive same results)
-- Cycles or repetitions
-
-### Step 5: Compare Multiple Sessions
-
-Run the test multiple times on different days. Results should vary naturally while maintaining overall 50/50 distribution.
-
-### Red Flags to Watch For
-
-- ❌ Consistent bias toward one outcome (>55% over 1,000 flips)
-- ❌ Obvious repeating patterns
-- ❌ Impossibly perfect 50/50 splits (which would actually indicate manipulation)
-- ❌ Identical sequences across multiple sessions
-
-## API Integration Guide
-
-Developers can easily integrate coin flip functionality into their applications using our free API.
-
-### Basic API Call
+### Request Parameters
 
 \`\`\`javascript
 // Simple GET request
@@ -731,21 +842,27 @@ fetch('https://flipacoinfree.com/api/flip')
 }
 \`\`\`
 
-### Bulk Flips
-
-Need multiple flips at once?
+### Multiple Flips Request
 
 \`\`\`javascript
-// Request 100 flips
-fetch('https://flipacoinfree.com/api/flip?count=100')
-  .then(response => response.json())
-  .then(data => {
-    console.log('Results:', data.results); // Array of 100 results
-    console.log('Summary:', data.summary); // { heads: 52, tails: 48 }
-  });
+fetch('https://flipacoinfree.com/api/flip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    count: 10
+  })
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Results:', data.results);  // Array of 10 results
+  console.log('Summary:', data.summary);  // { heads: 6, tails: 4 }
+});
 \`\`\`
 
-### Weighted Flips (Custom Probability)
+### Weighted Flip Request
 
 \`\`\`javascript
 // 70% chance of Heads
@@ -756,34 +873,43 @@ fetch('https://flipacoinfree.com/api/flip?weight=0.7')
   });
 \`\`\`
 
+### Rate Limits
+
+-   **Free tier**: 100 requests per hour
+-   **Basic tier**: 1,000 requests per hour
+-   **Pro tier**: 10,000 requests per hour
+-   **Enterprise**: Custom limits available
+Exceeded rate limits return HTTP 429 with retry-after header.
+
 ### Error Handling
 
 \`\`\`javascript
-async function flipCoin() {
-  try {
-    const response = await fetch('https://flipacoinfree.com/api/flip');
-    
-    if (!response.ok) {
-      throw new Error(\`HTTP error! status: \${response.status}\`);
-    }
-    
-    const data = await response.json();
-    return data.result;
-  } catch (error) {
-    console.error('Flip failed:', error);
-    return null;
+fetch('https://flipacoinfree.com/api/flip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ count: 1 })
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error(\`HTTP error! status: \${response.status}\`);
   }
-}
+  return response.json();
+})
+.then(data => {
+  console.log('Success:', data);
+})
+.catch(error => {
+  console.error('Error:', error);
+  // Handle error appropriately
+});
 \`\`\`
 
-### Rate Limiting
+## Bulk Flips, Giveaways & Sports Integration
 
-Our API allows:
-- **Free tier**: 100 requests per minute
-- **No authentication required** for basic use
-- **Bulk requests**: Up to 1,000 flips per request
-
-### Best Practices
+### Bulk Flip Endpoint
 
 1.  **Cache flip IDs** for auditable contests
 2.  **Implement exponential backoff** for retries
@@ -791,79 +917,98 @@ Our API allows:
 4.  **Log results** for transparency in giveaways
 5.  **Display methodology** to build user trust
 
-## Advanced Use Cases
+\`\`\`
+POST https://flipacoinfree.com/api/batchflip
+\`\`\`
 
-### 1. Contest Winner Selection
+**Request:**
 
 \`\`\`javascript
-async function selectWinner(contestants) {
-  const results = [];
-  
-  for (let contestant of contestants) {
-    const response = await fetch('https://flipacoinfree.com/api/flip');
-    const data = await response.json();
-    
-    results.push({
-      name: contestant,
-      result: data.result,
-      flipId: data.flipId // For verification
-    });
-  }
-  
-  // Winner is first to get Heads
-  const winner = results.find(r => r.result === 'Heads');
-  return winner;
+fetch('https://flipacoinfree.com/api/batchflip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    count: 1000,
+    exportFormat: 'csv'
+  })
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Batch ID:', data.batchId);
+  console.log('Download URL:', data.downloadUrl);
+});
+\`\`\`
+
+**Response:**
+
+\`\`\`json
+{
+  "success": true,
+  "batchId": "batch_abc123",
+  "count": 1000,
+  "summary": {
+    "heads": 503,
+    "tails": 497
+  },
+  "downloadUrl": "https://flipacoinfree.com/api/download/batch_abc123.csv",
+  "expiresAt": "2025-10-11T14:30:00Z"
 }
 \`\`\`
 
-### 2. A/B Testing Assignment
+### Giveaway Integration Example
+
+Here's a complete example for running a fair giveaway:
 
 \`\`\`javascript
-async function assignTestGroup(userId) {
-  const response = await fetch('https://flipacoinfree.com/api/flip');
-  const data = await response.json();
-  
-  const group = data.result === 'Heads' ? 'A' : 'B';
-  
-  // Store assignment
-  await saveUserGroup(userId, group, data.flipId);
-  
-  return group;
-}
-\`\`\`
+// Step 1: Get list of participants
+const participants = [
+  'user1@example.com',
+  'user2@example.com',
+  'user3@example.com',
+  // ... more participants
+];
 
-### 3. Game Mechanics
+// Step 2: Assign each participant to heads or tails
+const headsGroup = participants.filter((_, i) => i % 2 === 0);
+const tailsGroup = participants.filter((_, i) => i % 2 === 1);
 
-\`\`\`javascript
-async function startGame() {
-  const response = await fetch('https://flipacoinfree.com/api/flip');
-  const data = await response.json();
+// Step 3: Flip the coin
+fetch('https://flipacoinfree.com/api/flip', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    count: 1,
+    metadata: {
+      giveaway: 'Summer Contest 2025',
+      participants: participants.length
+    }
+  })
+})
+.then(response => response.json())
+.then(data => {
+  // Step 4: Determine winners
+  const winners = data.result === 'heads' ? headsGroup : tailsGroup;
   
-  const firstPlayer = data.result === 'Heads' ? 'Player 1' : 'Player 2';
+  // Step 5: Select random winner from winning group
+  const finalWinner = winners[Math.floor(Math.random() * winners.length)];
   
-  console.log(\`\${firstPlayer} goes first!\`);
-  return firstPlayer;
-}
-\`\`\`
-
-### 4. Educational Simulations
-
-\`\`\`javascript
-async function probabilityExperiment(numFlips) {
-  const response = await fetch(
-    \`https://flipacoinfree.com/api/flip?count=\${numFlips}\`
-  );
-  const data = await response.json();
+  console.log('Winning side:', data.result);
+  console.log('Winner:', finalWinner);
+  console.log('Flip ID for verification:', data.flipId);
   
-  // Analyze results
-  const headsPercentage = (data.summary.heads / numFlips) * 100;
-  
-  console.log(\`After \${numFlips} flips:\`);
-  console.log(\`Heads: \${data.summary.heads} (\${headsPercentage.toFixed(2)}%)\`);
-  console.log(\`Tails: \${data.summary.tails} (\${(100 - headsPercentage).toFixed(2)}%)\`);
-  
-  return data;
-}
+  // Step 6: Log for audit trail
+  logGiveawayResult({
+    flipId: data.flipId,
+    winner: finalWinner,
+    timestamp: data.timestamp
+  });
+});
 \`\`\`
 
 ## FAQ
@@ -1031,239 +1176,207 @@ A weighted coin has unequal probabilities for each outcome. For example:
 - **25% Yes, 75% No**: No is three times more likely
 - **90% Success, 10% Failure**: Simulating high success rates
 
-### Real-World Applications
-
-#### 1. Game Design
-
-Create balanced gameplay:
-- **Boss drops**: 5% chance for rare item, 95% for common
-- **Critical hits**: 15% chance for extra damage
-- **Random events**: 80% normal, 20% special encounter
-
-#### 2. Educational Simulations
-
-Teach probability concepts:
-- **Weather simulation**: 70% sunny, 30% rainy
-- **Disease modeling**: 2% infection rate
-- **Quality control**: 98% pass, 2% defect
-
-#### 3. Business Decisions
-
-Model real-world scenarios:
-- **Market conditions**: 60% favorable, 40% unfavorable
-- **Customer behavior**: 35% conversion rate
-- **Risk assessment**: Various probability levels
-
-### How to Create Weighted Flips
-
-**Using FlipACoinFree.com:**
-
-1. **Select "Weighted Flip"** mode
-2. **Adjust the slider** to set probability (0-100%)
-3. **Preview the odds** displayed clearly
-4. **Flip and observe** results over multiple attempts
-
-**Using the API:**
+For sports websites implementing official coin tosses:
 
 \`\`\`javascript
-// 70% chance of Heads
-fetch('https://flipacoinfree.com/api/flip?weight=0.7')
-  .then(response => response.json())
-  .then(data => {
-    console.log('Result:', data.result);
-    console.log('Probability used:', data.weight);
+async function conductSportsCoinToss(team1, team2) {
+  // Step 1: Display teams
+  console.log(\`Coin toss between \${team1} and \${team2}\`);
+  
+  // Step 2: Conduct flip
+  const response = await fetch('https://flipacoinfree.com/api/flip', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      count: 1,
+      metadata: {
+        team1: team1,
+        team2: team2,
+        event: 'Pre-game coin toss'
+      }
+    })
+  });
+  
+  const data = await response.json();
+  
+  // Step 3: Determine winner
+  const winner = data.result === 'heads' ? team1 : team2;
+  const loser = data.result === 'heads' ? team2 : team1;
+  
+  // Step 4: Return results
+  return {
+    result: data.result,
+    winner: winner,
+    loser: loser,
+    flipId: data.flipId,
+    timestamp: data.timestamp
+  };
+}
+
+// Usage
+conductSportsCoinToss('Team A', 'Team B')
+  .then(result => {
+    console.log(\`\${result.winner} wins the toss!\`);
+    console.log(\`Flip ID: \${result.flipId}\`);
   });
 \`\`\`
 
-### Understanding the Math
+### Tournament Bracket Generation
 
-For a weighted coin with probability *p* for Heads:
-
-- **Probability of Heads**: p (e.g., 0.7 = 70%)
-- **Probability of Tails**: 1 - p (e.g., 0.3 = 30%)
-- **Expected Heads in 100 flips**: 100 × p (e.g., 70 Heads)
-
-**Example Calculation:**
-
-If you flip a 60% weighted coin 50 times:
-- Expected Heads: 50 × 0.6 = 30
-- Expected Tails: 50 × 0.4 = 20
-
-## Two-Coin Flip Games and Strategies
-
-Flipping two coins simultaneously creates interesting probability scenarios and game mechanics.
-
-### Possible Outcomes
-
-When flipping two coins, there are four possible outcomes:
-
-| Coin 1 | Coin 2 | Probability |
-|--------|--------|-------------|
-| Heads | Heads | 25% (1/4) |
-| Heads | Tails | 25% (1/4) |
-| Tails | Heads | 25% (1/4) |
-| Tails | Tails | 25% (1/4) |
-
-### Outcome Combinations
-
-- **Both Heads**: 25% chance
-- **Both Tails**: 25% chance
-- **One of Each**: 50% chance (most likely!)
-
-### Popular Two-Coin Games
-
-#### Game 1: Match or Mix
-
-**Rules:**
-- Flip two coins
-- **Match** (both same): Player A wins
-- **Mix** (one of each): Player B wins
-
-**Strategy**: Player B has a 50% advantage! This game favors the "Mix" player.
-
-#### Game 2: First to Three Matches
-
-**Rules:**
-- Players take turns flipping two coins
-- Score a point when both coins match (HH or TT)
-- First to 3 points wins
-
-**Expected Duration**: 12 flips on average
-
-#### Game 3: Heads Race
-
-**Rules:**
-- Flip two coins repeatedly
-- Count total Heads across both coins
-- First to reach 10 Heads wins
-
-**Strategy**: Pure luck, but exciting to watch!
-
-### Three-Coin Flips
-
-With three coins, you get 8 possible outcomes:
-
-- **All Heads (HHH)**: 12.5% (1/8)
-- **All Tails (TTT)**: 12.5% (1/8)
-- **Two Heads, One Tail**: 37.5% (3/8)
-- **One Head, Two Tails**: 37.5% (3/8)
-
-**Most likely result**: Two of one kind, one of the other (75% combined)
-
-## Practical Applications
-
-### 1. Decision Making with Multiple Options
-
-Use custom coins to choose between more than two options:
-
-**Method**: Flip twice
-- First flip: Narrows to two options
-- Second flip: Final decision
-
-**Example**: Choosing between 4 restaurants
-- Flip 1: Italian/Chinese vs Mexican/Thai
-- Flip 2: Final choice within winning pair
-
-### 2. Team Selection
-
-Create fair team assignments:
-
-**For 2 teams:**
-- Custom coin with Team A and Team B
-- Flip for each person
-
-**For 4 teams:**
-- Flip twice per person
-- HH = Team 1, HT = Team 2, TH = Team 3, TT = Team 4
-
-### 3. Content Creation
-
-Engage your audience:
-
-- **Livestream decisions**: Let viewers see custom coin flips
-- **Social media polls**: "Should I do X or Y?" with branded coin
-- **Challenge selection**: Random challenge generator with custom options
-
-### 4. Educational Activities
-
-Teach probability:
-
-- **Weighted flips**: Demonstrate non-uniform probability
-- **Two-coin experiments**: Show combination probabilities
-- **Custom scenarios**: Create subject-specific examples
-
-## How to Make Fair Decisions with Style
-
-### Step 1: Define Your Options Clearly
-
-Be specific about what each outcome means:
-
-- ❌ Vague: "Heads = maybe do it"
-- ✅ Clear: "Heads = Start project Monday"
-
-### Step 2: Customize for Context
-
-Match the coin to the decision:
-
-- **Serious decisions**: Professional, clean design
-- **Fun choices**: Colorful, playful images
-- **Brand decisions**: Company colors and logos
-
-### Step 3: Set Appropriate Weights
-
-Consider if 50/50 is right:
-
-- **Equal options**: Use 50/50
-- **Risky choice**: Weight toward safer option (e.g., 30/70)
-- **Simulation**: Match real-world probabilities
-
-### Step 4: Document the Process
-
-For important decisions:
-
-1. **Record the flip ID** (if available)
-2. **Screenshot the result**
-3. **Note the timestamp**
-4. **Share with stakeholders** for transparency
-
-### Step 5: Commit to the Outcome
-
-The flip only works if you honor the result:
-
-- Decide beforehand if you'll accept the outcome
-- If you're tempted to "best 2 out of 3," the decision wasn't ready for a coin flip
-- Use the flip to break true ties, not avoid difficult thinking
-
-## Advanced Customization Tips
-
-### Creating Memorable Experiences
-
-1. **Add sound effects**: Custom audio makes flips more engaging
-2. **Use animations**: Realistic physics or quick reveals based on context
-3. **Brand consistently**: Match your website or app design
-4. **Mobile optimize**: Ensure custom images look good on small screens
-
-### Technical Considerations
-
-**Image Optimization:**
-- Compress images to <100KB for fast loading
-- Use transparent PNGs for professional look
-- Test on various screen sizes
-
-**Accessibility:**
-- Provide text alternatives for images
-- Ensure sufficient color contrast
-- Support keyboard navigation
-
-**Performance:**
-- Cache custom coins for repeat users
-- Lazy load images when possible
-- Optimize animation frame rates
-
-### API Integration for Custom Flips
+Use bulk flips to generate random tournament brackets:
 
 \`\`\`javascript
-// Custom flip with API
+async function generateTournamentBracket(teams) {
+  // Flip for each matchup
+  const matchups = [];
+  
+  for (let i = 0; i < teams.length; i += 2) {
+    const response = await fetch('https://flipacoinfree.com/api/flip', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer YOUR_API_KEY',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        count: 1,
+        metadata: {
+          matchup: \`\${teams[i]} vs \${teams[i+1]}\`
+        }
+      })
+    });
+    
+    const data = await response.json();
+    const winner = data.result === 'heads' ? teams[i] : teams[i+1];
+    
+    matchups.push({
+      team1: teams[i],
+      team2: teams[i+1],
+      winner: winner,
+      flipId: data.flipId
+    });
+  }
+  
+  return matchups;
+}
+\`\`\`
+
+## Security, Logging & Audit Trails
+
+### Ensuring Fair Results
+
+For contests and giveaways, transparency is crucial:
+
+**1. Use Verifiable Flip IDs**
+
+Every API flip returns a unique \`flipId\` that can be verified:
+
+\`\`\`javascript
+// Store the flip ID
+const flipId = data.flipId;
+
+// Later, verify the flip
+fetch(\`https://flipacoinfree.com/api/verify/\${flipId}\`)
+  .then(response => response.json())
+  .then(verification => {
+    console.log('Verified result:', verification.result);
+    console.log('Timestamp:', verification.timestamp);
+    console.log('Metadata:', verification.metadata);
+  });
+\`\`\`
+
+**2. Enable Public Verification**
+
+Generate a public verification link for participants:
+
+\`\`\`javascript
+const verificationUrl = \`https://flipacoinfree.com/verify/\${flipId}\`;
+console.log('Verify this flip at:', verificationUrl);
+\`\`\`
+
+**3. Export Complete Audit Logs**
+
+Download CSV of all flips for your account:
+
+\`\`\`javascript
+fetch('https://flipacoinfree.com/api/export', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
+  }
+})
+.then(response => response.blob())
+.then(blob => {
+  // Download CSV file
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'flip-audit-log.csv';
+  a.click();
+});
+\`\`\`
+
+### Privacy and Data Handling
+
+We take privacy seriously:
+
+-   **No personal data required**: Flips don't require user accounts
+-   **Optional metadata**: You control what data is attached to flips
+-   **Automatic deletion**: Flip data deleted after 90 days (or sooner on request)
+-   **GDPR compliant**: Full data export and deletion available
+-   **No tracking**: We don't track users across sites
+
+### Preventing Fraud in Giveaways
+
+Best practices for fair giveaways:
+
+**1. Announce Method in Advance**
+- Tell participants you'll use a coin flip
+- Share the verification URL format
+- Explain how winners will be selected
+
+**2. Conduct Flips Publicly**
+- Live stream the flip if possible
+- Share flip ID immediately after
+- Allow real-time verification
+
+**3. Use Metadata for Transparency**
+- Include giveaway name in metadata
+- Record participant count
+- Timestamp the flip
+
+**4. Provide Audit Trail**
+- Export flip history
+- Share CSV with participants
+- Keep records for disputes
+
+### API Security Best Practices
+
+Protect your API key:
+
+**Don't:**
+- ❌ Expose API key in client-side code
+- ❌ Commit API key to public repositories
+- ❌ Share API key publicly
+
+**Do:**
+- ✅ Store API key in environment variables
+- ✅ Use server-side API calls only
+- ✅ Rotate keys regularly
+- ✅ Use separate keys for development and production
+
+**Example (Node.js):**
+
+\`\`\`javascript
+// Store in .env file
+// FLIPACOIN_API_KEY=your_key_here
+
+// Access in code
+const apiKey = process.env.FLIPACOIN_API_KEY;
+
+// Never expose in client code
 fetch('https://flipacoinfree.com/api/flip', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },

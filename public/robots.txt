@@ -18,11 +18,5 @@ Allow: /api/
 Allow: /public/assets/
 Allow: /public/og/
 
-Allow: /blog/digital-random-flip-tools/
-Allow: /blog/custom-weighted-coin-flips/
-Allow: /blog/coin-flip-vs-spinner-vs-dice/
-Allow: /blog/top-5-mistakes-online-randomizers/
-Allow: /blog/business-decisions-coin-flip/
-
 # Sitemap
 Sitemap: https://flipacoinfree.com/sitemap.xml
