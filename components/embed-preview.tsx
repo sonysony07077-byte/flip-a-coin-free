@@ -180,6 +180,7 @@ export function EmbedPreview({
             className="border-0 rounded-lg bg-background shadow-lg"
             title="Coin Flip Widget Preview"
             sandbox="allow-scripts allow-same-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           />
         </div>
 

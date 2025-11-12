@@ -28,7 +28,8 @@ export function EmbedCodeGenerator() {
   height="${height}" 
   frameborder="0"
   title="Coin Flip Widget"
-  sandbox="allow-scripts allow-same-origin"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  loading="lazy"
 ></iframe>`
   }
 

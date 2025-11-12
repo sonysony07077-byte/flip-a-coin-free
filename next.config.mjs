@@ -14,7 +14,6 @@ const nextConfig = {
 
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-    // optimizeCss: true,
   },
 
   async headers() {
@@ -47,6 +46,67 @@ const nextConfig = {
         ],
       },
       {
+        source: '/widget/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
+          },
+          // Note: X-Frame-Options is NOT set here to allow embedding
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors *"
+          },
+        ],
+      },
+      {
+        source: '/widget',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()'
+          },
+          // Note: X-Frame-Options is NOT set here to allow embedding
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors *"
+          },
+        ],
+      },
+      // Default headers for all other routes
+      {
         source: '/:path*',
         headers: [
           {
@@ -78,6 +138,31 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=()'
           },
         ],
+      },
+    ]
+  },
+
+  async redirects() {
+    return [
+      {
+        source: '/coin-flip',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/flip-coin',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/coin-toss',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/heads-or-tails',
+        destination: '/',
+        permanent: true,
       },
     ]
   },
