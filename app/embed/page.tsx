@@ -92,6 +92,8 @@ export default function EmbedPage() {
   height="500" 
   frameborder="0"
   title="Coin Flip Widget"
+  allow="accelerometer; autoplay; clipboard-write"
+  loading="lazy"
 ></iframe>`}</code>
                 </pre>
               </CardContent>
@@ -136,6 +138,8 @@ export function CoinFlipWidget() {
       height="500" 
       frameBorder="0"
       title="Coin Flip Widget"
+      allow="accelerometer; autoplay; clipboard-write"
+      loading="lazy"
       style={{ border: 'none' }}
     />
   );
