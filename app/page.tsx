@@ -89,6 +89,22 @@ export default function HomePage() {
                   text: "Yes! We provide a free embeddable widget that you can add to any website. Just copy the embed code and paste it into your site.",
                 },
               },
+              {
+                "@type": "Question",
+                name: "How many times can I flip the coin?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can flip the coin as many times as you want. Our multi-flip feature allows you to flip up to 10,000 coins at once and see detailed statistics.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is there an API available?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes! We offer a free REST API that developers can use to integrate coin flip functionality into their applications. Visit our API documentation for details.",
+                },
+              },
             ],
           }),
         }}

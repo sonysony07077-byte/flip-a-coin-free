@@ -10,6 +10,12 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 31536000,
     unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flipacoinfree.com',
+      },
+    ],
   },
 
   experimental: {
@@ -19,7 +25,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|png|webp|avif|ico)',
+        source: '/:all*(svg|jpg|png|webp|avif|ico|woff|woff2)',
         headers: [
           {
             key: 'Cache-Control',
@@ -68,7 +74,6 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()'
           },
-          // Note: X-Frame-Options is NOT set here to allow embedding
           {
             key: 'Content-Security-Policy',
             value: "frame-ancestors *"
@@ -98,14 +103,12 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()'
           },
-          // Note: X-Frame-Options is NOT set here to allow embedding
           {
             key: 'Content-Security-Policy',
             value: "frame-ancestors *"
           },
         ],
       },
-      // Default headers for all other routes
       {
         source: '/:path*',
         headers: [
@@ -161,6 +164,16 @@ const nextConfig = {
       },
       {
         source: '/heads-or-tails',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/toss-a-coin',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/flip',
         destination: '/',
         permanent: true,
       },

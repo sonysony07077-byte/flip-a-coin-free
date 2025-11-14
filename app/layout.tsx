@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Poppins } from "next/font/google"
+import { Inter, Poppins } from 'next/font/google'
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://flipacoinfree.com"),
   alternates: {
     canonical: "https://flipacoinfree.com",
+    languages: {
+      'en-US': 'https://flipacoinfree.com',
+      'x-default': 'https://flipacoinfree.com',
+    },
   },
   title: {
     default: "Flip a Coin Free - Realistic Online Coin Flipper with Sound",
@@ -53,10 +57,18 @@ export const metadata: Metadata = {
     "yes no coin flip",
     "coin toss simulator",
     "virtual coin flip",
+    "flip coin online",
+    "online coin toss",
+    "digital coin flip",
+    "fair coin flip",
+    "50/50 decision maker",
   ],
-  authors: [{ name: "Flip A Coin Free", url: "https://flipacoinfree.com" }],
+  authors: [{ name: "Flip A Coin Free Team", url: "https://flipacoinfree.com" }],
   creator: "Flip A Coin Free",
   publisher: "Flip A Coin Free",
+  applicationName: "Flip A Coin Free",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,
@@ -72,10 +84,11 @@ export const metadata: Metadata = {
       "Flip a coin free online - realistic heads or tails coin toss with human voice and sound. Now in 30+ languages! Fast, fair, multi-flip & export. Try now - no app.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://flipacoinfree.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Flip A Coin Free - Online Coin Flipper",
+        type: "image/png",
       },
     ],
   },
@@ -84,7 +97,7 @@ export const metadata: Metadata = {
     title: "Flip a Coin Free - Realistic Online Coin Flipper with Sound",
     description:
       "Flip a coin free online - realistic heads or tails coin toss with human voice and sound. Now in 30+ languages! Fast, fair, multi-flip & export. Try now - no app.",
-    images: ["/og-image.png"],
+    images: ["https://flipacoinfree.com/og-image.png"],
     creator: "@flipacoinfree",
     site: "@flipacoinfree",
   },
@@ -114,7 +127,12 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   category: "technology",
-    generator: 'v0.app'
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'CoinFlip',
+  },
 }
 
 export default function RootLayout({
@@ -155,6 +173,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
         <meta name="msapplication-TileColor" content="#FFD25A" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+
+        {/* Mobile Web App Capable */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="CoinFlip" />
       </head>
       <body className="font-sans antialiased">
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-1Z8E1XBFE0" strategy="afterInteractive" />

@@ -5,15 +5,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://flipacoinfree.com"
   const currentDate = new Date()
 
+  // Get all blog posts
   const posts = getAllPosts()
-  const blogUrls = posts.map((post) => ({
+  const blogUrls: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.publishedAt),
-    changeFrequency: "weekly" as const,
+    changeFrequency: "monthly" as const,
     priority: 0.7,
   }))
 
-  return [
+  // Main pages with proper priorities
+  const mainPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: currentDate,
@@ -24,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/embed`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/api-docs`,
@@ -33,37 +35,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/widget`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/how-it-works`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/classroom`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/faq`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/contact`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/docs/ai-partnership`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/docs/outreach-ai-templates`,
       lastModified: currentDate,
       changeFrequency: "monthly",
       priority: 0.6,
@@ -80,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.4,
     },
-    ...blogUrls,
   ]
+
+  return [...mainPages, ...blogUrls]
 }
