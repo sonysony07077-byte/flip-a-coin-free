@@ -377,7 +377,7 @@ Copyright © 2025 Flip A Coin Free. All rights reserved.
 
 ## Support
 
-- Email: support@flipacoinfree.com
+- Email: m.ramzan@flipacoinfree.com
 - GitHub: github.com/flipacoinfree
 - Twitter: @flipacoinfree
 
